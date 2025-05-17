@@ -1,0 +1,684 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: linear-gradient(135deg, #45403b, #3877b6);
+    position: relative;
+    z-index: 10;
+  }
+  
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+}
+
+.pharaoh-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.pharaoh {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    filter: brightness(0) invert(38%) sepia(90%) saturate(600%) hue-rotate(15deg);
+}
+
+.way {
+    font-size: 26px;
+    font-weight: bold;
+    color: #FF9B44;
+    margin-left: 8px;
+}
+ .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links li:hover a {
+    color: #FF9B44;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #FF9B44;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-links li:hover a::after {
+    transform: scaleX(1);
+}
+
+/* Dropdown menu styles */
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .dropdown-menu {
+    display: none; /* المخفي في البداية */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(135deg, #45403b, #3877b6);
+    min-width: 180px;
+    padding: 10px 0;
+    list-style: none;
+    border-radius: 5px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.nav-links .dropdown:hover .dropdown-menu {
+    display: block; /* يظهر عند المرور على العنصر */
+}
+
+.nav-links .dropdown-menu li {
+    padding: 10px 20px;
+}
+
+.nav-links .dropdown-menu li a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links .dropdown-menu li:hover a {
+    color: #FF9B44;
+}
+  .login-btn {
+    background: linear-gradient(135deg, #d2840f, #ffae42);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  
+  .login-btn:hover {
+    background: linear-gradient(135deg, #ffae42, #d2840f);
+    transform: scale(1.05);
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(135deg, #45403b, #3877b6);
+    padding: 10px 0;
+    border-radius: 6px;
+    display: none;
+    min-width: 180px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 100;
+  }
+  
+  .dropdown:hover .dropdown-menu,
+  .dropdown-menu.active {
+    display: block;
+  }
+  
+  .dropdown-menu li {
+    padding: 10px 20px;
+  }
+  
+  .dropdown-menu li a {
+    padding: 0;
+    font-size: 15px;
+  }
+  
+  .menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background: linear-gradient(135deg, #45403b, #3877b6);
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      transition: transform 0.3s ease;
+      transform: translateY(-100%);
+    }
+  
+    .nav-links.active {
+      display: flex;
+      transform: translateY(0);
+    }
+  
+    .nav-links li {
+      width: 100%;
+    }
+  
+    .dropdown-menu {
+      position: static;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: none;
+      display: none;
+    }
+  
+    .dropdown-menu.active {
+      display: block;
+    }
+  
+    .login-btn {
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+  
+
+/* تحسينات على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .login-btn {
+        padding: 8px 16px; 
+        font-size: 14px;
+    }
+}
+    /* ========== القسم الرئيسي ========== */
+    .home {
+        position: relative;
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+        width: 100vw;
+        overflow: hidden;
+    }
+    .home {
+        width: 100%;
+        height: 400px;
+    }
+    .home-image {
+        width: 100%;
+    }
+    .home-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 400px;
+    }
+
+    .home-image img {
+        width: 100%;
+        height: 550px;
+        object-fit: cover;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 400px;
+        background-color: rgba(0, 0, 0, 0.432);
+    }
+
+    .home-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+    }
+
+    .home-text h1 {
+        font-size: 44px;
+        margin: 0;
+    }
+
+    .home-text p {
+        font-size: 18px;
+        margin-top: 8px;
+    }
+
+    .home-text p a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .home-text p a:hover {
+        text-decoration: underline;
+    }
+
+    /* ========== قسم استكشاف مصر ========== */
+    .explore-egypt {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px;
+   
+    }
+
+    .content {
+        width: 50%;
+    }
+
+    .content h2 {
+        font-size: 28px;
+        font-weight: bold;
+        color: black;
+    }
+
+    .content p {
+        font-size: 18px;
+        color: #141414;
+        margin: 10px 0;
+    }
+
+.explore-btn{
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff9800;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+.explore-btn:hover{
+    background-color: #e8860f;
+    color: #fff;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+.values-btn{
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff9800;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 1%;
+}
+.values-btn:hover{
+    background-color: #e8860f;
+    color: #fff;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+    .images {
+        position: relative;
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .top-image {
+        width: 50%;
+        max-height: 250px;
+        border-radius: 20px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .bottom-image {
+        width: 50%;
+        max-height: 220px;
+        position: absolute;
+        right: -15px;
+        top: 80px;
+        border-radius: 20px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ========== قسم القيم ========== */
+    .values-section {
+        text-align: center;
+        padding: 50px 20px;
+        background-color:  #e0f7f8;
+        border-radius: 20px;
+        margin: 50px 20px;
+    }
+
+    .values-container {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+    .value-box {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        width: 340px;
+        min-height: 220px; /* زيادة بسيطة في الطول */
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-size: 18px;
+    }
+    
+    .icon-style {
+        font-size: 52px;
+        color:#e8860fed;
+        margin-bottom: 15px;
+    }
+    
+    
+    .value-box:hover {
+        transform: scale(1.07); /* كانت 1.05 */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* ظل أقوى عند التحويم */
+    }
+    
+
+
+    /* ========== قسم المهمة والرؤية ========== */
+    .mission-vision {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        padding: 100px 10%;
+        background-color: #ffffff;
+    }
+
+    .mission, .vision {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 60px;
+    }
+
+    .mission img, .vision img {
+        width: 45%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mission img:hover, .vision img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .mission .text, .vision .text {
+        width: 50%;
+    }
+
+    .mission h3, .vision h3 {
+        font-size: 28px;
+        color: #000000;
+        margin-bottom: 15px;
+    }
+
+    .mission p, .vision p {
+        font-size: 20px;
+        color: #131313;
+        line-height: 1.4;
+    }
+
+/* 🔹 تصميم استجابة للهواتف */
+@media (max-width: 768px) {
+    .payment-section {
+        width: 90%;
+    }
+    .payment-section .input-box,
+    .payment-section .input-box.half-width {
+        width: 100%;
+    }
+}
+
+footer {
+    background: linear-gradient(135deg, #45403b, #3877b6); /* برتقالي دافئ مع رمادي فحمي لمظهر عصري وأنيق */
+    color: white;
+    padding: 50px 0;
+    font-family: 'Poppins', sans-serif;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    overflow: hidden;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #FF9B44;
+    margin: 5px auto 0;
+    border-radius: 5px;
+}
+
+.footer-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #FF9B44;
+}
+
+.footer-section p i {
+    margin-right: 8px;
+    color: #FF9B44;
+    font-size: 18px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+    background: #FF9B44;
+}
+
+/* Quick reply buttons */
+.quick-replies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+.chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff9800;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 26px;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .chat-icon:hover {
+    background-color: #e68900;
+    transform: scale(1.1);
+  }
+
+.quick-reply {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.quick-reply:hover {
+    background: #ddd;
+}
+
+/* Responsive styles */
+@media (max-width: 480px) {
+    .chatbot-container {
+        width: 90%;
+        right: 5%;
+        bottom: 10px;
+    }
+    
+    .chatbot-messages {
+        height: 250px;
+    }
+}
+
+    /* ========== الوسائط المتجاوبة ========== */
+    @media (max-width: 768px) {
+        .explore-egypt {
+            flex-direction: column;
+            padding: 30px 20px;
+        }
+
+        .content, .images {
+            width: 100%;
+        }
+
+        .images {
+            margin-top: 30px;
+        }
+
+        .mission, .vision {
+            flex-direction: column;
+        }
+
+        .mission img, .vision img {
+            width: 100%;
+            height: auto;
+        }
+
+        .mission .text, .vision .text {
+            width: 100%;
+        }
+
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .login-btn {
+            margin: 10px auto;
+        }
+    }

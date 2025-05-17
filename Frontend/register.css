@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgba(245, 245, 220, 0.272);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.register-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 10px;
+    align-items: stretch;
+    min-height: 100vh;
+    border: 2px solid #ccc;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.left-panel {
+    flex: 1;
+    background: url("imgs/The Karnak Temple Complex in Egypt_ One of the world's largest temple complexes.jfif") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    position: relative;
+}
+.highlight{
+    color: #ff8500;
+}
+.overlay {
+    width: 80%;
+    max-width: 500px;
+    height: 550px;
+    background: rgba(255, 255, 255, 0.288); /* تقليل الشفافية قليلاً */
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.overlay:hover {
+    background: rgba(255, 255, 255, 0.388); /* لون أفتح عند الوقوف */
+    transition-delay: 0.1s; /* التأخير */
+
+}
+.overlay h1 {
+    font-size: 40px;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.right-panel {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-align: center;
+    color: black;
+}
+
+.user-type {
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.user-type span {
+    cursor: pointer;
+    padding-bottom: 3px;
+}
+
+.user-type .active {
+    color: #ff8500;
+    border-bottom: 2px solid #ff8500;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.register-btn {
+    background: #ff8500;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.register-btn:hover {
+    background: #e67300;
+}
+
+.terms {
+    font-size: 12px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.terms a {
+    color: #ff8500;
+}
+
+.login {
+    text-align: center;
+    color: #ff8500;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .register-container {
+        flex-direction: column;
+        align-items: center;
+        min-height: auto;
+    }
+
+    .left-panel {
+        width: 100%;
+        min-height: 300px;
+    }
+
+    .overlay {
+        width: 90%;
+        height: 250px;
+    }
+
+    .right-panel {
+        width: 100%;
+        padding: 15px;
+    }
+
+    form {
+        width: 100%;
+    }
+}
+
+input:focus, select:focus {
+    background-color: white !important; /* الحفاظ على الخلفية البيضاء */
+    border-color: #ccc; /* إذا كنت تريد الحفاظ على لون الحدود */
+}

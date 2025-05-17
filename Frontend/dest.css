@@ -1,0 +1,899 @@
+
+.chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff9800;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 26px;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .chat-icon:hover {
+    background-color: #e68900;
+    transform: scale(1.1);
+  }
+
+.explore-section {
+    padding-top: 100px; /* زيادة المسافة من الأعلى */
+    margin-top: 30px; /* مسافة إضافية */
+    margin-top: 7%;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, #45403b, #3877b6);
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+}
+
+.pharaoh-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.pharaoh {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    filter: brightness(0) invert(38%) sepia(90%) saturate(600%) hue-rotate(15deg);
+}
+
+.way {
+    font-size: 26px;
+    font-weight: bold;
+    color: #FF9B44;
+    margin-left: 8px;
+}
+
+/* Navigation links styles */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links li:hover a {
+    color: #FF9B44;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #FF9B44;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-links li:hover a::after {
+    transform: scaleX(1);
+}
+
+/* Dropdown menu styles */
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .dropdown-menu {
+    display: none; /* المخفي في البداية */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(135deg, #45403b, #3877b6);
+    min-width: 180px;
+    padding: 10px 0;
+    list-style: none;
+    border-radius: 5px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.nav-links .dropdown:hover .dropdown-menu {
+    display: block; /* يظهر عند المرور على العنصر */
+}
+
+.nav-links .dropdown-menu li {
+    padding: 10px 20px;
+}
+
+.nav-links .dropdown-menu li a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links .dropdown-menu li:hover a {
+    color: #FF9B44;
+}
+
+/* Button styles */
+.login-btn {
+    background: linear-gradient(135deg, #d2840f, #ffae42); /* تدرج ذهبي */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #ffae42, #d2840f);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.login-btn:active {
+    transform: scale(0.95);
+}
+
+
+
+@media (max-width: 768px) {
+    .navbar {
+        height: 60px;
+        padding: 8px 15px;
+    }
+    
+    .explore-section {
+        padding-top: 80px;
+    }
+}
+
+/* ========== القسم الرئيسي ========== */
+.home {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.home {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.home-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+}
+
+.home-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.home-text h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.home-text p {
+    font-size: 18px;
+    margin-top: 8px;
+}
+
+.home-text p a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.home-text p a:hover {
+    text-decoration: underline;
+}
+
+.home-text p span {
+    color: #f4a42d;
+    font-weight: bold;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+
+
+.explore-container {
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    margin: auto;
+    gap: 30px; /* زودنا المسافة بين الصورة والنص */
+    padding-top: 20px; /* تقديم المحتوى السفلي قليلاً */
+}
+.explore-section {
+    position: relative;  /* تحديد موضع العنصر الأب */
+    padding-top: 80px;   /* تحديد مسافة من الأعلى */
+}
+
+.explore-title {
+    font-size: 33px;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;  /* جعل النص في المنتصف */
+    margin-bottom: 30px;
+    position: absolute;  /* استخدمنا position لتحديد الموقع */
+    top: 0;  /* وضع النص في الجزء العلوي */
+    left: 50%;  /* وضع النص في المنتصف من حيث العرض */
+    transform: translateX(-50%);  /* لتحريك النص بالكامل إلى المنتصف */
+}
+
+.explore-text {
+    flex: 1;
+    text-align: left;
+}
+
+.explore-text p {
+    font-size: 19px;
+    color: #191919;
+    line-height: 1.4;
+}
+.card .overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%; /* تغطي كل الكارت */
+    color: #fff;
+    display: flex;
+    align-items: center;    /* عموديًا */
+    justify-content: center; /* أفقيًا */
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+.explore-title {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+}
+
+.explore-section {
+    padding-inline: 50px; /* نضيف مسافة للكل من اليمين والشمال */
+}
+
+.explore-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding-top: 20px;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0; /* مهم جداً */
+}
+.explore-container img {
+    margin-left: -32px; /* تحريك الصورة أكثر نحو اليسار */
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: left;
+    padding-left: 10%;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+    margin-top: 1%;
+}
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    gap: 15px;
+    overflow: hidden;
+    width: 80%;
+    scroll-behavior: smooth;
+}
+
+.card {
+    flex: 0 0 30%;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* عند الضغط، تصبح الصورة داكنة ويظهر الاسم */
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: filter 0.3s ease-in-out;
+}
+
+.card .overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+
+}
+
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    color: #000;
+}
+.explore-container {
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    margin: auto;
+    gap: 30px;
+    padding-top: 20px;
+    justify-content: flex-start; /* تحريك المحتوى لليسار */
+    align-self: flex-start; /* ضبط المحاذاة مع العنوان */
+}
+
+.explore-img {
+    flex: 1;
+    max-width: 280px; /* تصغير الصورة أكثر */
+    margin-left: 0px; /* محاذاة الصور مع العنوان */
+}
+
+.explore-img img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.explore-img:hover img {
+    transform: scale(1.05); /* تحريك الصورة للأمام عند تمرير الماوس */
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+    filter: brightness(70%); /* تغميق الصور */
+}
+
+.card:hover img {
+    filter: brightness(50%); /* تغميق أكثر عند تمرير الماوس */
+    transform: scale(1.1); /* تحريك الصورة للأمام عند تمرير الماوس */
+}
+
+.card .overlay {
+    position: absolute;
+    top: 50%; /* تحريك النص إلى منتصف الصورة */
+    left: 50%;
+    transform: translate(-50%, -50%); /* توسيط النص */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background: none; /* إزالة الخلفية السوداء */
+}
+
+.card:hover .overlay {
+    opacity: 1; /* ظهور الاسم عند تمرير الماوس */
+}
+
+/* تنظيم الكروت في شبكة متناسقة */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* توزيع تلقائي */
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* تحسين تصميم الكارد */
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* جعل الصور أصغر ومتناسقة */
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+    filter: brightness(75%);
+}
+
+/* تأثير عند تمرير الماوس */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover img {
+    filter: brightness(50%);
+}
+
+/* تحسين النص داخل الكارد بدون خلفية */
+.card .overlay {
+    position: absolute;
+    top: 50%; /* توسيط النص */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.explore-container {
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    margin: auto;
+    gap: 30px; /* المسافة بين الصورة والنص */
+    padding-top: 20px;
+    position: relative;
+}
+
+.explore-img {
+    flex: 1;
+    max-width: 280px;
+    position: relative; /* يسمح بإضافة الخط */
+}
+
+.explore-img::after {
+    content: "";
+    position: absolute;
+    right: -15px; /* المسافة بين الخط والصورة */
+    top: 10%;
+    height: 80%;
+    width: 4px; /* سمك الخط */
+    background-color: #f4a42d; /* اللون البرتقالي */
+    border-radius: 2px;
+}
+
+/* ظهور النص عند تمرير الماوس */
+.card:hover .overlay {
+    opacity: 1;
+}
+
+footer {
+    background: linear-gradient(135deg, #45403b, #3877b6);
+    color: white;
+    padding: 50px 0;
+    font-family: 'Poppins', sans-serif;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    overflow: hidden;
+    margin-top: 70px; /* إضافة مسافة بين الفوتر والمحتوى */
+}
+
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #FF9B44;
+    margin: 5px auto 0;
+    border-radius: 5px;
+}
+
+.footer-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #FF9B44;
+}
+
+.footer-section p i {
+    margin-right: 8px;
+    color: #FF9B44;
+    font-size: 18px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+    background: #FF9B44;
+}
+
+@media (max-width: 768px) {
+    footer {
+        margin-top: 30px; /* تقليل المسافة في الشاشات الصغيرة */
+    }
+}
+
+    .explore-container {
+        display: flex;
+        align-items: center;
+        max-width: 900px;
+        margin: auto;
+        gap: 30px;
+        padding-top: 20px;
+        justify-content: flex-start; /* تحريك المحتوى لليسار */
+    }
+    .card a {
+        display: block;
+        text-decoration: none;
+    }
+    
+    .card img {
+        width: 100%;  /* تأكد أن الصورة ستملأ المساحة المتاحة */
+        height: auto;
+    }
+    
+    .card .overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 20px;
+    }
+    
+    
+    .explore-img {
+        flex: 1;
+        max-width: 300px; /* تصغير حجم الصورة */
+        margin-left: -20px; /* تحريك الصورة أكثر لليسار */
+    }
+    
+    .explore-img img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: filter 0.3s ease-in-out;
+        filter: brightness(70%); /* تغميق الصور */
+    }
+    
+    .card:hover img {
+        filter: brightness(50%); /* تغميق أكثر عند تمرير الماوس */
+    }
+    
+    .card .overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 10px;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+    
+    .card:hover .overlay {
+        opacity: 1; /* ظهور الاسم عند تمرير الماوس */
+    }
+    .explore-container {
+        display: flex;
+        align-items: center;
+        max-width: 900px;
+        margin: auto;
+        gap: 30px;
+        padding-top: 20px;
+        justify-content: flex-start; /* تحريك المحتوى لليسار */
+    }
+    
+    .explore-img {
+        flex: 1;
+        max-width: 280px; 
+        margin-left: -40px;
+    }
+    
+    .explore-img img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: filter 0.3s ease-in-out;
+        filter: brightness(70%);
+    }
+    
+    .card {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+        filter: brightness(70%); /* تغميق الصور */
+    }
+    
+    .card:hover img {
+        filter: brightness(50%); /* تغميق أكثر عند تمرير الماوس */
+        transform: scale(1.05); /* تحريك الصورة للأمام عند تمرير الماوس */
+    }
+    
+    .card .overlay {
+        position: absolute;
+        top: 50%; /* تحريك النص إلى منتصف الصورة */
+        left: 50%;
+        transform: translate(-50%, -50%); /* توسيط النص */
+        color: white;
+        padding: 10px;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        background: none; /* إزالة الخلفية السوداء */
+    }
+    
+    .card:hover .overlay {
+        opacity: 1; /* ظهور الاسم عند تمرير الماوس */
+    } 
+
+    /* جعل النصوص والصور أكثر توافقًا مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px 15px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .navbar ul li a {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    .home {
+        height: 80vh;
+        padding-top: 80px;
+    }
+
+    .home-text h1 {
+        font-size: 30px;
+    }
+
+    .home-text p {
+        font-size: 16px;
+    }
+
+    .explore-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .explore-img {
+        max-width: 100%;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* عرض الكروت لتناسب الشاشات الصغيرة */
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* لتحسين الشاشات الصغيرة جدا (مثل الهواتف) */
+@media (max-width: 480px) {
+    .navbar ul li a {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .home-text h1 {
+        font-size: 24px;
+    }
+
+    .home-text p {
+        font-size: 14px;
+    }
+
+    .card {
+        flex: 0 0 100%;
+    }
+
+    .explore-container {
+        gap: 15px;
+    }
+}

@@ -1,0 +1,636 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, #45403b, #3877b6);
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+}
+
+.pharaoh-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.pharaoh {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    filter: brightness(0) invert(38%) sepia(90%) saturate(600%) hue-rotate(15deg);
+}
+
+.way {
+    font-size: 26px;
+    font-weight: bold;
+    color: #FF9B44;
+    margin-left: 8px;
+}
+
+/* Navigation links styles */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links li:hover a {
+    color: #FF9B44;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #FF9B44;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-links li:hover a::after {
+    transform: scaleX(1);
+}
+
+/* Dropdown menu styles */
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .dropdown-menu {
+    display: none; /* المخفي في البداية */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(135deg, #45403b, #3877b6);
+    min-width: 180px;
+    padding: 10px 0;
+    list-style: none;
+    border-radius: 5px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.nav-links .dropdown:hover .dropdown-menu {
+    display: block; /* يظهر عند المرور على العنصر */
+}
+
+.nav-links .dropdown-menu li {
+    padding: 10px 20px;
+}
+
+.nav-links .dropdown-menu li a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links .dropdown-menu li:hover a {
+    color: #FF9B44;
+}
+
+/* Button styles */
+.login-btn {
+    background: linear-gradient(135deg, #d2840f, #ffae42); /* تدرج ذهبي */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #ffae42, #d2840f);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.login-btn:active {
+    transform: scale(0.95);
+}
+
+
+/* تحسينات على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .login-btn {
+        padding: 8px 16px; 
+        font-size: 14px;
+    }
+}
+/* 🔹 تحسين العنوان */
+.contact-section {
+    text-align: center;
+    margin-top: 10%;
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+    text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* 🔹 تحسين توزيع العناصر */
+.contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    margin-top: 9%;
+    background-color: #e0f7f8;
+    gap: 50px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 تحسين الصورة */
+.contact-image {
+    width: 40%;
+    height: auto;
+    max-height: 500px;
+    border-radius: 10px;
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 تحسين نموذج التواصل */
+.contact-form {
+    width: 50%;
+}
+
+/* 🔹 تحسين العناوين داخل الفورم */
+.contact-form h4 {
+    margin-bottom: 15px;
+    font-size: 26px;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.contact-form p {
+    text-align: center;
+    font-size: 16px;
+    color: #1d1d1d;
+    margin-bottom: 1%;
+}
+
+/* 🔹 تحسين المدخلات */
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    border: 1px solid #bbb;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    border-color: black;
+    box-shadow: 0 0 10px rgba(44, 144, 159, 0.3);
+    outline: none;
+}
+
+/* 🔹 تحسين زر الإرسال */
+.contact-form button {
+    width: 100%;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form button:hover {
+    background:  #e8860f;
+    color: #fff;
+    transform: scale(1.05); /* تكبير بسيط */
+    transition: all 0.3s ease;
+}
+
+/* 🔹 تحسين الرسالة بعد الإرسال */
+.message {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 16px;
+    color: black;
+    display: none;
+}
+
+/* ✅ تحسين قسم معلومات الاتصال */
+.contact-info {
+    text-align: center;
+    padding: 50px;
+}
+
+.contact-info h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: black;
+    text-transform: uppercase;
+}
+
+/* ✅ تصميم الكروت باستخدام Glassmorphism */
+.info-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 25px;
+    width: 260px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ✅ تأثير عند تمرير الماوس */
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ تحسين الأيقونات داخل دوائر */
+.icon {
+    background: rgba(255, 155, 68, 0.15);
+    color: #FF9B44;
+    font-size: 28px;
+    padding: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ✅ تأثير على الأيقونات عند التمرير */
+.info-card:hover .icon {
+    background: #FF9B44;
+    color: white;
+}
+
+/* ✅ تحسين العناوين والنصوص */
+.info-card h4 {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.774);
+    margin-bottom: 5px;
+}
+
+.info-card p {
+    font-size: 16px;
+    color: #1d1d1d;
+    font-weight: 500;
+}
+
+/* ✅ تحسين تصميم الخريطة */
+.map {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.map iframe {
+    width: 98%;  /* زيادة العرض ليملأ الشاشة */
+    height: 350px;  /* زيادة الارتفاع */
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* ✅ تأثير عند تمرير الماوس على الخريطة */
+.map iframe:hover {
+    transform: scale(1.02);
+}
+
+
+/* الفوتر */
+
+footer {
+    background: linear-gradient(135deg, #45403b, #3877b6); /* برتقالي دافئ مع رمادي فحمي لمظهر عصري وأنيق */
+    color: white;
+    padding: 50px 0;
+    font-family: 'Poppins', sans-serif;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    overflow: hidden;
+    margin-top: 2%;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #FF9B44;
+    margin: 5px auto 0;
+    border-radius: 5px;
+}
+
+.footer-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #FF9B44;
+}
+
+.footer-section p i {
+    margin-right: 8px;
+    color: #FF9B44;
+    font-size: 18px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+    background: #FF9B44;
+}
+
+/* استجابة لمقاسات الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* ترتيب العناصر عموديًا */
+        padding: 10px; /* تقليل الحواف */
+    }
+
+    .nav-links {
+        flex-direction: column; /* ترتيب الروابط عموديًا */
+        gap: 15px; /* تقليل المسافة بين العناصر */
+    }
+
+    .logo {
+        margin-bottom: 20px; /* مسافة بين اللوجو والروابط */
+    }
+
+    .contact-container {
+        flex-direction: column; /* ترتيب الصورة والفورم عموديًا */
+        align-items: center; /* محاذاة إلى الوسط */
+        gap: 30px; /* مسافة بين الصورة والفورم */
+    }
+
+    .contact-image {
+        width: 70%; /* تقليل عرض الصورة */
+        height: 300px; /* تقليل ارتفاع الصورة */
+    }
+
+    .contact-form {
+        width: 80%; /* زيادة عرض الفورم */
+    }
+
+    .footer-container {
+        flex-direction: column; /* ترتيب الأقسام عموديًا */
+        align-items: center; /* محاذاة إلى الوسط */
+    }
+
+    .footer-section {
+        margin: 20px 0; /* تقليل المسافة بين الأقسام */
+        text-align: center; /* محاذاة النص إلى الوسط */
+    }
+
+    .footer-section h3 {
+        margin-left: 0; /* إزالة المسافة اليسرى */
+        font-size: 16px; /* تصغير حجم العنوان */
+    }
+
+    .footer-section ul li {
+        margin-left: 0; /* إزالة المسافة اليسرى */
+    }
+
+    .social-icons img {
+        width: 25px; /* تقليل حجم الأيقونات */
+        height: 25px;
+        margin-left: 5%; /* تقليل المسافة بين الأيقونات */
+    }
+
+    .contact-section {
+        font-size: 20px; /* تصغير حجم النص */
+    }
+
+    .contact-info h2 {
+        font-size: 20px; /* تصغير حجم العنوان */
+    }
+
+    .footer-section p {
+        font-size: 14px; /* تصغير حجم النص */
+    }
+}
+
+/* استجابة لأجهزة صغيرة جدًا */
+@media (max-width: 480px) {
+    /* أي تعديلات إضافية للشاشات الصغيرة جدًا */
+}
+
+
+/* ✅ تحسين القائمة (Navbar) لجعلها منسدلة على الشاشات الصغيرة */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+/* عند الشاشات الصغيرة، نخفي القائمة العادية */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #45403b, #3877b6); /* برتقالي دافئ مع رمادي فحمي لمظهر عصري وأنيق */
+        padding: 10px 0;
+        text-align: center;
+        z-index: 99;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+}
+
+/* ✅ تحسين الخريطة لتتناسب مع جميع الأجهزة */
+@media (max-width: 768px) {
+    .map iframe {
+        width: 100%;
+        height: 300px; /* تقليل الارتفاع على الهواتف */
+    }
+}
+
+/* ✅ تحسين نموذج التواصل */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .contact-image {
+        width: 100%;
+        max-height: 250px;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+}
+
+/* ✅ تحسين الفوتر على الهواتف */
+@media (max-width: 768px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+}
+
+/* ✅ تحسين النصوص والأزرار على الشاشات الصغيرة جدًا */
+@media (max-width: 480px) {
+    .contact-section {
+        font-size: 20px;
+    }
+
+    .contact-info h2 {
+        font-size: 18px;
+    }
+
+    .contact-form button {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .map iframe {
+        height: 250px;
+    }
+}

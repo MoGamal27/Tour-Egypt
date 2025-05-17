@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Guides - Explore Egypt</title>
+    <link rel="stylesheet" href="tour.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+        <nav class="navbar">
+            <div class="logo">
+                <div class="pharaoh-wrapper">
+                    <span class="pharaoh">PHAR</span>
+                    <img src="img/egypt.png" alt="Logo" class="logo-img" />
+                    <span class="pharaoh">AOH'S</span>
+                </div>
+                <span class="way">WAY</span>
+            </div>
+         
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+
+                <li class="dropdown">
+                    <a href="#">Destination ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="destination.html">Top attractions</a></li>
+                        <li><a href="activity.html">Activities</a></li>
+                        <li><a href="tour.html">Tour Guide</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Travel Services ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="hotel.html">Hotels</a></li>
+                        <li><a href="Restaurants.html">Restaurants</a></li>
+                        <li><a href="payment.html">Booking</a></li>
+                        <li><a href="flight.html">Flight</a></li>
+
+                    </ul>
+                </li>
+
+                <li><a href="SOUV.HTML">Souvenirs</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <a href="login.html" class="login-btn">Login / Register</a>
+        </nav>
+    </header>
+
+
+
+    <header class="hero">
+        <h1>Discover your special guide</h1>
+        <p>Choose your ideal tour guide for an unforgettable experience</p>
+        <div class="search-container">
+            <div class="search-box">
+                <label>Location</label>
+                <select id="location-filter">
+                    <option value="all">Where are you going?</option>
+                    <option value="Cairo">Cairo</option>
+                    <option value="Luxor">Luxor</option>
+                    <option value="Aswan">Aswan</option>
+                    <option value="Alexandria">Alexandria</option>
+                    <option value="Red Sea">Red Sea</option>
+                </select>
+            </div>
+            <div class="search-box">
+                <label>Languages</label>
+                <select id="language-filter">
+                    <option value="all">Add language</option>
+                    <option value="English">English</option>
+                    <option value="Arabic">Arabic</option>
+                    <option value="French">French</option>
+                </select>
+            </div>
+            <button class="search-btn" id="check-availability">Check Availability</button>
+        </div>
+    </header>
+
+    <section class="guides-section">
+        <h2 style="font-size: 30px;">Tour Guides</h2>
+        <div class="guides-container">
+            <!-- Tour Guide 1 -->
+            <div class="guide-card" data-location="Cairo" data-language="Arabic , English , french">
+                <img src="images/a4e201a05798aca511eb7465c7813801.png" alt="Ahmed Ali">
+                <div class="guide-info">
+                    <h3>Ahmed Ali</h3>
+                    <p>Expert in Cairo & Pyramids Tours</p>
+                    <p class="languages">Languages: Arabic, English, French</p>
+                    <p class="price">Price: 300$/day</p>
+                    <p class="rating">⭐ 4.8</p>
+                    <a href="book.html" class="book-btn">Book a Tour</a>
+
+                </div>
+            </div>
+
+            <!-- Tour Guide 2 -->
+            <div class="guide-card" data-location="Luxor " data-language="English , French , Arabic">
+                <img src="images/17c80660cd789842c57c957d37a2d247.png" alt="Mona Hassan">
+                <div class="guide-info">
+                    <h3>Mona Hassan</h3>
+                    <p>Expert in Luxor & Aswan Tours</p>
+                    <p class="languages">Languages: English, French, Arabic</p>
+                    <p class="price">Price: 200$/day</p>
+                    <p class="rating">⭐ 4.9</p>
+                    <a href="book.html" class="book-btn">Book a Tour</a>
+
+                </div>
+            </div>
+
+            <!-- Tour Guide 3 -->
+            <div class="guide-card" data-location="Alexandria" data-language="French , Arabic , English">
+                <img src="images/840c62ad1df4a762376d1ca2ee3608aa.png" alt="Karim Mohamed">
+                <div class="guide-info">
+                    <h3>Karim Mohamed</h3>
+                    <p>Expert in Alexandria & Coastal Tours</p>
+                    <p class="languages">Languages: French, Arabic, English</p>
+                    <p class="price">Price: 250$/day</p>
+                    <p class="rating">⭐ 4.6</p>
+                    <a href="book.html" class="book-btn">Book a Tour</a>
+
+                </div>
+            </div>
+
+            <!-- Tour Guide 4 -->
+            <div class="guide-card" data-location="RedSea" data-language="English , Arabic , French">
+                <img src="images/4e1fd548d4524a7283f162f726ba9d87.png" alt="Mohamed Al Attar">
+                <div class="guide-info">
+                    <h3>mahmoud Al Attar</h3>
+                    <p>Expert RedSea Tours</p>
+                    <p class="languages">Languages: English, Arabic, French</p>
+                    <p class="price">Price: 190$/day</p>
+                    <p class="rating">⭐ 4.5</p>
+                    <a href="book.html" class="book-btn">Book a Tour</a>
+
+                </div>
+            </div>
+
+            <!-- Tour Guide 5 -->
+            <div class="guide-card" data-location="RedSea" data-language="Arabic , french , English">
+                <img src="images/f492723e27d1c5e86ff7bc392f919090.png" alt="Kareem Elsayed">
+                <div class="guide-info">
+                    <h3>Kareem Elsayed</h3>
+                    <p>Expert in Desert & Safari Tours</p>
+                    <p class="languages">Languages: Arabic, French, English</p>
+                    <p class="price">Price: 175$/day</p>
+                    <p class="rating">⭐ 4.9</p>
+                    <a href="book.html" class="book-btn">Book a Tour</a>
+
+                </div>
+            </div>
+
+            <!-- Tour Guide 6 -->
+            <div class="guide-card" data-location="Aswan" data-language="French , English , Arabic">
+                <img src="images/ee0c9ce92fb9df4fdfad29b44a4ea8aa.png" alt="Ahmed Tarik">
+                <div class="guide-info">
+                    <h3>Ahmed Tarik</h3>
+                    <p>Expert in Nile Cruise & Temple Tours</p>
+                    <p class="languages">Languages: French, English, Arabic</p>
+                    <p class="price">Price: 165$/day</p>
+                    <p class="rating">⭐ 4.7</p>
+                    <a href="book.html" class="book-btn">Book a Tour</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="index.html" class="chat-icon" title="Chat with us!">
+        <i class="fas fa-comments"></i>
+    </a>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Pharaoh's Way</h3>
+                <p>Explore the wonders of ancient Egypt and enjoy the beauty of modern cities.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Need Help?</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Cairo, Egypt</p>
+                <p><i class="fa-solid fa-phone"></i> +20-123-456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
+                    <a href="https://instagram.com" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+                    <a href="https://twitter.com" target="_blank"><img src="images/twitter.png" alt="Twitter"></a>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="tour.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels</title>
+    <link rel="stylesheet" href="hotel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <div class="pharaoh-wrapper">
+                    <span class="pharaoh">PHAR</span>
+                    <img src="img/egypt.png" alt="Logo" class="logo-img" />
+                    <span class="pharaoh">AOH'S</span>
+                </div>
+                <span class="way">WAY</span>
+            </div>
+              <div class="menu-toggle" onclick="toggleMenu()">
+                ☰
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+
+                <li class="dropdown">
+                    <a href="#">Destination ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="destination.html">Top attractions</a></li>
+                        <li><a href="activity.html">Activities</a></li>
+                        <li><a href="tour.html">Tour Guide</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Travel Services ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="hotel.html">Hotels</a></li>
+                        <li><a href="Restaurants.html">Restaurants</a></li>
+                        <li><a href="payment.html">Booking</a></li>
+                        <li><a href="flight.html">Flight</a></li>
+
+                    </ul>
+                </li>
+
+                <li><a href="SOUV.HTML">Souvenirs</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <a href="login.html" class="login-btn">Login / Register</a>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <div class="text-content">
+            <h2>Forget Busy Work, <br> <strong>Start Next Vacation</strong></h2>
+            <p>We provide what you need to enjoy your <br> holiday with family. Time to make anothe <br> memorable
+                moments.</p>
+            <div class="info">
+                <div class="info-item">
+                    <img src="imgs/ic_cities 1.png" alt="Cities Icon" width="16">
+                    <span>5</span>
+                    <span class="class1">Cities Covered</span>
+                </div>
+                <div class="info-item">
+                    <img src="imgs/ic_treasure 1.png" alt="Places Icon" width="16">
+                    <span>25</span>
+                    <span class="class1">Hotels</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="image-content">
+            <img src="imgs/picture (1).png" alt="Restaurant">
+        </div>
+    </div>
+    <div class="search-container">
+        <div class="search-bar">
+            <select id="locationSelect" class="btn">
+                <option value="" disabled selected>Select Location</option>
+                <option value="cairo">Cairo</option>
+                <option value="alexandria">Alexandria</option>
+                <option value="luxor">Luxor</option>
+                <option value="aswan">Aswan</option>
+                <option value="red-sea">Red Sea</option>
+            </select>
+
+            <button class="search-btn" onclick="goToSection()">Search</button>
+        </div>
+    </div>
+    <section class="hotels" id="cairo">
+        <div class="hotel-section">
+            <h2>Best Hotels in Cairo</h2>
+            <div class="hotel-grid">
+                <!-- Hotel cards will be dynamically loaded here by hotelAPI.js -->
+            </div>
+        </div>
+    </section>
+
+    <section class="hotels" id="alexandria">
+        <div class="hotel-section">
+            <h2>Best Hotels in Alexandria</h2>
+                <div class="hotel-grid">
+                    <!-- Hotel cards will be dynamically loaded here by hotelAPI.js -->
+                </div>   
+        </div>
+    </section>
+    <section class="hotels" id="luxor">
+        <div class="hotel-section">
+            <h2>Best Hotels in Luxor</h2>
+            <div class="hotel-grid">
+            </div>
+        </div>
+    </section>
+
+    <section class="hotels" id="aswan">
+        <div class="hotel-section">
+            <h2>Best Hotels in Aswan</h2>
+            <div class="hotel-grid">
+               
+            </div>
+        </div>
+    </section>
+    <section class="hotels" id="red sea">
+        <div class="hotel-section">
+            <h2>Best Hotels in Red Sea</h2>
+            <div class="hotel-grid">          
+            </div>
+        </div>     
+    </section>
+
+    <a href="index.html" class="chat-icon" title="Chat with us!">
+        <i class="fas fa-comments"></i>
+    </a>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Pharaoh's Way</h3>
+                <p>Explore the wonders of ancient Egypt and enjoy the beauty of modern cities.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Need Help?</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Cairo, Egypt</p>
+                <p><i class="fa-solid fa-phone"></i> +20-123-456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank"><img src="imgs/image 12.png" alt="Facebook"></a>
+                    <a href="https://instagram.com" target="_blank"><img src="imgs/Social.png" alt="Instagram"></a>
+                    <a href="https://twitter.com" target="_blank"><img src="imgs/icon.png" alt="Twitter"></a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./apis/hotelAPI.js"></script>
+    <script src="hotel.js"></script>
+</body>
+
+</html>

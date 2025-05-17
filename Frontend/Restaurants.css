@@ -1,0 +1,814 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, #45403b, #3877b6);
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+}
+
+.pharaoh-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.pharaoh {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    filter: brightness(0) invert(38%) sepia(90%) saturate(600%) hue-rotate(15deg);
+}
+
+.way {
+    font-size: 26px;
+    font-weight: bold;
+    color: #FF9B44;
+    margin-left: 8px;
+}
+
+/* Navigation links styles */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links li:hover a {
+    color: #FF9B44;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #FF9B44;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-links li:hover a::after {
+    transform: scaleX(1);
+}
+
+/* Dropdown menu styles */
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .dropdown-menu {
+    display: none; /* المخفي في البداية */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(135deg, #45403b, #3877b6);
+    min-width: 180px;
+    padding: 10px 0;
+    list-style: none;
+    border-radius: 5px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.nav-links .dropdown:hover .dropdown-menu {
+    display: block; /* يظهر عند المرور على العنصر */
+}
+
+.nav-links .dropdown-menu li {
+    padding: 10px 20px;
+}
+
+.nav-links .dropdown-menu li a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links .dropdown-menu li:hover a {
+    color: #FF9B44;
+}
+
+/* Button styles */
+.login-btn {
+    background: linear-gradient(135deg, #d2840f, #ffae42); /* تدرج ذهبي */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #ffae42, #d2840f);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.login-btn:active {
+    transform: scale(0.95);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    max-width: 1400px;
+    width: 100%;
+    background: white;
+    padding: 60px;
+    margin-top: 50px;
+}
+.text-content {
+    flex: 1;
+    padding-right: 60px;
+}
+.text-content h2 {
+    font-size: 36px;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 20px; /* إضافة مسافة أسفل العنوان */
+}
+.text-content p {
+    font-size: 20px;
+    color: #141414;
+    margin-bottom: 20px; /* إضافة مسافة أسفل الفقرة */
+}
+.info {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+.info span {
+    color: #f39c12;
+    font-weight: bold;
+}
+.image-content img {
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+.search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px 15px;
+    box-sizing: border-box;
+}
+.search-container select{
+     border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.search-container select:focus{
+ outline: none;
+    border-color: #fa8b2a;
+    box-shadow: 0 0 5px rgba(13, 13, 13, 0.5);
+
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+
+}
+
+.search-bar .btn,
+.search-bar .search-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    transition: 0.3s ease;
+    min-width: 180px;
+}
+
+.search-container {
+    width: 50%;
+    margin-left: 20%;
+    display: flex;
+    justify-content: center;
+    padding: 30px 15px;
+    box-sizing: border-box;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #e0f7f8;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+}
+
+.search-bar .btn,
+.search-bar .search-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    transition: 0.3s ease;
+    min-width: 180px;
+}
+
+.search-bar .btn {
+    flex: 1;
+    background-color: #ffffff;
+    color: #222222;
+    cursor: pointer;
+
+}
+
+.search-bar .search-btn {
+    background-color: #ff9800;
+    color: white;
+    cursor: pointer;
+    min-width: 120px;
+    cursor: pointer;
+}
+
+.search-btn {
+    background-color: #ff9800;
+    color: white;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-btn:hover {
+    background: #e8860f;
+    color: #fff;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.restaurant-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+.restaurant-card h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.restaurant-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 210px;
+    flex-direction: column;
+    background: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.506); /* تكبير الظل عند التمرير */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* تأثير عند التحويم */
+.restaurant-card:hover {
+box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2); /* تكبير الظل عند التمرير */
+}
+.restaurant-card a {
+    display: block;
+    height: 100%;
+}
+
+.restaurant-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+.restaurant-card:hover img {
+    transform: scale(1.05);
+}
+.restaurant-info {
+    background-color: white;
+    text-align: center;
+    padding: 8px;
+    border-radius: 0 0 10px 10px;
+}
+.restaurant-info h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+.restaurants {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    margin-top: 4%;
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 15px;
+}
+
+.restaurant-main {
+    grid-row: span 2; /* يجعل الصورة الرئيسية تأخذ ارتفاع صفين */
+    width: 100%;
+    height: 100%;
+}
+
+.restaurant-card h3 {
+    margin-top: 10px;
+}
+
+/* اسم المطعم */
+.restaurant-card h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 2;
+}
+.restaurant-section h2{
+    text-align: center;
+    margin-bottom: 1%;
+}
+/* تأثير عند التحويم */
+.restaurant-card:hover {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+/* الصورة تغطي البطاقة بالكامل */
+.restaurant-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+/* إضافة الـ overlay */
+.restaurant-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out;
+    z-index: 2;
+}
+
+/* جعل الـ overlay يصبح أغمق عند التحويم */
+.restaurant-card:hover .overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.153), transparent);
+}
+
+
+footer {
+    background: linear-gradient(135deg, #45403b, #3877b6); /* برتقالي دافئ مع رمادي فحمي لمظهر عصري وأنيق */
+    color: white;
+    padding: 40px 0;
+    font-family: 'Poppins', sans-serif;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    overflow: hidden;
+    margin-top: 2%;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #FF9B44;
+    margin: 5px auto 0;
+    border-radius: 5px;
+}
+
+.footer-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #FF9B44;
+}
+
+.footer-section p i {
+    margin-right: 8px;
+    color: #FF9B44;
+    font-size: 18px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+    background: #FF9B44;
+}
+
+
+html, body {
+    scroll-behavior: smooth; /* يساعد في الانتقال السلس */
+    overflow: auto; /* تأكد من عدم وضع hidden */
+}
+
+
+/* القوائم المنسدلة للهواتف */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 0;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .login-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .text-content {
+        padding-right: 0;
+    }
+
+    .text-content h2 {
+        font-size: 28px;
+    }
+
+    .text-content p {
+        font-size: 16px;
+    }
+
+    .image-content img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .search-container {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .restaurant-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* للهواتف الصغيرة جدًا */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .nav-links {
+        gap: 5px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+    .login-btn {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .text-content h2 {
+        font-size: 24px;
+    }
+
+    .text-content p {
+        font-size: 14px;
+    }
+
+    .image-content img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .search-container {
+        width: 100%;
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .restaurant-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    footer {
+        text-align: center;
+    }
+}
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+/* عند الشاشات الصغيرة، نخفي القائمة العادية */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #45403b, #3877b6); /* برتقالي دافئ مع رمادي فحمي لمظهر عصري وأنيق */
+        padding: 10px 0;
+        text-align: center;
+        z-index: 99;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #45403b, #3877b6);
+        padding: 10px 0;
+        text-align: center;
+        z-index: 99;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+        padding-bottom: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .text-content h2 {
+        font-size: 25px;
+        margin-top: 38%;
+        margin-left: 1%;
+        width: 100%;
+    }
+
+    .text-content p {
+        font-size: 15px;
+        margin-left: 2%;
+        width: 100%;
+        margin-top: -5%;
+    }
+
+    .info {
+        justify-content: center;
+        flex-direction: column;
+        gap: 7px;
+        margin-left: -2%;
+    }
+
+    .image-content img {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .search-bar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+        width: 270px;
+        margin-left: 2%;
+
+    }
+
+    .search-bar .btn,
+    .search-bar .search-btn {
+        width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-btn {
+        width: 40%;
+        text-align: center;
+        padding: 10px;
+        font-size: 16px;
+        margin-top: 2%;
+    }
+}
+.chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff9800;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 26px;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .chat-icon:hover {
+    background-color: #e68900;
+    transform: scale(1.1);
+  }

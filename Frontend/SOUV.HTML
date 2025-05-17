@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egypt Souvenirs - Pharaoh's Way</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="sou.css">
+</head>
+<body>
+<header>
+        <nav class="navbar">
+            <div class="logo">
+                <div class="pharaoh-wrapper">
+                    <span class="pharaoh">PHAR</span>
+                    <img src="img/egypt.png" alt="Logo" class="logo-img" />
+                    <span class="pharaoh">AOH'S</span>
+                </div>
+                <span class="way">WAY</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+
+                <li class="dropdown">
+                    <a href="#">Destination ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="destination.html">Top attractions</a></li>
+                        <li><a href="activity.html">Activities</a></li>
+                        <li><a href="tour.html">Tour Guide</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Travel Services ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="hotel.html">Hotels</a></li>
+                        <li><a href="Restaurants.html">Restaurants</a></li>
+                        <li><a href="payment.html">Booking</a></li>
+                        <li><a href="flight.html">Flight</a></li>
+
+                    </ul>
+                </li>
+
+                <li><a href="SOUV.HTML">Souvenirs</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li class="cart-icon">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+
+            <a href="login.html" class="login-btn">Login / Register</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="hero-section">
+            <div class="text-content">
+                <h2>"Take a Piece of Egypt with You!"</h2>
+                <a href="#mugs" class="shop-now-btn">
+                    <i class="fas fa-shopping-cart"></i> Shop Now
+                </a>
+            </div>
+            <div class="image-gallery">
+                <div class="img-container img-bracelet-container">
+                    <img src="imgs/image 40.png" alt="Egyptian Lotus Bracelet">
+                </div>
+                <div class="img-container img-papyrus-container">
+                    <img src="imgs/image 39.png" alt="Framed Papyrus Artwork">
+                </div>
+                <div class="img-container img-mug-container">
+                    <img src="imgs/mug3.png" alt="Egyptian Theme Mug">
+                </div>
+            </div>
+        </section>
+
+        <div class="category-container">
+            <nav class="category-nav">
+                <button type="button" data-target="mugs">Mugs & Cups</button>
+                <button type="button" data-target="accessories">Accessories</button>
+                <button type="button" data-target="artwork">ArtWork</button>
+                <button type="button" data-target="statues">Statues</button>
+            </nav>
+        </div>
+
+        <!-- Mugs Section -->
+        <section id="mugs" aria-labelledby="mugs-title">
+            <h2 id="mugs-title" class="section-title">Mugs & Cups</h2>
+            <div class="product-grid">
+                <!-- Product 1: Pharaohs Mug -->
+                <div class="product-card" data-id="mug1">
+                    <div class="product-image-container"><img src="imgs/mug1.png" alt="Classic mug with Pharaohs art"></div>
+                    <h3 class="product-name" style="display:none;">Classic Pharaohs Mug</h3>
+                    <p class="product-description">Classic mug with Pharaohs art</p>
+                    <div class="product-info">
+                        <span class="product-price">$14.50</span>
+                        <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+                    </div>
+                </div>
+                <!-- Product 2: Nefertiti Mug -->
+                <div class="product-card" data-id="mug2">
+                    <div class="product-image-container"><img src="imgs/download (2).jpeg" alt="Elegant mug with Queen Nefertiti"></div>
+                    <h3 class="product-name" style="display:none;">Nefertiti Mug</h3>
+                    <p class="product-description">Elegant mug with Queen Nefertiti</p>
+                    <div class="product-info">
+                        <span class="product-price">$20.00</span>
+                        <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+                    </div>
+                </div>
+                <!-- Product 3: Symbols Mug -->
+                <div class="product-card" data-id="mug3">
+                    <div class="product-image-container"><img src="imgs/shopping (1).webp" alt="Mug featuring ancient Egyptian symbols"></div>
+                    <h3 class="product-name" style="display:none;">Egyptian Symbols Mug</h3>
+                    <p class="product-description">Mug featuring ancient Egyptian symbols</p>
+                    <div class="product-info">
+                        <span class="product-price">$15.00</span>
+                        <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accessories Section -->
+        <section id="accessories" aria-labelledby="accessories-title">
+            <h2 id="accessories-title" class="section-title">Accessories</h2>
+            <div class="product-grid">
+                <!-- Accessory 1: Lotus Bracelet -->
+                <div class="product-card" data-id="accessory1">
+                    <div class="product-image-container"><img src="imgs/il_600x600.6280089429_d092 1.png" alt="Handmade bracelet with lotus charm"></div>
+                    <h3 class="product-name" style="display:none;">Lotus Charm Bracelet</h3>
+                    <p class="product-description">Handmade bracelet with lotus charm</p>
+                    <div class="product-info">
+                        <span class="product-price">$13.00</span>
+                        <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+                    </div>
+                </div>
+                <!-- Accessory 2: Scarab Pendant -->
+                <div class="product-card" data-id="accessory2">
+                    <div class="product-image-container"><img src="imgs/image (2).png" alt="Ancient-style scarab necklace pendant"></div>
+                    <h3 class="product-name" style="display:none;">Scarab Pendant</h3>
+                    <p class="product-description">Ancient-style scarab necklace pendant</p>
+                    <div class="product-info">
+                        <span class="product-price">$30.00</span>
+                        <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+                    </div>
+                </div>
+                <!-- Accessory 3: Horus Bracelet -->
+                <div class="product-card" data-id="accessory3">
+                    <div class="product-image-container"><img src="imgs/download.jpeg" alt="Bracelet featuring Eye of Horus charm"></div>
+                    <h3 class="product-name" style="display:none;">Eye of Horus Bracelet</h3>
+                    <p class="product-description">Bracelet featuring Eye of Horus charm</p>
+                    <div class="product-info">
+                        <span class="product-price">$19.00</span>
+                        <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Artwork Section -->
+        <section id="artwork" aria-labelledby="artwork-title">
+            <h2 id="artwork-title" class="section-title">ArtWork</h2>
+            <div class="product-grid">
+                <!-- Artwork 1: Papyrus Scroll -->
+                <div class="product-card" data-id="artwork1">
+                    <div class="product-image-container"><img src="imgs/Picture of the classical style ppt backgrounds….jpeg" alt="Traditional Egyptian papyrus scroll painting"></div>
+                    <h3 class="product-name" style="display:none;">Papyrus Scroll Painting</h3>
+                    <p class="product-description">Traditional Egyptian papyrus scroll painting</p>
+                    <div class="product-info">
+                        <span class="product-price">$25.00</span>
+                        <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+                    </div>
+                </div>
+                <!-- Artwork 2: Framed Nefertiti -->
+                <div class="product-card" data-id="artwork2">
+                    <div class="product-image-container"><img src="imgs/portrait-of-nefertiti-mark-ashkenazi.jpg" alt="Framed artwork of Nefertiti"></div>
+                    <h3 class="product-name" style="display:none;">Framed Nefertiti Portrait</h3>
+                    <p class="product-description">Framed artwork depicting Queen Nefertiti</p>
+                    <div class="product-info">
+                        <span class="product-price">$32.00</span>
+                        <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+                    </div>
+                </div>
+                <!-- Artwork 3: Hieroglyphs Poster -->
+                <div class="product-card" data-id="artwork3">
+                    <div class="product-image-container"><img src="imgs/shopping.webp" alt="Colorful poster featuring Egyptian hieroglyphs"></div>
+                    <h3 class="product-name" style="display:none;">Hieroglyphs Poster</h3>
+                    <p class="product-description">Colorful poster featuring Egyptian hieroglyphs</p>
+                    <div class="product-info">
+                        <span class="product-price">$18.00</span>
+                        <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statues Section -->
+        <section id="statues" aria-labelledby="statues-title">
+            <h2 id="statues-title" class="section-title">Statues</h2>
+            <div class="product-grid">
+                <!-- Statue 1: Tutankhamun Bust -->
+                <div class="product-card" data-id="statue1">
+                    <div class="product-image-container"><img src="imgs/King Tutankhamun bust gold blue Antique art decor….jpeg" alt="Miniature bust of King Tutankhamun"></div>
+                    <h3 class="product-name" style="display:none;">Tutankhamun Bust</h3>
+                    <p class="product-description">Miniature bust of King Tutankhamun</p>
+                    <div class="product-info">
+                        <span class="product-price">$45.00</span>
+                        <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+                    </div>
+                </div>
+                <!-- Statue 2: Anubis Statue -->
+                <div class="product-card" data-id="statue2">
+                    <div class="product-image-container"><img src="imgs/bf5cf382-64d1-4000-a14a-7b95790d5c34.jpeg" alt="Guardian Anubis figurine in black and gold"></div>
+                    <h3 class="product-name" style="display:none;">Anubis Statue</h3>
+                    <p class="product-description">Guardian Anubis figurine in black and gold</p>
+                    <div class="product-info">
+                        <span class="product-price">$60.00</span>
+                        <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+                    </div>
+                </div>
+                <!-- Statue 3: Bastet Figurine -->
+                <div class="product-card" data-id="statue3">
+                    <div class="product-image-container"><img src="imgs/e8e21314-8e78-4ca5-aea1-99fe928ad404.jpeg" alt="Elegant Bastet cat statue for decoration"></div>
+                    <h3 class="product-name" style="display:none;">Bastet Cat Statue</h3>
+                    <p class="product-description">Elegant Bastet cat statue for decoration</p>
+                    <div class="product-info">
+                        <span class="product-price">$39.00</span>
+                        <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <a href="index.html" class="chat-icon" title="Chat with us!">
+        <i class="fas fa-comments"></i>
+    </a>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Pharaoh's Way</h3>
+                <p>Explore the wonders of ancient Egypt and enjoy the beauty of modern cities.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Need Help?</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Cairo, Egypt</p>
+                <p><i class="fa-solid fa-phone"></i> +20-123-456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank"><img src="imgs/facebook.png" alt="Facebook"></a>
+                    <a href="https://instagram.com" target="_blank"><img src="imgs/instagram.png" alt="Instagram"></a>
+                    <a href="https://twitter.com" target="_blank"><img src="imgs/twitter.png" alt="Twitter"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="cart.js"></script>
+    <script src="checkout.js"></script>
+    <script src="sou.js"></script>
+</body>
+</html>

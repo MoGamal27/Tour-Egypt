@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight</title>
+    <link rel="stylesheet" href="flight.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+</head>
+
+<body>
+   <header>
+        <nav class="navbar">
+            <div class="logo">
+                <div class="pharaoh-wrapper">
+                    <span class="pharaoh">PHAR</span>
+                    <img src="img/egypt.png" alt="Logo" class="logo-img" />
+                    <span class="pharaoh">AOH'S</span>
+                </div>
+                <span class="way">WAY</span>
+            </div>
+              <div class="menu-toggle" onclick="toggleMenu()">
+                ☰
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+
+                <li class="dropdown">
+                    <a href="#">Destination ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="destination.html">Top attractions</a></li>
+                        <li><a href="activity.html">Activities</a></li>
+                        <li><a href="tour.html">Tour Guide</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Travel Services ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="hotel.html">Hotels</a></li>
+                        <li><a href="Restaurants.html">Restaurants</a></li>
+                        <li><a href="payment.html">Booking</a></li>
+                        <li><a href="flight.html">Flight</a></li>
+
+                    </ul>
+                </li>
+
+                <li><a href="SOUV.HTML">Souvenirs</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <a href="login.html" class="login-btn">Login / Register</a>
+        </nav>
+    </header>
+
+    <div class="hero-section">
+        <div class="overlay">
+            <p class="overlay-text">Hi, <span style="color: #FF9B44;">Where</span> would you <br>like to go?</p>
+        </div>
+        <img src="imgs/airplane-7679992_1280.jpg" alt="Hero Image" class="hero-image">
+    </div>
+
+    <div class="form-step show" id="step1">
+        <h2>Flight Booking</h2>
+
+        <div class="form-row">
+            <div class="form-column">
+                <label for="from">From</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-plane-departure"></i>
+                    <input type="text" id="from" placeholder="Enter departure city" required>
+                </div>
+            </div>
+            <div class="form-column">
+                <label for="to">To</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-plane-arrival"></i>
+                    <input type="text" id="to" placeholder="Enter destination city" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-column">
+                <label for="departure">Departure Date</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-calendar-alt"></i>
+                    <input type="date" id="departure" required>
+                </div>
+            </div>
+            <div class="form-column">
+                <label for="return">Return Date</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-calendar-alt"></i>
+                    <input type="date" id="return">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-column">
+                <label for="passengers">Passengers</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-user-friends"></i>
+                    <input type="number" id="passengers" min="1" value="1" required>
+                </div>
+            </div>
+            <div class="form-column">
+                <label for="class">Class</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-chair"></i>
+                    <select id="class" required>
+                        <option value="">-- Select Class --</option>
+                        <option value="economy">Economy</option>
+                        <option value="business">Business</option>
+                        <option value="first">First Class</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <button id="searchFlights">Search Flights</button>
+        </div>
+    </div>
+
+    <div class="flight-results" id="step2">
+        <h3>Available Flights:</h3>
+        <div class="flight-card">
+            <div class="info">Flight Number: <span class="highlight" id="flightNumber">MS123</span></div>
+            <div class="info">From: <span class="highlight" id="fromCity"></span></div>
+            <div class="info">To: <span class="highlight" id="toCity"></span></div>
+            <div class="info">Price: <span class="highlight" id="price">$250</span></div>
+            <div class="info">Class: <span class="highlight" id="flightClass"></span></div>
+            <button class="btn1" id="bookNow" >Book Now</button>
+        </div>
+    </div>
+
+
+    <div class="booking-details" id="step3">
+        <h3>Booking Details</h3>
+        <div class="flight-card1">
+            <div class="info">Flight Number: <span class="highlight" id="bookingFlightNumber"></span></div>
+            <div class="info">From: <span class="highlight" id="bookingFrom"></span></div>
+            <div class="info">To: <span class="highlight" id="bookingTo"></span></div>
+            <div class="info">Price: <span class="highlight" id="bookingPrice"></span> USD</div>
+            <button class="btn" id="confirmBooking">Confirm Booking</button>
+        </div>
+    </div>
+
+<div class="booking-confirmation" id="step4">
+    <h3>🎉 Booking Confirmed!</h3>
+    <p>Your flight has been successfully booked.</p>
+    <p class="ref">Reference Number: <span class="highlight" id="confirmationNumber"></span></p>
+    
+    <div class="btn-group">
+        <button class="btn2" onclick="window.print()">🖨️ Print Ticket</button>
+        <button class="btn2" onclick="window.location.href='home.html'">🏠 Return to Homepage</button>
+    </div>
+  </div>
+  
+
+    <a href="index.html" class="chat-icon" title="Chat with us!">
+        <i class="fas fa-comments"></i>
+    </a>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Pharaoh's Way</h3>
+                <p>Explore the wonders of ancient Egypt and enjoy the beauty of modern cities.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Need Help?</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Cairo, Egypt</p>
+                <p><i class="fa-solid fa-phone"></i> +20-123-456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank"><img src="imgs/image 12.png" alt="Facebook"></a>
+                    <a href="https://instagram.com" target="_blank"><img src="imgs/Social.png" alt="Instagram"></a>
+                    <a href="https://twitter.com" target="_blank"><img src="imgs/icon.png" alt="Twitter"></a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="flight.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Egypt</title>
+    <link rel="stylesheet" href="act.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+<header>
+        <nav class="navbar">
+            <div class="logo">
+                <div class="pharaoh-wrapper">
+                    <span class="pharaoh">PHAR</span>
+                    <img src="img/egypt.png" alt="Logo" class="logo-img" />
+                    <span class="pharaoh">AOH'S</span>
+                </div>
+                <span class="way">WAY</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+
+                <li class="dropdown">
+                    <a href="#">Destination ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="destination.html">Top attractions</a></li>
+                        <li><a href="activity.html">Activities</a></li>
+                        <li><a href="tour.html">Tour Guide</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Travel Services ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="hotel.html">Hotels</a></li>
+                        <li><a href="Restaurants.html">Restaurants</a></li>
+                        <li><a href="payment.html">Booking</a></li>
+                        <li><a href="flight.html">Flight</a></li>
+
+                    </ul>
+                </li>
+
+                <li><a href="SOUV.HTML">Souvenirs</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <a href="login.html" class="login-btn">Login / Register</a>
+        </nav>
+    </header>
+
+
+    <section class="home" id="home">
+        <div class="home-image">
+            <img src="imgs/pyramid-complex-aswan-city-by-nile-aerial-view-egypt-scaled.jpg.webp" alt="Egypt Image">
+            <div class="overlay"></div>
+        </div>
+    
+        <div class="home-text">
+            <h3 class="section-title">Exciting Activities and Cultural Tours</h3>
+        </div>
+    
+        <div class="booking-form">
+            <div class="input-box">
+                <label>Check-In</label>
+                <i class="fa-regular fa-calendar"></i>
+                <input type="date">
+            </div>
+            <div class="input-box">
+                <label>Check-Out</label>
+                <i class="fa-regular fa-calendar"></i>
+                <input type="date">
+            </div>
+            <div class="input-box">
+                <label>Guests</label>
+                <i class="fa-solid fa-user"></i>
+                <input type="number" min="1" value="1">
+            </div>
+            <button class="book-btn">
+                <i class="fas fa-calendar-check"></i>
+                Book Now
+            </button>
+        </div>
+    </section>
+    
+
+    <div class="activities-section">
+        <div class="activities-filter">
+            <h2 class="section-title">Exciting Activities and Cultural Tours</h2>
+            <div class="sort-box">
+                <label for="sort-activities">Sort by:</label>
+                <select id="sort-activities">
+                    <option value="mostPopular">Most Popular</option>
+                    <option value="priceHighToLow">Price: High to Low</option>
+                    <option value="priceLowToHigh">Price: Low to High</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <div class="activities-container">
+        <!-- Card 1 -->
+        <div class="activity-card">
+            <div class="activity-image">
+                <img src="img/pyrmids .jpg" alt="Pyramids of Giza">
+            </div>
+            <div class="activity-details">
+                <div class="rating">⭐⭐⭐⭐⭐ <span>(4.9)</span></div>
+                <h3>Pyramids of Giza Tour</h3>
+                <p class="location">📍 Giza, Egypt</p>
+                <p class="price">💰 $50</p>
+                <p class="description">Explore the Great Pyramids and Sphinx with a guided tour.</p>
+                <div class="card-price-details">
+                    <span>⏳ 4 hours</span>
+                    <span>👥 25 people</span>
+                   
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="activity-card">
+            <div class="activity-image">
+                <img src="img/istockphoto-1327507461-612x612 1.png" alt="Nile River Cruise">
+            </div>
+            <div class="activity-details">
+                <div class="rating">⭐⭐⭐⭐ <span>(4.5)</span></div>
+                <h3>Nile River Cruise</h3>
+                <p class="location">📍 Cairo, Egypt</p>
+                <p class="price">💰 $30</p>
+                <p class="description">Enjoy a relaxing cruise on the Nile with breathtaking views.</p>
+                <div class="card-price-details">
+                    <span>⏳ 2 hours</span>
+                    <span>👥 25 people</span>
+                  
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="activity-card">
+            <div class="activity-image">
+                <img src="img/karnek.png" alt="Karnak Temple">
+            </div>
+            <div class="activity-details">
+                <div class="rating">⭐⭐⭐⭐⭐ <span>(4.8)</span></div>
+                <h3>Karnak Temple Visit</h3>
+                <p class="location">📍 Luxor, Egypt</p>
+                <p class="price">💰 $40</p>
+                <p class="description">Discover the ancient wonders of Karnak, Egypt's largest temple complex.</p>
+                <div class="card-price-details">
+                    <span>⏳ 3 hours</span>
+                    <span>👥 25 people</span>
+                   
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="activity-card">
+            <div class="activity-image">
+                <img src="img/parachute.jpg" alt="Hot Air Balloon">
+            </div>
+            <div class="activity-details">
+                <div class="rating">⭐⭐⭐⭐ <span>(4.4)</span></div>
+                <h3>Valley of the Kings Adventure</h3>
+                <p class="location">📍 Luxor, Egypt</p>
+                <p class="price">💰 $45</p>
+                <p class="description">Experience an unforgettable hot air balloon ride over the Valley of the Kings.</p>
+                <div class="card-price-details">
+                    <span>⏳ 4 hours</span>
+                    <span>👥 25 people</span>
+               
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="activity-card">
+            <div class="activity-image">
+                <img src="img/marsa .jpg" alt="Sandboarding in Marsa Matruh">
+            </div>
+            <div class="activity-details">
+                <div class="rating">⭐⭐⭐⭐⭐ <span>(4.7)</span></div>
+                <h3>Sandboarding in Marsa Matruh</h3>
+                <p class="location">📍 Marsa Matruh, Egypt</p>
+                <p class="price">💰 $25</p>
+                <p class="description">Try an exciting sandboarding adventure in the stunning desert dunes.</p>
+                <div class="card-price-details">
+                    <span>⏳ 2 hours</span>
+                    <span>👥 25 people</span>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="activity-card">
+            <div class="activity-image">
+                <img src="img/desert.jpg" alt="Desert Safari in Hurghada">
+            </div>
+            <div class="activity-details">
+                <div class="rating">⭐⭐⭐⭐ <span>(4.6)</span></div>
+                <h3>Desert Safari in Hurghada</h3>
+                <p class="location">📍 Hurghada, Egypt</p>
+                <p class="price">💰 $55</p>
+                <p class="description">Explore the vast desert of Hurghada with an adrenaline-filled safari tour.</p>
+                <div class="card-price-details">
+                    <span>⏳ 5 hours</span>
+                    <span>👥 25 people</span>
+                 
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="activity-card">
+            <div class="activity-image">
+                <img src="img/river.jpg" alt="Felucca Sailing on the Nile">
+            </div>
+            <div class="activity-details">
+                <div class="rating">⭐⭐⭐⭐⭐ <span>(4.9)</span></div>
+                <h3>Felucca Sailing on the Nile</h3>
+                <p class="location">📍 Aswan, Egypt</p>
+                <p class="price">💰 $25</p>
+                <p class="description">Enjoy a peaceful Felucca ride on the Nile and admire the beautiful scenery of Aswan.</p>
+                <div class="card-price-details">
+                    <span>⏳ 2 hours</span>
+                    <span>👥 25 people</span>
+                  
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="activity-card">
+            <div class="activity-image">
+                <img src="img/istockphoto-2130416586-612x612.jpg" alt="Siwa Oasis Adventure">
+            </div>
+            <div class="activity-details">
+                <div class="rating">⭐⭐⭐⭐ <span>(4.3)</span></div>
+                <h3>Siwa Oasis Adventure</h3>
+                <p class="location">📍 Siwa Oasis, Egypt</p>
+                <p class="price">💰 $100</p>
+                <p class="description">Discover the unique landscapes of Siwa, famous for its stunning salt lakes and rich history.</p>
+                <div class="card-price-details">
+                    <span>⏳ Full-day tour</span>
+                    <span>👥 25 people</span>
+                   
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="activity-card">
+            <div class="activity-image">
+                <img src="img/istockphoto-1737551998-612x612.jpg" alt="Alexandria City Tour">
+            </div>
+            <div class="activity-details">
+                <div class="rating">⭐⭐⭐⭐⭐ <span>(4.8)</span></div>
+                <h3>Alexandria City Tour</h3>
+                <p class="location">📍 Alexandria, Egypt</p>
+                <p class="price">💰 $75</p>
+                <p class="description">Explore the historical landmarks of Alexandria, from the Citadel to the ancient library ruins.</p>
+                <div class="card-price-details">
+                    <span>⏳ 6 hours</span>
+                    <span>👥 25 people</span>
+                   
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+      
+    <a href="index.html" class="chat-icon" title="Chat with us!">
+        <i class="fas fa-comments"></i>
+    </a> 
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Pharaoh's Way</h3>
+            <p>Explore the wonders of ancient Egypt and enjoy the beauty of modern cities.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Need Help?</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Cairo, Egypt</p>
+            <p><i class="fa-solid fa-phone"></i> +20-123-456-7890</p>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><img src="img/facebook.png" alt="Facebook"></a>
+                <a href="https://instagram.com" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
+                <a href="https://twitter.com" target="_blank"><img src="img/twitter.png" alt="Twitter"></a>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="act.js"></script>
+    
+</body>
+</html>
+
+

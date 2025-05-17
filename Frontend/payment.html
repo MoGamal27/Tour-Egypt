@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<header>
+        <nav class="navbar">
+            <div class="logo">
+                <div class="pharaoh-wrapper">
+                    <span class="pharaoh">PHAR</span>
+                    <img src="img/egypt.png" alt="Logo" class="logo-img" />
+                    <span class="pharaoh">AOH'S</span>
+                </div>
+                <span class="way">WAY</span>
+            </div>
+              <div class="menu-toggle" onclick="toggleMenu()">
+                ☰
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+
+                <li class="dropdown">
+                    <a href="#">Destination ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="destination.html">Top attractions</a></li>
+                        <li><a href="activity.html">Activities</a></li>
+                        <li><a href="tour.html">Tour Guide</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Travel Services ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="hotel.html">Hotels</a></li>
+                        <li><a href="Restaurants.html">Restaurants</a></li>
+                        <li><a href="payment.html">Booking</a></li>
+                        <li><a href="flight.html">Flight</a></li>
+
+                    </ul>
+                </li>
+
+                <li><a href="SOUV.HTML">Souvenirs</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <a href="login.html" class="login-btn">Login / Register</a>
+        </nav>
+    </header>
+
+
+    <!-- 🔹 صورة الغلاف -->
+    <div class="hero">
+        <h1>Make Your Reservation</h1>
+    </div>
+
+    <!-- 🔹 نموذج الحجز -->
+    <section class="booking-form">
+        <h2>Booking Form</h2>
+        <form id="bookingForm">
+            <div class="form-group">
+                <div class="input-box">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="firstName" placeholder="First Name" required>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="lastName" placeholder="Last Name" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-box">
+                    <i class="fas fa-calendar-alt"></i>
+                    <input type="date" id="checkIn" required>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-calendar-alt"></i>
+                    <input type="date" id="checkOut" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-box">
+                    <i class="fas fa-user-friends"></i>
+                    <input type="number" id="adults" placeholder="Adults" min="1" required>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-child"></i>
+                    <input type="number" id="children" placeholder="Children" min="0">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-box">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" id="phone" placeholder="Phone" required>
+                </div>
+            </div>
+            <button type="button" id="bookNow">Book Now</button>
+        </form>
+    </section>
+    <script src="./apis/bookingAPI.js"></script>
+
+    <!--  🔹 قسم الدفع (مخفي افتراضيًا) -->
+    <section class="payment-section hidden">
+        <h2>Payment Details</h2>
+        <form id="paymentForm">
+            <div class="form-group">
+                <label for="cardNumber">Card Number</label>
+                <div class="input-box">
+                    <i class="fas fa-credit-card"></i>
+                    <input type="text" id="cardNumber" placeholder="**** **** **** ****" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="bank">Bank Name</label>
+                <div class="input-box">
+                    <i class="fas fa-university"></i>
+                    <input type="text" id="bank" placeholder="Bank Name" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="expDate">Expiration Date</label>
+                <div class="input-box">
+                    <i class="fas fa-calendar-alt"></i>
+                    <input type="text" id="expDate" placeholder="MM/YY" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <div class="input-box">
+                    <i class="fas fa-lock"></i>
+                    <input type="text" id="cvv" placeholder="***" required>
+                </div>
+            </div>
+
+            <button type="submit">Payment Now</button>
+          <a href="payment.html" class="cancel-btn">Cancel</a>
+
+
+        </form>
+    </section>
+
+    <div id="success-message" style="display: none; text-align: center;">
+        <div class="progress-container">
+            <div class="step"><i class="fas fa-check"></i></div>
+        </div>
+        <h2>Yay! Payment Completed</h2>
+        <p>Please check your email & phone message. We have sent all the information.</p>
+        <img src="imgs/Group 1 1.png" alt="Payment Success"
+            style="width: 50%; max-width: 300px; display: block; margin: 0 auto;">
+
+        <!-- رابط عادي بعد الصورة -->
+        <a href="home.html" class="plain-link">Back to Home</a>
+    </div>
+
+
+
+    <a href="index.html" class="chat-icon" title="Chat with us!">
+        <i class="fas fa-comments"></i>
+    </a>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Pharaoh's Way</h3>
+                <p>Explore the wonders of ancient Egypt and enjoy the beauty of modern cities.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Need Help?</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Cairo, Egypt</p>
+                <p><i class="fa-solid fa-phone"></i> +20-123-456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank"><img src="imgs/image 12.png" alt="Facebook"></a>
+                    <a href="https://instagram.com" target="_blank"><img src="imgs/Social.png" alt="Instagram"></a>
+                    <a href="https://twitter.com" target="_blank"><img src="imgs/icon.png" alt="Twitter"></a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="payment.js"></script>
+   
+</body>
+
+</html>

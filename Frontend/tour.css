@@ -1,0 +1,560 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* شريط التنقل الثابت */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, #45403b, #3877b6);
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+}
+
+.pharaoh-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.pharaoh {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    filter: brightness(0) invert(38%) sepia(90%) saturate(600%) hue-rotate(15deg);
+}
+
+.way {
+    font-size: 26px;
+    font-weight: bold;
+    color: #FF9B44;
+    margin-left: 8px;
+}
+
+/* Navigation links styles */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links li:hover a {
+    color: #FF9B44;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #FF9B44;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-links li:hover a::after {
+    transform: scaleX(1);
+}
+
+/* Dropdown menu styles */
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .dropdown-menu {
+    display: none; /* المخفي في البداية */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(135deg, #45403b, #3877b6);
+    min-width: 180px;
+    padding: 10px 0;
+    list-style: none;
+    border-radius: 5px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.nav-links .dropdown:hover .dropdown-menu {
+    display: block; /* يظهر عند المرور على العنصر */
+}
+
+.nav-links .dropdown-menu li {
+    padding: 10px 20px;
+}
+
+.nav-links .dropdown-menu li a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links .dropdown-menu li:hover a {
+    color: #FF9B44;
+}
+
+/* Button styles */
+.login-btn {
+    background: linear-gradient(135deg, #d2840f, #ffae42); /* تدرج ذهبي */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #ffae42, #d2840f);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.login-btn:active {
+    transform: scale(0.95);
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    background: url('images/image\ 33.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 100px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(56, 54, 54, 0.158); /* لون أسود شبه شفاف، يمكنك تغيير اللون أو درجة الشفافية */
+    z-index: 1;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 2; /* لضمان ظهور المحتوى فوق الأوفرلاي */
+}
+
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* مربع البحث */
+.search-container {
+    position: absolute;
+    width: 50%;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.search-box {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.search-box label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.search-box select {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.search-box select:focus {
+    outline: none;
+    border-color: #FF9B44;
+    box-shadow: 0 0 5px rgba(255,155,68,0.5);
+}
+.chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff9800;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 26px;
+    text-align: center;
+    margin-right: 1%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .chat-icon:hover {
+    background-color: #e68900;
+    transform: scale(1.1);
+  }
+.search-btn {
+    width: 35%;
+     background: #ff9800;
+    color: white;
+    border: none;
+    padding:3px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.search-btn:hover {
+  background: #e8860f;
+    color: #fff;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.search-btn i {
+    margin-left: 5px;
+}
+
+/* قسم المرشدين */
+.guides-section {
+    padding: 50px;
+    margin-bottom: 50px;
+    text-align: center; /* لضمان محاذاة النصوص في المنتصف */
+}
+
+.guides-title {
+    font-size: 2.5rem; /* حجم الخط، يمكنك تعديله */
+    font-weight: bold;
+    color: #151515; /* لون النص، يمكنك تغييره */
+    margin-bottom: 20px; /* مسافة بين العنوان والـ container */
+}
+
+.guides-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 45px;
+
+}
+
+/* تحسينات لبطاقات المرشدين */
+.guide-card {
+    width: 30%;
+    height: 70%;
+    min-width: 300px; /* حد أدنى لعرض البطاقة */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    
+}
+.guide-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+/* تأثيرات إضافية للصور */
+.guide-card img {
+    transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.guide-card:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+.guide-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(28, 135, 142, 0.03);
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.guide-card:hover::before {
+    background: rgba(0,0,0,0);
+}
+
+.guide-card img {
+    width: 100%;
+    min-height: 350px;
+    max-height: 350px;
+    object-fit: cover;
+    object-position: top;
+   border-radius: 15px;
+    transition: transform 0.5s ease;
+}
+
+.guide-card:hover img {
+    transform: scale(1.05);
+}
+
+.guide-info {
+    padding: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.guide-info h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+}
+
+.guide-info h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background: #FF9B44;
+    transition: all 0.3s ease;
+}
+
+.guide-card:hover h3::after {
+    width: 100%;
+}
+
+.price {
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.rating {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #FF9B44;
+}
+.book-btn {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.book-btn:hover {
+    background-color: darkorange;
+    transform: scale(1.03);
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
+}
+
+footer {
+    background: linear-gradient(135deg, #45403b, #3877b6); /* برتقالي دافئ مع رمادي فحمي لمظهر عصري وأنيق */
+    color: white;
+    padding: 50px 0;
+    font-family: 'Poppins', sans-serif;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    overflow: hidden;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #FF9B44;
+    margin: 5px auto 0;
+    border-radius: 5px;
+}
+
+.footer-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #FF9B44;
+}
+
+.footer-section p i {
+    margin-right: 8px;
+    color: #FF9B44;
+    font-size: 18px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+    background: #FF9B44;
+}
+
+    /* ========== الوسائط المتجاوبة ========== */
+    @media (max-width: 768px) {
+        .explore-egypt {
+            flex-direction: column;
+            padding: 30px 20px;
+        }
+
+        .content, .images {
+            width: 100%;
+        }
+
+        .images {
+            margin-top: 30px;
+        }
+
+        .mission, .vision {
+            flex-direction: column;
+        }
+
+        .mission img, .vision img {
+            width: 100%;
+            height: auto;
+        }
+
+        .mission .text, .vision .text {
+            width: 100%;
+        }
+    }

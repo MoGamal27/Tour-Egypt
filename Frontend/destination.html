@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination</title>
+    <link rel="stylesheet" href="dest.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+<header>
+        <nav class="navbar">
+            <div class="logo">
+                <div class="pharaoh-wrapper">
+                    <span class="pharaoh">PHAR</span>
+                    <img src="img/egypt.png" alt="Logo" class="logo-img" />
+                    <span class="pharaoh">AOH'S</span>
+                </div>
+                <span class="way">WAY</span>
+            </div>
+          
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+
+                <li class="dropdown">
+                    <a href="#">Destination ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="destination.html">Top attractions</a></li>
+                        <li><a href="activity.html">Activities</a></li>
+                        <li><a href="tour.html">Tour Guide</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Travel Services ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="hotel.html">Hotels</a></li>
+                        <li><a href="Restaurants.html">Restaurants</a></li>
+                        <li><a href="payment.html">Booking</a></li>
+                        <li><a href="flight.html">Flight</a></li>
+
+                    </ul>
+                </li>
+
+                <li><a href="SOUV.HTML">Souvenirs</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <a href="login.html" class="login-btn">Login / Register</a>
+        </nav>
+    </header>
+
+   
+    <div id="destinations-container"></div>
+  
+  <div class="explore-container">
+    <div class="explore-img">
+      <img id="destination-img" src="" alt="">
+    </div>
+    <div class="explore-text">
+      <p id="destination-description"></p>
+    </div>
+  </div>
+
+</div>
+  
+  <script src="./apis/destinationAPI.js"></script>
+  
+    
+    <!--
+    <section class="explore-section" id="explore2">
+        <h2 class="explore-title">Explore Alexandria</h2>
+    </section>
+    
+    <div class="explore-container">
+        <div class="explore-img">
+            <img src="img/alex2.jpg" alt="Alexandria">
+        </div>
+        <div class="explore-text">
+            <p>
+                Discover Alexandria: a timeless destination where history, culture, and the Mediterranean breeze come together. Unveil the secrets of ancient landmarks, vibrant streets, and breathtaking views in a city that has inspired travelers for centuries.
+            </p>
+
+        </div>
+    </div>
+    
+    <section class="attractions">
+        <h2>Top Attractions in Alexandria</h2>
+        <div class="carousel">
+            <button id="prev-alex" class="nav-btn">&#10094;</button>
+            <div class="carousel-container">
+                <div class="card">
+                    <img src="img/Bey Citadel.jpeg" alt="Qaitbay Citadel">
+                    <div class="overlay">Qaitbay Citadel</div>
+                </div>
+                <div class="card">
+                    <img src="img/WhatsApp Image 2025-02-17 at 23.23.05_40dcff4e.jpg" alt="Bibliotheca Alexandrina">
+                    <div class="overlay">Bibliotheca Alexandrina</div>
+                </div>
+                <div class="card">
+                    <img src="img/WhatsApp Image 2025-02-17 at 23.37.19_a8f2752c.jpg" alt="Roman Amphitheatre">
+                    <div class="overlay">Roman Amphitheatre</div>
+                </div>
+                <div class="card">
+                    <img src="img/WhatsApp Image 2025-02-17 at 23.23.05_b2405ed0.jpg" alt="Montazah Palace Gardens">
+                    <div class="overlay">Montazah Palace Gardens</div>
+                </div>
+                <div class="card">
+                    <img src="img/2023-05-21.jpg" alt="Alexandria National Museum">
+                    <div class="overlay">Alexandria National Museum</div>
+                </div>
+            </div>
+            <button id="next-alex" class="nav-btn">&#10095;</button>
+        </div>
+        <section class="explore-section" id="explore3">
+            <h2 class="explore-title">Explore Luxor</h2>
+        </section>
+        
+        <div class="explore-container">
+            
+            <div class="explore-img">
+                <img src="img/Luxor.jpg" alt="Luxor">
+            </div>
+            <div class="explore-text">
+                <p>
+                    Discover Luxor: the world’s greatest open-air museum, where ancient temples, tombs, and monuments bring Egypt’s rich history to life. Walk through the Valley of the Kings and witness the grandeur of Karnak Temple.
+                </p>
+              
+            </div>
+        </div>
+        <section class="attractions">
+            <h2>Top Attractions in Luxor</h2>
+            <div class="carousel">
+                <button id="prev-luxor" class="nav-btn">&#10094;</button>
+                <div class="carousel-container">
+                    <div class="card">
+                        <img src="img/tamp.jpg" alt="Karnak Temple">
+                        <div class="overlay">Karnak Temple</div>
+                    </div>
+                    <div class="card">
+                        <img src="img/download (5).jpeg" alt="Valley of the Kings">
+                        <div class="overlay">Valley of the Kings</div>
+                    </div>
+                    <div class="card">
+                        <img src="img/معبد حتشبسوت بالدير البحري - الاقصر.jpeg" alt="Hatshepsut Temple">
+                        <div class="overlay">Hatshepsut Temple</div>
+                    </div>
+                    <div class="card">
+                        <img src="img/Luksor Tapınağı_   📍Mısır_.jpeg" alt="Luxor Temple">
+                        <div class="overlay">Luxor Temple</div>
+                    </div>
+                    <div class="card">
+                        <img src="img/Visiting the Colossi of Memnon, Luxorrnrn.jpeg" alt="Colossi of Memnon">
+                        <div class="overlay">Colossi of Memnon</div>
+                    </div>
+                </div>
+                <button id="next-luxor" class="nav-btn">&#10095;</button>
+            </div>
+            <section class="explore-section" id="explore4">
+                <h2 class="explore-title">Explore Aswan</h2>
+            </section>
+            
+            <div class="explore-container">
+                <div class="explore-img">
+                    <img src="img/Nile River, Aswan.jpeg" alt="Aswan">
+                </div>
+                <div class="explore-text">
+                    <p>
+                        Discover Aswan: a serene destination where the Nile meets ancient temples and Nubian culture. Sail on a felucca, explore historical sites, and experience the beauty of southern Egypt.
+                    </p>
+                  
+                </div>
+            </div>
+            <section class="attractions">
+                <h2>Top Attractions in Aswan</h2>
+                <div class="carousel">
+                    <button id="prev-aswan" class="nav-btn">&#10094;</button>
+                    <div class="carousel-container">
+                        <div class="card">
+                            <img src="img/Great Temple of Abu Simbel in Egypt_.jpeg" alt="Abu Simbel Temple">
+                            <div class="overlay">Abu Simbel Temple</div>
+                        </div>
+                        <div class="card">
+                            <img src="img/Philae Temple - Visiting The Striking Temple of Isis in Aswanrnrn.jpeg" alt="Philae Temple">
+                            <div class="overlay">Philae Temple</div>
+                        </div>
+                        <div class="card">
+                            <img src="img/Nubia.jpeg" alt="Nubian Village">
+                            <div class="overlay">Nubian Village</div>
+                        </div>
+                        <div class="card">
+                            <img src="img/24_2 aswan.jpeg" alt="Aswan High Dam">
+                            <div class="overlay">Aswan High Dam</div>
+                        </div>
+                        <div class="card">
+                            <img src="img/download (7).jpeg" alt="Aswan Botanical Garden">
+                            <div class="overlay">Aswan Botanical Garden</div>
+                        </div>
+                    </div>
+                    <button id="next-aswan" class="nav-btn">&#10095;</button>
+                </div>
+        
+                    <section class="explore-section" id="explore5">
+                        <h2 class="explore-title">Explore the Red Sea</h2>
+                    </section>
+                    
+                    <div class="explore-container">
+                        <div class="explore-img">
+                            <img src="img/Red Sea _ Egypt.jpeg" alt="Red Sea">
+                        </div>
+                        <div class="explore-text">
+                            <p>
+                                Discover the Red Sea: a paradise for diving, relaxation, and adventure. From vibrant coral reefs to luxurious resorts, the Red Sea offers an unforgettable coastal escape.
+                            </p>
+                           
+                        </div>
+                    </div>
+                    <section class="attractions">
+                        <h2>Top Attractions in the Red Sea</h2>
+                        <div class="carousel">
+                            <button id="prev-redsea" class="nav-btn">&#10094;</button>
+                            <div class="carousel-container">
+                                <div class="card">
+                                    <img src="img/bd62e3a9-4d8f-4c57-9eca-c8c904840c88.jpeg" alt="Giftun Island">
+                                    <div class="overlay">Giftun Island</div>
+                                </div>
+                                <div class="card">
+                                    <img src="img/El Gouna, Egypt.jpeg" alt="El Gouna">
+                                    <div class="overlay">El Gouna</div>
+                                </div>
+                                <div class="card">
+                                    <img src="img/Ägypten _ Egypt _ Soma Bay.jpeg" alt="Soma Bay">
+                                    <div class="overlay">Soma Bay</div>
+                                </div>
+                                <div class="card">
+                                    <img src="img/images (3).jpeg" alt="Hamata Islands">
+                                    <div class="overlay">Hamata Islands</div>
+                                </div>
+                                <div class="card">
+                                    <img src="img/Wadi el Gamal National Park.jpeg" alt="Wadi El Gemal">
+                                    <div class="overlay">Wadi El Gemal</div>
+                                </div>
+                            </div>
+                            <button id="next-redsea" class="nav-btn">&#10095;</button>
+                        </div>
+                
+    </section>
+-->
+    
+    <a href="index.html" class="chat-icon" title="Chat with us!">
+        <i class="fas fa-comments"></i>
+    </a>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Pharaoh's Way</h3>
+                <p>Explore the wonders of ancient Egypt and enjoy the beauty of modern cities.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Need Help?</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Cairo, Egypt</p>
+                <p><i class="fa-solid fa-phone"></i> +20-123-456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank"><img src="img/facebook.png" alt="Facebook"></a>
+                    <a href="https://instagram.com" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
+                    <a href="https://twitter.com" target="_blank"><img src="img/twitter.png" alt="Twitter"></a>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="dest.js"></script>
+    
+</body>
+</html>

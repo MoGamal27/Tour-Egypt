@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+<body>
+   <header>
+        <nav class="navbar">
+            <div class="logo">
+                <div class="pharaoh-wrapper">
+                    <span class="pharaoh">PHAR</span>
+                    <img src="img/egypt.png" alt="Logo" class="logo-img" />
+                    <span class="pharaoh">AOH'S</span>
+                </div>
+                <span class="way">WAY</span>
+            </div>
+              <div class="menu-toggle" onclick="toggleMenu()">
+                ☰
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+
+                <li class="dropdown">
+                    <a href="#">Destination ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="destination.html">Top attractions</a></li>
+                        <li><a href="activity.html">Activities</a></li>
+                        <li><a href="tour.html">Tour Guide</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Travel Services ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="hotel.html">Hotels</a></li>
+                        <li><a href="Restaurants.html">Restaurants</a></li>
+                        <li><a href="payment.html">Booking</a></li>
+                        <li><a href="flight.html">Flight</a></li>
+
+                    </ul>
+                </li>
+
+                <li><a href="SOUV.HTML">Souvenirs</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <a href="login.html" class="login-btn">Login / Register</a>
+        </nav>
+    </header>
+
+    <section class="contact-section">
+        <h1>Contact Us</h1>
+    </section>
+    
+    <div class="contact-container">
+        <img src="imgs/Nile River Cruise From Cairo.jfif" alt="Contact Image" class="contact-image">
+        <div class="contact-form">
+            <h4>Let's Get in Touch!</h4>
+            <p>Fill in the form below and we will get back to you soon.</p>
+            <form id="contactForm">
+                <div class="input-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Subject" required>
+                </div>
+                <div class="input-group">
+                    <textarea rows="6" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+            <div id="message" class="message" style="display: none;"></div>
+        </div>
+    </div>
+    
+<!-- قسم معلومات الاتصال -->
+<section class="contact-info">
+    <h2>Contact Info</h2>
+    <div class="info-container">
+        <div class="info-card">
+            <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+            <h4>Location</h4>
+            <p>Cairo, Egypt</p>
+        </div>
+        <div class="info-card">
+            <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+            <h4>Email</h4>
+            <p>www.pharaohsway.com</p>
+        </div>
+        <div class="info-card">
+            <div class="icon"><i class="fa-solid fa-phone"></i></div>
+            <h4>Contact Number</h4>
+            <p>+20-123-456-7890</p>
+        </div>
+    </div>
+</section>
+
+<!-- الخريطة -->
+<section class="map">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110544.61237240986!2d31.235711!3d30.044419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458381a8c8e1a8d%3A0x1f9e8b6f8b3e0f5e!2sCairo%2C%20Egypt!5e0!3m2!1sen!2seg!4v1638286538383!5m2!1sen!2seg" 
+        allowfullscreen="" loading="lazy">
+    </iframe>
+</section>
+
+    <a href="index.html" class="chat-icon" title="Chat with us!">
+        <i class="fas fa-comments"></i>
+    </a>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Pharaoh's Way</h3>
+                <p>Explore the wonders of ancient Egypt and enjoy the beauty of modern cities.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Need Help?</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Cairo, Egypt</p>
+                <p><i class="fa-solid fa-phone"></i> +20-123-456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank"><img src="imgs/image 12.png" alt="Facebook"></a>
+                    <a href="https://instagram.com" target="_blank"><img src="imgs/Social.png" alt="Instagram"></a>
+                    <a href="https://twitter.com" target="_blank"><img src="imgs/icon.png" alt="Twitter"></a>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // منع الإرسال الافتراضي للنموذج
+      
+      // عرض alert لتأكيد إرسال الرسالة
+      alert('Thank you for your message! We will get back to you soon.');
+  
+      const messageDiv = document.getElementById('message');
+      messageDiv.textContent = 'Thank you for your message! We will get back to you soon.';
+      messageDiv.style.display = 'block'; // عرض الرسالة
+      this.reset(); // إعادة تعيين النموذج بعد الإرسال
+  });
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    // عند النقر على زر القائمة
+    menuToggle.addEventListener("click", function (event) {
+        navLinks.classList.toggle("show");
+        event.stopPropagation(); // لمنع إغلاقها عند النقر على الزر نفسه
+    });
+
+    // إخفاء القائمة عند النقر في أي مكان خارجها
+    document.addEventListener("click", function (event) {
+        if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+            navLinks.classList.remove("show");
+        }
+    });
+});
+
+
+      </script>
+</body>
+
+</html>

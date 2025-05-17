@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharaoh's Way</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+<body>
+   <header>
+        <nav class="navbar">
+            <div class="logo">
+                <div class="pharaoh-wrapper">
+                    <span class="pharaoh">PHAR</span>
+                    <img src="img/egypt.png" alt="Logo" class="logo-img" />
+                    <span class="pharaoh">AOH'S</span>
+                </div>
+                <span class="way">WAY</span>
+            </div>
+              <div class="menu-toggle" onclick="toggleMenu()">
+                ☰
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+
+                <li class="dropdown">
+                    <a href="#">Destination ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="destination.html">Top attractions</a></li>
+                        <li><a href="activity.html">Activities</a></li>
+                        <li><a href="tour.html">Tour Guide</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Travel Services ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="hotel.html">Hotels</a></li>
+                        <li><a href="Restaurants.html">Restaurants</a></li>
+                        <li><a href="payment.html">Booking</a></li>
+                        <li><a href="flight.html">Flight</a></li>
+
+                    </ul>
+                </li>
+
+                <li><a href="SOUV.HTML">Souvenirs</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <a href="login.html" class="login-btn">Login / Register</a>
+        </nav>
+    </header>
+
+
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>PHARAOH'S <span>WAY</span></h1>
+            <p>Every Corner Of Egypt Holds a Unique Story Waiting To Be Discovered</p>
+            <p>What Are You Waiting For?</p>
+        </div>
+    </section>
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <img src="imgs/Handshake.png" alt="Hand Icon" class="icon-before-title">
+                <h2>Why Choose Us?</h2>
+            </div>
+            <div class="reasons">
+                <div class="reason">
+                    <img src="imgs/Right.png" alt="Trust Icon">
+                    <h3>Tried and Trust</h3>
+                    <p>We are trusted by many tourists.</p>
+                </div>
+                <div class="reason">
+                    <img src="imgs/Travel.png" alt="Variety Icon">
+                    <h3>The Variety of Tours</h3>
+                    <p>We are proud of our selection of tours around Egypt.</p>
+                </div>
+                <div class="reason">
+                    <img src="imgs/Coin.png" alt="Best Price Icon">
+                    <h3>Best Price</h3>
+                    <p>We are glad to offer our clients the best rates on our tours.</p>
+                </div>
+                <div class="reason">
+                    <img src="imgs/Support.png" alt="Support Icon">
+                    <h3>24/7 Support</h3>
+                    <p>We ensure that a customer is able to get their issue resolved.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="tour-plan">
+        <div class="tour-images">
+            <img src="imgs/Back.png" alt="Large Image" class="large-img">
+            <img src="imgs/Front.png" alt="Small Image" class="small-img">
+        </div>
+        <div class="tour-text">
+            <h2>Our <span class="highlight">tour</span> plan is to <br> fulfill your dream <span
+                    class="highlight">wish</span></h2>
+            <p>Understand to achieve anything requires faith and belief in yourself, vision, hard work, determination,
+                and dedication.</p>
+
+        </div>
+    </div>
+
+    <section class="popular-destination">
+        <div class="container">
+            <h2 class="section-title">Popular Destination</h2>
+            <p class="section-subtitle">Most popular destinations around Egypt from historical places to natural
+                wonders.</p>
+            <div class="destination-slider">
+                <div class="destination-card">
+                    <img src="imgs/11 The great sphinx of Giza.jfif" alt="Cairo">
+                    <a href="destination.html#explore1" class="overlay-link"></a> <!-- الـ Overlay كـ لينك -->
+                    <div class="destination-info">
+                        <div class="destination-details">
+                            <h3>Cairo</h3>
+                            <p>2 Days / 3 Nights</p>
+                            <span class="price">$4750</span>
+                        </div>
+                        <div class="destination-actions">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <a href="hotel.html#cairo" class="dest-book-btn">Book Now</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="destination-card">
+                    <img src="imgs/Alexandria Egypt.png" alt="Alexandria">
+                    <a href="destination.html#explore2" class="overlay-link"></a> <!-- الـ Overlay كـ لينك -->
+
+                    <div class="destination-info">
+                        <div class="destination-details">
+                            <h3>Alexandria</h3>
+                            <p>2 Days / 3 Nights</p>
+                            <span class="price">$2550</span>
+                        </div>
+                        <div class="destination-actions">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i> <!-- نص نجمة -->
+                            </div>
+                            <a href="hotel.html#alexandria" class="dest-book-btn">Book Now</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="destination-card">
+                    <img src="imgs/image (23).png" alt="Red Sea">
+                    <a href="destination.html#explore5" class="overlay-link"></a> <!-- الـ Overlay كـ لينك -->
+
+                    <div class="destination-info">
+                        <div class="destination-details">
+                            <h3>ٌRed Sea</h3>
+                            <p>2 Days / 3 Nights</p>
+                            <span class="price">$3000</span>
+                        </div>
+                        <div class="destination-actions">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i> <!-- نص نجمة -->
+                            </div>
+                            <a href="hotel.html#red-sea" class="dest-book-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="imgs/16804026370abo-simbel-1-1.jpg" alt="Aswan">
+                    <a href="destination.html#explore4" class="overlay-link"></a> <!-- الـ Overlay كـ لينك -->
+                    <div class="destination-info">
+                        <div class="destination-details">
+                            <h3>Aswan</h3>
+                            <p>2 Days / 3 Nights</p>
+                            <span class="price">$1900</span>
+                        </div>
+                        <div class="destination-actions">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i> <!-- نص نجمة -->
+                            </div>
+                            <a href="hotel.html#aswan" class="dest-book-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="imgs/image (4).png" alt="Luxor">
+                    <a href="destination.html#explore3" class="overlay-link"></a> <!-- الـ Overlay كـ لينك -->
+                    <div class="destination-info">
+                        <div class="destination-details">
+                            <h3>Luxor</h3>
+                            <p>2 Days / 3 Nights</p>
+                            <span class="price">$3200</span>
+                        </div>
+                        <div class="destination-actions">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <a href="hotel.html#luxor" class="dest-book-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="popular-attractions">
+        <div class="container">
+            <h2 class="section-title">Popular Attractions</h2>
+            <p class="section-subtitle">Most popular attractions around Egypt.</p>
+            <div class="attractions-slider">
+                <div class="attraction-card">
+                    <img src="imgs/WhatsApp Image 2024-10-05 at 08.48.01.jpeg" alt="">
+                    <a href="information.html#pyramids" class="overlay-link" data-name="The Pyramids and Sphinx"></a>
+                </div>
+                <div class="attraction-card">
+                    <img src="imgs/قلعة قايتباي.jpg" alt="">
+                    <a href="destination-link.html" class="overlay-link" data-name="Qaitbay Citadel"></a>
+                </div>
+                <div class="attraction-card">
+                    <img src="imgs/image (8).png" alt="">
+                    <a href="destination-link.html" class="overlay-link" data-name="Valley of the Kings"></a>
+                </div>
+                <div class="attraction-card">
+                    <img src="imgs/image (9).png" alt="">
+                    <a href="destination-link.html" class="overlay-link" data-name="Luxor Temple"></a>
+                </div>
+                <div class="attraction-card">
+                    <img src="imgs/image (10).png" alt="">
+                    <a href="destination-link.html" class="overlay-link" data-name="Karnak Temple"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container2">
+        <div class="steps">
+            <h2>Travel Around Egypt<br>In 3 Easy Steps</h2>
+            <div class="step">
+                <div class="icon choose"></div>
+                <div>
+                    <h3>Choose Destination</h3>
+                </div>
+            </div>
+            <div class="step">
+                <div class="icon payment"></div>
+                <div>
+                    <h3>Make Payment</h3>
+                </div>
+            </div>
+            <div class="step">
+                <div class="icon airport"></div>
+                <div>
+                    <h3>Reach Airport on Selected Date</h3>
+                </div>
+            </div>
+        </div>
+        <div class="trip-section">
+            <div class="trip-card">
+                <img src="imgs/image (23).png" alt="Trip to Sinai">
+                <div class="trip-info">
+                    <h3>Trip To Red Sea</h3>
+                    <p>14-29 June | by Ahmed M.</p>
+                    <p>24 people going</p>
+                </div>
+            </div>
+            <div class="progress-card">
+                <p>Ongoing</p>
+                <h4>Trip to Red Sea</h4>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <p>40% completed</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="luxor-hotels-section">
+        <h2 class="luxor-hotels-title">Popular Hotels</h2>
+        <p class="luxor-hotels-subtitle">Most popular hotels around Egypt.</p>
+
+        <div class="luxor-slider-container">
+            <div class="luxor-hotels-slider">
+                <!-- Hotel Card -->
+                <div class="luxor-hotel-card">
+                    <a href="#" class="luxor-image-wrapper">
+                        <img src="imgs/big.png" alt="Four Season Hotel">
+                        <div class="luxor-overlay"></div>
+                    </a>
+                    <div class="luxor-hotel-info">
+                        <h3>Kempinski Nile Hotel</h3>
+                        <div class="luxor-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <a href="information of hotels.html#Kempinski" class="luxor-book-btn"> More Info</a>
+                    </div>
+                </div>
+
+                <div class="luxor-hotel-card">
+                    <a href="#" class="luxor-image-wrapper">
+                        <img src="imgs/tolip.jpg" alt="Tolip Hotel">
+                        <div class="luxor-overlay"></div>
+                    </a>
+                    <div class="luxor-hotel-info">
+                        <h3>Tolip Hotel</h3>
+                        <div class="luxor-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <a href="#" class="luxor-book-btn"> More Info</a>
+                    </div>
+                </div>
+
+                <div class="luxor-hotel-card">
+                    <a href="#" class="luxor-image-wrapper">
+                        <img src="imgs/image (12).png" alt="Iberotel Luxor Hotel">
+                        <div class="luxor-overlay"></div>
+                    </a>
+                    <div class="luxor-hotel-info">
+                        <h3>Iberotel Luxor Hotel</h3>
+                        <div class="luxor-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <a href="#" class="luxor-book-btn"> More Info</a>
+                    </div>
+                </div>
+
+                <div class="luxor-hotel-card">
+                    <a href="#" class="luxor-image-wrapper">
+                        <img src="imgs/rixos-sharm-el-sheikh.jpg" alt="Citymax Hotel">
+                        <div class="luxor-overlay"></div>
+                    </a>
+                    <div class="luxor-hotel-info">
+                        <h3>Rixos Hotel</h3>
+                        <div class="luxor-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <a href="#" class="luxor-book-btn"> More Info</a>
+                    </div>
+                </div>
+
+                <div class="luxor-hotel-card">
+                    <a href="#" class="luxor-image-wrapper">
+                        <img src="imgs/pavillon.jpg" alt="The Grand Resort Hotel">
+                        <div class="luxor-overlay"></div>
+                    </a>
+                    <div class="luxor-hotel-info">
+                        <h3>Pavillon Winter Hotel</h3>
+                        <div class="luxor-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <a href="#" class="luxor-book-btn"> More Info</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="popular-Restaurant">
+        <div class="container">
+            <h2 class="section-title">Popular Restaurants</h2>
+            <p class="section-subtitle">Most popular restaurants around Egypt.</p>
+            <div class="Restaurant-slider">
+                <div class="Restaurant-card">
+                    <img src="imgs/revolving-restauarant.jpg" alt="Lobby Lounge">
+                    <a href="information of rest.html#RevolvingRestaurant" class="overlay-link"></a>
+                    <!-- الـ Overlay كـ لينك -->
+                    <div class="Restaurant-info">
+                        <div class="destination-details">
+                            <h3>Revolving Restaurant</h3>
+                        </div>
+                        <div class="Restaurant-actions">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <a href="information of rest.html#RevolvingRestaurant" class="reset-book-btn"> More Info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Restaurant-card">
+                    <img src="imgs/image (17).png" alt="Ginger Asian Restaurant">
+                    <a href="destination-link.html" class="overlay-link"></a> <!-- الـ Overlay كـ لينك -->
+                    <div class="Restaurant-info">
+                        <div class="destination-details">
+                            <h3>Ginger Asian Restaurant</h3>
+                        </div>
+                        <div class="Restaurant-actions">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i> <!-- نص نجمة -->
+                            </div>
+                            <a href="#" class="reset-book-btn"> More Info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Restaurant-card">
+                    <img src="imgs/image (18).png" alt="Casa Di Napoli">
+                    <a href="destination-link.html" class="overlay-link"></a> <!-- الـ Overlay كـ لينك -->
+                    <div class="Restaurant-info">
+                        <div class="destination-details">
+                            <h3>Casa Di Napoli</h3>
+                        </div>
+                        <div class="Restaurant-actions">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <a href="#" class="reset-book-btn"> More Info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Restaurant-card">
+                    <img src="imgs/image (19).png" alt="Mezze Restaurant">
+                    <a href="destination-link.html" class="overlay-link"></a> <!-- الـ Overlay كـ لينك -->
+                    <div class="Restaurant-info">
+                        <div class="destination-details">
+                            <h3>Mezze Restaurant</h3>
+                        </div>
+                        <div class="Restaurant-actions">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i> <!-- نص نجمة -->
+                            </div>
+                            <a href="#" class="reset-book-btn"> More Info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Restaurant-card">
+                    <img src="imgs/aqua-restaurant.jpg" alt="Soho Bar - Tapas & Grill">
+                    <a href="destination-link.html" class="overlay-link"></a> <!-- الـ Overlay كـ لينك -->
+                    <div class="Restaurant-info">
+                        <div class="destination-details">
+                            <h3>Aqua Restaurant</h3>
+                        </div>
+                        <div class="Restaurant-actions">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <a href="#" class="reset-book-btn"> More Info</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <div class="activities">
+        <div class="activities-text">
+            <h2>Activities</h2>
+            <p>Discover many activities you can do</p>
+            <a href="activity.html" class="activity-btn">Read More</a>
+        </div>
+
+        <div class="activities-images">
+            <img src="imgs/image (23).png" alt="Diving" class="img1">
+            <img src="imgs/image (24).png" alt="Kite Surfing" class="img2">
+            <img src="imgs/image (25).png" alt="Hot Air Balloons" class="img3">
+            <img src="imgs/image (27).png" alt="Paragliding" class="img4">
+            <img src="imgs/image (26).png" alt="Paragliding" class="img5">
+        </div>
+    </div>
+    <div class="section3">
+        <div class="section3-content">
+            <h2>Flight reservation</h2>
+            <p>What are you waiting for!</p>
+            <a href="flight.html" class="flight-btn">Book Now</a>
+        </div>
+        <img src="imgs/airplane-7679992_1280.jpg" alt="Flight">
+    </div>
+
+    <a href="index.html" class="chat-icon" title="Chat with us!">
+        <i class="fas fa-comments"></i>
+    </a>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Pharaoh's Way</h3>
+                <p>Explore the wonders of ancient Egypt and enjoy the beauty of modern cities.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Need Help?</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Cairo, Egypt</p>
+                <p><i class="fa-solid fa-phone"></i> +20-123-456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank"><img src="imgs/image 12.png" alt="Facebook"></a>
+                    <a href="https://instagram.com" target="_blank"><img src="imgs/Social.png" alt="Instagram"></a>
+                    <a href="https://twitter.com" target="_blank"><img src="imgs/icon.png" alt="Twitter"></a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="home.js"></script>
+
+</body>
+
+</html>

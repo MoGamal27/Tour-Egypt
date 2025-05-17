@@ -1,0 +1,866 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, #45403b, #3877b6);
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+}
+
+.pharaoh-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.pharaoh {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    filter: brightness(0) invert(38%) sepia(90%) saturate(600%) hue-rotate(15deg);
+}
+
+.way {
+    font-size: 26px;
+    font-weight: bold;
+    color: #FF9B44;
+    margin-left: 8px;
+}
+
+/* Navigation links styles */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links li:hover a {
+    color: #FF9B44;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #FF9B44;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-links li:hover a::after {
+    transform: scaleX(1);
+}
+
+/* Dropdown menu styles */
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .dropdown-menu {
+    display: none; /* المخفي في البداية */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(135deg, #45403b, #3877b6);
+    min-width: 180px;
+    padding: 10px 0;
+    list-style: none;
+    border-radius: 5px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.nav-links .dropdown:hover .dropdown-menu {
+    display: block; /* يظهر عند المرور على العنصر */
+}
+
+.nav-links .dropdown-menu li {
+    padding: 10px 20px;
+}
+
+.nav-links .dropdown-menu li a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links .dropdown-menu li:hover a {
+    color: #FF9B44;
+}
+
+/* Button styles */
+.login-btn {
+    background: linear-gradient(135deg, #d2840f, #ffae42); /* تدرج ذهبي */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #ffae42, #d2840f);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.login-btn:active {
+    transform: scale(0.95);
+}
+
+
+
+/* تحسينات على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .login-btn {
+        padding: 8px 16px; 
+        font-size: 14px;
+    }
+}
+
+.hero {
+    position: relative;
+    background: url('imgs/image\ \(28\).png') center/cover no-repeat;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.6rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* إضافة طبقة الـ Overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* درجة الشفافية */
+    z-index: 1;
+}
+
+/* جعل النص يظهر فوق الـ Overlay */
+.hero h1 {
+    position: relative;
+    z-index: 2;
+}
+
+
+.booking-form{
+    height: 500px;
+}
+
+/* 🔹 تحسين العناوين */
+h2 {
+    color:black;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 28px;
+    text-align: center;
+    margin-top: 5%;
+}
+
+/* 🔹 ضبط الحقول مع الأيقونات */
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 15px;
+    margin-top: 2%;
+}
+
+.input-box {
+    position: relative;
+    width: 40%;
+    margin: 0 70px;
+}
+
+.input-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 1.2rem;
+    color: #ff9900bc; /* برتقالي */
+
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 15px 12px 40px; /* مسافة كافية للأيقونة */
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: 0.3s ease-in-out;
+}
+
+.input-box input:focus {
+    border-color: black;
+    box-shadow: 0 0 10px rgba(44, 144, 159, 0.3);
+    outline: none;
+}
+
+/* 🔹 تحسين زر الحجز مع التأثيرات */
+#bookNow {
+    width: 15%; /* توسيع الزر قليلاً */
+    padding: 12px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    margin-left: 42.5%; /* توسيطه */
+    margin-top: 2%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* تأثير عند تمرير الماوس */
+#bookNow:hover {
+    background-color: #e8860f; /* لون أغمق عند التمرير */
+    color: #fff;
+    transform: scale(1.05); /* تكبير بسيط */
+    transition: all 0.3s ease;
+}
+
+/* تأثير عند الضغط */
+#bookNow:active {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+#bookNow.glow {
+    animation: glowing 1.5s infinite alternate;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🔹 تنسيق قسم الدفع */
+.payment-section {
+    width: 50%;
+    margin: 30px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.payment-section h2 {
+    color: black;
+    font-weight: bold;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* 🔹 ترتيب الحقول في صفوف عند الحاجة */
+.payment-section .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.payment-section .form-group label {
+    font-size: px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.payment-section .input-box {
+    position: relative;
+    width: 100%;
+}
+.payment-section .input-box.half-width {
+    width: calc(50% - 10px);
+}
+.payment-section .input-box i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #f7921ec6;
+    font-size: 1.3rem;
+    transition: color 0.3s;
+}
+
+.payment-section .input-box input {
+    width: 100%;
+    padding: 12px 15px 12px 40px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: black;
+    transition: 0.3s ease-in-out;
+}
+
+.payment-section .input-box input:focus {
+    border-color: #000000;
+    outline: none;
+    background: white;
+}
+
+.payment-section .input-box input:focus + i {
+    color: #f7931e;
+}
+
+/* 🔹 زر الدفع */
+.payment-section button {
+    width: 100%;
+    padding: 14px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.payment-section button:hover {
+    background:  #e8860f;
+    color: #fff;
+    transform: scale(1.05); /* تكبير بسيط */
+    transition: all 0.3s ease;
+}
+
+/* 🔹 تحسين زر إظهار قسم الدفع */
+#showPaymentBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #f7931e;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#showPaymentBtn:hover {
+    background-color: #e6821c;
+}
+
+/* 🔹 إخفاء القسم افتراضيًا */
+.hidden {
+    display: none;
+}
+
+/* 🔹 تصميم استجابة للهواتف */
+@media (max-width: 768px) {
+    .payment-section {
+        width: 90%;
+    }
+    .payment-section .input-box,
+    .payment-section .input-box.half-width {
+        width: 100%;
+    }
+}
+
+footer {
+    background: linear-gradient(135deg, #45403b, #3877b6); /* برتقالي دافئ مع رمادي فحمي لمظهر عصري وأنيق */
+    color: white;
+    padding: 50px 0;
+    font-family: 'Poppins', sans-serif;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    overflow: hidden;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #FF9B44;
+    margin: 5px auto 0;
+    border-radius: 5px;
+}
+
+.footer-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #FF9B44;
+}
+
+.footer-section p i {
+    margin-right: 8px;
+    color: #FF9B44;
+    font-size: 18px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+    background: #FF9B44;
+}
+.plain-link {
+    display: inline-block;
+    margin-top: 22px;
+    font-size: 22px;
+    margin-bottom: 1%;
+    color:#ff9800;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.plain-link:hover {
+    color: #e68900;
+}
+
+
+.chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff9800;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 26px;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .chat-icon:hover {
+    background-color: #e68900;
+    transform: scale(1.1);
+  }
+/* 🔹 تنسيق عام لقسم الدفع */
+.payment-methods {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* 🔹 تصميم كل خيار دفع كـ بطاقة */
+.payment-methods label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: white;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    width: calc(50% - 10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* 🔹 تحسين عند تمرير الماوس */
+.payment-methods label:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 تنسيق الراديو وإخفاؤه */
+.payment-methods input {
+    display: none;
+}
+
+/* 🔹 عند تحديد الخيار */
+.payment-methods input:checked + label {
+    background: linear-gradient(135deg, #f7931e, #ff9a3d);
+    color: white;
+    border-color: #f7931e;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 🔹 أيقونات الدفع */
+.payment-methods label::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.payment-methods label[for="credit"]::before {
+    content: "\f09d"; /* أيقونة البطاقة */
+    color: #007bff;
+}
+
+.payment-methods label[for="paypal"]::before {
+    content: "\f1ed"; /* أيقونة PayPal */
+    color: #00457C;
+}
+
+.payment-methods label[for="applepay"]::before {
+    content: "\f179"; /* أيقونة Apple */
+    color: #000;
+}
+
+.payment-methods label[for="cod"]::before {
+    content: "\f0d6"; /* أيقونة النقود */
+    color: #28a745;
+}
+
+/* 🔹 تصميم استجابة للهواتف */
+@media (max-width: 768px) {
+    .payment-methods {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .payment-methods label {
+        width: 100%;
+        padding: 14px;
+    }
+}
+
+.cancel-btn {
+    background-color: rgba(234, 234, 234, 0.984);
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 2%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.cancel-btn:hover {
+    background-color: #d6d6d6;
+      transform: scale(1.05);
+        transition: all 0.3s ease;
+}
+
+
+.payment-message {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    border: 2px solid #ddd;
+    display: none;
+}
+
+.payment-message.visible {
+    display: block;
+}
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #046d6d; /* لون الدوائر */
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    margin-left: 1%;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: -4%;
+}
+
+
+.step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    width: 50px; /* طول الخط */
+    height: 5px;
+    background-color:#046d6d ; /* لون الخط */
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #45403b, #3877b6);
+        padding: 10px 0;
+        text-align: center;
+        z-index: 99;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+        /* تقليل الحواف */
+        padding-bottom: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        /* ترتيب الروابط عموديًا */
+        gap: 15px;
+        /* تقليل المسافة بين العناصر */
+    }
+
+    .logo {
+        margin-bottom: 20px;
+        /* مسافة بين اللوجو والروابط */
+    }
+    .login-btn {
+        width: 40%;
+        text-align: center;
+        padding: 10px;
+        font-size: 16px;
+        margin-top: 2%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .form-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .input-box {
+        flex: 0 0 70%; /* كل حقل ياخد العرض بالكامل */
+        margin-bottom: 10px;
+    }
+
+    .input-box input {
+        width: 100%; /* عشان يملى الحقل جوه الـ input-box */
+        padding: 12px;
+        font-size: 16px;
+        padding-left: 13%;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .booking-form h2 {
+        font-size: 28px;
+    }
+
+    #bookNow {
+        width: 30%;/* أكبر شوية للشاشات الصغيرة */
+        padding: 12px;
+        font-size: 16px;
+        display: block; /* لازم */
+        margin-left: 35%;
+        margin-right: auto; /* يخليه يروح ناحيه اليسار */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .input-box input {
+        padding: 10px;
+        font-size: 14px;
+        width: 100%;
+        padding-left: 10%;
+
+    }
+
+    button {
+        font-size: 14px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .booking-form h2 {
+        font-size: 24px;
+    }
+    #bookNow {
+        width: 30%;
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        margin-top: 45%; /* إضافة margin-top في حالة الشاشات الصغيرة */
+    }
+}
