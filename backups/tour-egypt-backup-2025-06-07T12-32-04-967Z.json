@@ -1,0 +1,647 @@
+{
+  "destinations": [
+    {
+      "id": 1,
+      "name": "Cairo",
+      "description": "Discover Cairo, the capital of Egypt and the largest city in the Arab world, where history meets modernity in a mesmerizing blend. Known as the 'City of a Thousand Minarets' for its breathtaking Islamic architecture, Cairo is a vibrant metropolis that offers an unforgettable experience for every traveler.",
+      "attractions": [
+        {
+          "id": 1,
+          "name": "The Pyramids and Sphinx",
+          "location": "Giza, Cairo",
+          "destinationId": 1
+        },
+        {
+          "id": 2,
+          "name": "Cairo Tower",
+          "location": "Zamalek, Cairo",
+          "destinationId": 1
+        },
+        {
+          "id": 3,
+          "name": "Salahdin Citadel",
+          "location": "Islamic Cairo",
+          "destinationId": 1
+        },
+        {
+          "id": 4,
+          "name": "Grand Egyptian Museum",
+          "location": "Giza, Cairo",
+          "destinationId": 1
+        },
+        {
+          "id": 5,
+          "name": "Khan El Khalili Bazaar",
+          "location": "Islamic Cairo",
+          "destinationId": 1
+        },
+        {
+          "id": 6,
+          "name": "Al-Azhar Mosque",
+          "location": "Islamic Cairo",
+          "destinationId": 1
+        }
+      ],
+      "restaurants": [
+        {
+          "id": 1,
+          "name": "Saigon Restaurant & Lounge",
+          "location": "Cairo",
+          "destinationId": 1
+        },
+        {
+          "id": 2,
+          "name": "Al Khal Egyptian Restaurant",
+          "location": "Cairo",
+          "destinationId": 1
+        },
+        {
+          "id": 3,
+          "name": "Bab El-Sharq",
+          "location": "Cairo",
+          "destinationId": 1
+        },
+        {
+          "id": 4,
+          "name": "Revolving Restaurant",
+          "location": "Cairo",
+          "destinationId": 1
+        },
+        {
+          "id": 5,
+          "name": "Crimson Bar & Grill",
+          "location": "Cairo",
+          "destinationId": 1
+        }
+      ],
+      "hotels": [
+        {
+          "id": 1,
+          "name": "Kempinski Nile Hotel",
+          "location": "Corniche El Nil, Cairo",
+          "destinationId": 1
+        },
+        {
+          "id": 2,
+          "name": "Le Méridien Cairo Airport",
+          "location": "Cairo International Airport",
+          "destinationId": 1
+        },
+        {
+          "id": 3,
+          "name": "Le Passage",
+          "location": "Cairo International Airport",
+          "destinationId": 1
+        },
+        {
+          "id": 4,
+          "name": "Ramses Hilton",
+          "location": "Downtown Cairo",
+          "destinationId": 1
+        },
+        {
+          "id": 5,
+          "name": "The Nile Ritz-Carlton",
+          "location": "Downtown Cairo",
+          "destinationId": 1
+        }
+      ],
+      "tourGuides": [
+        {
+          "id": 1,
+          "name": "Ahmed Ali",
+          "email": "ahmed.ali@tourguide.com",
+          "phoneNumber": "+201234567890",
+          "password": "hashedPassword123",
+          "language": "Arabic English French",
+          "Experience": "10 years",
+          "destinationId": 1,
+          "rating": 4.8,
+          "expertise": "Cairo & Pyramids Tours"
+        }
+      ],
+      "activities": []
+    },
+    {
+      "id": 2,
+      "name": "Alexandria",
+      "description": "Discover Alexandria: a timeless destination where history, culture, and the Mediterranean breeze come together. Unveil the secrets of ancient landmarks, vibrant streets, and breathtaking views in a city that has inspired travelers for centuries.",
+      "attractions": [
+        {
+          "id": 7,
+          "name": "Qaitbay Citadel",
+          "location": "Alexandria Corniche",
+          "destinationId": 2
+        },
+        {
+          "id": 8,
+          "name": "Bibliotheca Alexandrina",
+          "location": "Alexandria",
+          "destinationId": 2
+        },
+        {
+          "id": 9,
+          "name": "Roman Amphitheatre",
+          "location": "Kom El Dekka",
+          "destinationId": 2
+        },
+        {
+          "id": 10,
+          "name": "Montazah Palace Gardens",
+          "location": "Montazah",
+          "destinationId": 2
+        },
+        {
+          "id": 11,
+          "name": "Alexandria National Museum",
+          "location": "Alexandria",
+          "destinationId": 2
+        }
+      ],
+      "restaurants": [
+        {
+          "id": 6,
+          "name": "Santorini Greek Restaurant",
+          "location": "Alexandria",
+          "destinationId": 2
+        },
+        {
+          "id": 7,
+          "name": "Ginger Asian Restaurant",
+          "location": "Alexandria",
+          "destinationId": 2
+        },
+        {
+          "id": 8,
+          "name": "Roberto's Italian Restaurant",
+          "location": "Alexandria",
+          "destinationId": 2
+        },
+        {
+          "id": 9,
+          "name": "White and Blue Restaurant",
+          "location": "Alexandria",
+          "destinationId": 2
+        },
+        {
+          "id": 10,
+          "name": "Byblos",
+          "location": "Alexandria",
+          "destinationId": 2
+        }
+      ],
+      "hotels": [
+        {
+          "id": 6,
+          "name": "Hilton Alexandria King's Ranch",
+          "location": "King Mariout",
+          "destinationId": 2
+        },
+        {
+          "id": 7,
+          "name": "Steigenberger Cecil Hotel",
+          "location": "Downtown Alexandria",
+          "destinationId": 2
+        },
+        {
+          "id": 8,
+          "name": "TOLIP Hotel",
+          "location": "Alexandria",
+          "destinationId": 2
+        },
+        {
+          "id": 9,
+          "name": "Four Seasons Hotel",
+          "location": "San Stefano",
+          "destinationId": 2
+        },
+        {
+          "id": 10,
+          "name": "Romance Hotel",
+          "location": "Alexandria",
+          "destinationId": 2
+        }
+      ],
+      "tourGuides": [
+        {
+          "id": 3,
+          "name": "Karim Mohamed",
+          "email": "karim.mohamed@tourguide.com",
+          "phoneNumber": "+201234567892",
+          "password": "hashedPassword123",
+          "language": "French Arabic English",
+          "Experience": "12 years",
+          "destinationId": 2,
+          "rating": 4.6,
+          "expertise": "Alexandria & Coastal Tours"
+        }
+      ],
+      "activities": []
+    },
+    {
+      "id": 3,
+      "name": "Luxor",
+      "description": "Discover Luxor: the world's greatest open-air museum, where ancient temples, tombs, and monuments bring Egypt's rich history to life. Walk through the Valley of the Kings and witness the grandeur of Karnak Temple.",
+      "attractions": [
+        {
+          "id": 12,
+          "name": "Karnak Temple",
+          "location": "Luxor",
+          "destinationId": 3
+        },
+        {
+          "id": 13,
+          "name": "Valley of the Kings",
+          "location": "West Bank",
+          "destinationId": 3
+        },
+        {
+          "id": 14,
+          "name": "Hatshepsut Temple",
+          "location": "Deir el-Bahari",
+          "destinationId": 3
+        },
+        {
+          "id": 15,
+          "name": "Luxor Temple",
+          "location": "Luxor",
+          "destinationId": 3
+        },
+        {
+          "id": 16,
+          "name": "Colossi of Memnon",
+          "location": "West Bank",
+          "destinationId": 3
+        }
+      ],
+      "restaurants": [
+        {
+          "id": 11,
+          "name": "El Tarboush",
+          "location": "Luxor",
+          "destinationId": 3
+        },
+        {
+          "id": 12,
+          "name": "Casa Di Napoli",
+          "location": "Luxor",
+          "destinationId": 3
+        },
+        {
+          "id": 13,
+          "name": "Al-Sahaby Lane Restaurant",
+          "location": "Luxor",
+          "destinationId": 3
+        },
+        {
+          "id": 14,
+          "name": "1886 Restaurant",
+          "location": "Luxor",
+          "destinationId": 3
+        },
+        {
+          "id": 15,
+          "name": "Metro Restaurant",
+          "location": "Luxor",
+          "destinationId": 3
+        }
+      ],
+      "hotels": [
+        {
+          "id": 11,
+          "name": "Pyramisa Hotel",
+          "location": "Luxor",
+          "destinationId": 3
+        },
+        {
+          "id": 12,
+          "name": "Pavillon Winter Hotel",
+          "location": "Luxor",
+          "destinationId": 3
+        },
+        {
+          "id": 13,
+          "name": "Sonesta St. George Hotel",
+          "location": "Luxor",
+          "destinationId": 3
+        },
+        {
+          "id": 14,
+          "name": "Iberotel Hotel",
+          "location": "Luxor",
+          "destinationId": 3
+        },
+        {
+          "id": 15,
+          "name": "Nefertiti Hotel",
+          "location": "Luxor",
+          "destinationId": 3
+        }
+      ],
+      "tourGuides": [
+        {
+          "id": 2,
+          "name": "Mona Hassan",
+          "email": "mona.hassan@tourguide.com",
+          "phoneNumber": "+201234567891",
+          "password": "hashedPassword123",
+          "language": "English French Arabic",
+          "Experience": "8 years",
+          "destinationId": 3,
+          "rating": 4.9,
+          "expertise": "Luxor & Aswan Tours"
+        }
+      ],
+      "activities": []
+    },
+    {
+      "id": 4,
+      "name": "Aswan",
+      "description": "Discover Aswan: a serene destination where the Nile meets ancient temples and Nubian culture. Sail on a felucca, explore historical sites, and experience the beauty of southern Egypt.",
+      "attractions": [
+        {
+          "id": 17,
+          "name": "Abu Simbel Temple",
+          "location": "Abu Simbel",
+          "destinationId": 4
+        },
+        {
+          "id": 18,
+          "name": "Philae Temple",
+          "location": "Agilkia Island",
+          "destinationId": 4
+        },
+        {
+          "id": 19,
+          "name": "Nubian Village",
+          "location": "Aswan",
+          "destinationId": 4
+        },
+        {
+          "id": 20,
+          "name": "Aswan High Dam",
+          "location": "Aswan",
+          "destinationId": 4
+        },
+        {
+          "id": 21,
+          "name": "Aswan Botanical Garden",
+          "location": "Kitchener's Island",
+          "destinationId": 4
+        }
+      ],
+      "restaurants": [
+        {
+          "id": 16,
+          "name": "Oriental Kebabgy",
+          "location": "Aswan",
+          "destinationId": 4
+        },
+        {
+          "id": 17,
+          "name": "Mezze Restaurant",
+          "location": "Aswan",
+          "destinationId": 4
+        },
+        {
+          "id": 18,
+          "name": "1902 Restaurant",
+          "location": "Aswan",
+          "destinationId": 4
+        },
+        {
+          "id": 19,
+          "name": "Panorama Restaurant & Bar",
+          "location": "Aswan",
+          "destinationId": 4
+        },
+        {
+          "id": 20,
+          "name": "Solaih Nubian Restaurant",
+          "location": "Aswan",
+          "destinationId": 4
+        }
+      ],
+      "hotels": [
+        {
+          "id": 16,
+          "name": "Sofitel Legend Old Cataract",
+          "location": "Aswan",
+          "destinationId": 4
+        },
+        {
+          "id": 17,
+          "name": "Basma Hotel",
+          "location": "Aswan",
+          "destinationId": 4
+        },
+        {
+          "id": 18,
+          "name": "Sonesta Nouba Hotel",
+          "location": "Aswan",
+          "destinationId": 4
+        },
+        {
+          "id": 19,
+          "name": "Kato Dool Wellness Resort",
+          "location": "Aswan",
+          "destinationId": 4
+        },
+        {
+          "id": 20,
+          "name": "Movenpick Resort",
+          "location": "Aswan",
+          "destinationId": 4
+        }
+      ],
+      "tourGuides": [
+        {
+          "id": 6,
+          "name": "Ahmed Tarik",
+          "email": "ahmed.tarik@tourguide.com",
+          "phoneNumber": "+201234567895",
+          "password": "hashedPassword123",
+          "language": "French English Arabic",
+          "Experience": "10 years",
+          "destinationId": 4,
+          "rating": 4.7,
+          "expertise": "Nile Cruise & Temple Tours"
+        }
+      ],
+      "activities": []
+    },
+    {
+      "id": 5,
+      "name": "Red Sea",
+      "description": "Discover the Red Sea: a paradise for diving, relaxation, and adventure. From vibrant coral reefs to luxurious resorts, the Red Sea offers an unforgettable coastal escape.",
+      "attractions": [
+        {
+          "id": 22,
+          "name": "Giftun Island",
+          "location": "Hurghada",
+          "destinationId": 5
+        },
+        {
+          "id": 23,
+          "name": "El Gouna",
+          "location": "Hurghada",
+          "destinationId": 5
+        },
+        {
+          "id": 24,
+          "name": "Soma Bay",
+          "location": "Safaga",
+          "destinationId": 5
+        },
+        {
+          "id": 25,
+          "name": "Hamata Islands",
+          "location": "Hamata",
+          "destinationId": 5
+        },
+        {
+          "id": 26,
+          "name": "Wadi El Gemal",
+          "location": "Marsa Alam",
+          "destinationId": 5
+        }
+      ],
+      "restaurants": [
+        {
+          "id": 21,
+          "name": "Corallo Restaurant",
+          "location": "Red Sea",
+          "destinationId": 5
+        },
+        {
+          "id": 22,
+          "name": "Beach Restaurant",
+          "location": "Red Sea",
+          "destinationId": 5
+        },
+        {
+          "id": 23,
+          "name": "Aqua Restaurant",
+          "location": "Red Sea",
+          "destinationId": 5
+        },
+        {
+          "id": 24,
+          "name": "El Sayadin Restaurant",
+          "location": "Red Sea",
+          "destinationId": 5
+        },
+        {
+          "id": 25,
+          "name": "Felucca Seafood Restaurant & Bar",
+          "location": "Red Sea",
+          "destinationId": 5
+        }
+      ],
+      "hotels": [
+        {
+          "id": 21,
+          "name": "Premier Le Reve Hotel & Spa",
+          "location": "Hurghada",
+          "destinationId": 5
+        },
+        {
+          "id": 22,
+          "name": "SUNRISE Arabian Beach Resort",
+          "location": "Sharm El Sheikh",
+          "destinationId": 5
+        },
+        {
+          "id": 23,
+          "name": "Rixos Hotel",
+          "location": "Sharm El Sheikh",
+          "destinationId": 5
+        },
+        {
+          "id": 24,
+          "name": "Savoy Hotel",
+          "location": "Sharm El Sheikh",
+          "destinationId": 5
+        },
+        {
+          "id": 25,
+          "name": "Meraki Resort",
+          "location": "Hurghada",
+          "destinationId": 5
+        }
+      ],
+      "tourGuides": [
+        {
+          "id": 4,
+          "name": "Mahmoud Al Attar",
+          "email": "mahmoud.attar@tourguide.com",
+          "phoneNumber": "+201234567893",
+          "password": "hashedPassword123",
+          "language": "English Arabic French",
+          "Experience": "7 years",
+          "destinationId": 5,
+          "rating": 4.5,
+          "expertise": "Red Sea Tours"
+        },
+        {
+          "id": 5,
+          "name": "Kareem Elsayed",
+          "email": "kareem.elsayed@tourguide.com",
+          "phoneNumber": "+201234567894",
+          "password": "hashedPassword123",
+          "language": "Arabic French English",
+          "Experience": "8 years",
+          "destinationId": 5,
+          "rating": 4.9,
+          "expertise": "Desert & Safari Tours"
+        }
+      ],
+      "activities": []
+    }
+  ],
+  "tourists": [],
+  "categories": [],
+  "bookings": [
+    {
+      "id": 1,
+      "firstName": "mo",
+      "lastName": "gamil",
+      "checkIn": "1212-12-12T00:00:00.000Z",
+      "checkOut": "1211-12-12T00:00:00.000Z",
+      "adults": 2,
+      "children": 2,
+      "email": "mp@gmail.com",
+      "phone": "12345678",
+      "createdAt": "2025-05-15T11:30:33.640Z",
+      "updatedAt": "2025-05-15T11:30:33.640Z"
+    },
+    {
+      "id": 2,
+      "firstName": "mo",
+      "lastName": "gamil",
+      "checkIn": "2000-12-12T00:00:00.000Z",
+      "checkOut": "2000-02-12T00:00:00.000Z",
+      "adults": 12,
+      "children": 12,
+      "email": "mp@gmail.com",
+      "phone": "12345678",
+      "createdAt": "2025-06-04T12:22:22.845Z",
+      "updatedAt": "2025-06-04T12:22:22.845Z"
+    },
+    {
+      "id": 3,
+      "firstName": "mo",
+      "lastName": "gamil",
+      "checkIn": "2000-12-12T00:00:00.000Z",
+      "checkOut": "2000-12-12T00:00:00.000Z",
+      "adults": 12,
+      "children": 12,
+      "email": "mp@gmail.com",
+      "phone": "12345678",
+      "createdAt": "2025-06-04T12:24:06.155Z",
+      "updatedAt": "2025-06-04T12:24:06.155Z"
+    }
+  ],
+  "reviews": [],
+  "timestamp": "2025-06-07T12:32:04.963Z"
+}

@@ -1,235 +1,148 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const touristBtn = document.getElementById("tourist");
-    const tourGuideBtn = document.getElementById("tourGuide");
-    const form = document.getElementById("registerForm");
+document.addEventListener('DOMContentLoaded', () => {
+    const registerForm = document.getElementById('registerForm');
+    const touristSpan = document.getElementById('tourist');
+    const tourGuideSpan = document.getElementById('tourGuide');
+    const extraFields = document.getElementById('extraFields');
+    const imageUploadContainer = document.getElementById('image-upload-container');
+    const profilePicInput = document.getElementById('profile-pic');
+    const previewImg = document.getElementById('preview-img');
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+    const passwordMessage = document.getElementById('password-message');
+    const lengthMessage = document.getElementById('length-message');
 
-    // تبديل النمط النشط بين السائح والمرشد
-    touristBtn.addEventListener("click", () => {
-        touristBtn.classList.add("active");
-        tourGuideBtn.classList.remove("active");
+    // Toggle between Tourist and Tour Guide
+    touristSpan.addEventListener('click', () => {
+        touristSpan.classList.add('active');
+        tourGuideSpan.classList.remove('active');
+        extraFields.style.display = 'none';
+        imageUploadContainer.style.display = 'none';
     });
 
-    tourGuideBtn.addEventListener("click", () => {
-        tourGuideBtn.classList.add("active");
-        touristBtn.classList.remove("active");
+    tourGuideSpan.addEventListener('click', () => {
+        tourGuideSpan.classList.add('active');
+        touristSpan.classList.remove('active');
+        extraFields.style.display = 'block';
+        imageUploadContainer.style.display = 'block';
     });
 
-document.querySelectorAll('.toggle-password').forEach(icon => {
-    icon.addEventListener('click', function () {
-        let input = this.previousElementSibling;
-        if (input.type === "password") {
-            input.type = "text";
-            this.textContent = "🔒"; // أيقونة مغلقة
-        } else {
-            input.type = "password";
-            this.textContent = "👁"; // أيقونة مفتوحة
-        }
-    });
-});
-
-});
-document.addEventListener("DOMContentLoaded", function () {
-    const touristBtn = document.getElementById("tourist");
-    const tourGuideBtn = document.getElementById("tourGuide");
-    const confirmPasswordField = document.getElementById("confirmPassword").parentNode;
-    const loginParagraph = document.querySelector(".login");
-
-    // إنشاء قائمة اللغات
-    const languageField = document.createElement("div");
-    languageField.innerHTML = `
-        <label>Language</label>
-        <select id="language">
-            <option value="" disabled selected >Select a language</option>
-            <option value="English">English</option>
-            <option value="Arabic">Arabic</option>
-            <option value="French">French</option>
-            <option value="Spanish">Spanish</option>
-            <option value="German">German</option>
-        </select>
-        
-    `;
-    languageField.style.display = "none"; // إخفاؤه في البداية
-
-    const experienceField = document.createElement("div");
-    experienceField.innerHTML = `
-        <label>Experience</label>
-        <input type="number" id="experience" min="0" placeholder="Enter years of experience">
-
-        
-    `;
-    experienceField.style.display = "none"; // إخفاؤه في البداية
-
-    const destinationField = document.createElement("div");
-    destinationField.innerHTML = `
-        <label>Destination</label>
-        <select id="destination">
-            <option value="" disabled selected >Select a destination</option>
-            <option value="Cairo">Cairo</option>
-            <option value="Alexandria">Alexandria</option>
-            <option value="Red Sea">Red Sea</option>
-            <option value="Luxor">Luxor</option>
-            <option value="Aswan">Aswan</option>
-             <option value="Saina">Saina</option>
-        </select>
-        
-    `;
-    destinationField.style.display = "none"; // إخفاؤه في البداية
-
-    confirmPasswordField.parentNode.insertBefore(languageField, confirmPasswordField.nextSibling); // إضافته بعد Confirm Password
-    confirmPasswordField.parentNode.insertBefore(experienceField, languageField.nextSibling); // إضافته بعد Confirm Password
-    confirmPasswordField.parentNode.insertBefore(destinationField, experienceField.nextSibling); // إضافته بعد Confirm Password
-
-
-
-    // عند اختيار "Tour Guide"
-    tourGuideBtn.addEventListener("click", function () {
-        tourGuideBtn.classList.add("active");
-        touristBtn.classList.remove("active");
-        languageField.style.display = "block"; // إظهار القائمة
-        experienceField.style.display = "block"; // إظهار القائمة
-        destinationField.style.display = "block"; // إظهار القائمة
-
-
-        loginParagraph.style.display = "block";
-    });
-
-    // عند اختيار "Tourist"
-    touristBtn.addEventListener("click", function () {
-        touristBtn.classList.add("active");
-        tourGuideBtn.classList.remove("active");
-        languageField.style.display = "none"; // إخفاء القائمة
-        experienceField.style.display = "none"; // إخفاء القائمة
-        destinationField.style.display = "none"; // إخفاء القائمة
-        loginParagraph.style.display = "block";
-    });
-});
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const touristBtn = document.getElementById("tourist");
-    const tourGuideBtn = document.getElementById("tourGuide");
-    const imageUploadContainer = document.getElementById("image-upload-container");
-    const profilePicInput = document.getElementById("profile-pic");
-    const previewImg = document.getElementById("preview-img");
-
-    // عند اختيار "Tour Guide"
-    tourGuideBtn.addEventListener("click", function () {
-        tourGuideBtn.classList.add("active");
-        touristBtn.classList.remove("active");
-        imageUploadContainer.style.display = "block"; // إظهار حقل رفع الصورة
-    });
-
-    // عند اختيار "Tourist"
-    touristBtn.addEventListener("click", function () {
-        touristBtn.classList.add("active");
-        tourGuideBtn.classList.remove("active");
-        imageUploadContainer.style.display = "none"; // إخفاء حقل رفع الصورة
-        profilePicInput.value = ""; // مسح الملف عند الإخفاء
-        previewImg.style.display = "none"; // إخفاء المعاينة
-    });
-
-    // عرض الصورة عند رفعها
-    profilePicInput.addEventListener("change", function (event) {
-        const file = event.target.files[0];
+    // Image preview
+    profilePicInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
         if (file) {
             const reader = new FileReader();
-            reader.onload = function (e) {
+            reader.onload = (e) => {
                 previewImg.src = e.target.result;
-                previewImg.style.display = "block";
+                previewImg.style.display = 'block';
             };
             reader.readAsDataURL(file);
         }
     });
-});
 
+    // Password validation
+    const validatePassword = () => {
+        const password = passwordInput.value;
+        const confirmPassword = confirmPasswordInput.value;
 
+        if (password.length < 6) {
+            lengthMessage.style.display = 'block';
+            return false;
+        } else {
+            lengthMessage.style.display = 'none';
+        }
 
-document.addEventListener("DOMContentLoaded", function () {
-    const passwordInput = document.getElementById("password");
-    const confirmPasswordInput = document.getElementById("confirmPassword");
-    const registerForm = document.getElementById("registerForm");
+        if (password !== confirmPassword) {
+            passwordMessage.textContent = 'Passwords do not match!';
+            passwordMessage.style.color = 'red';
+            return false;
+        } else {
+            passwordMessage.textContent = 'Passwords match!';
+            passwordMessage.style.color = 'green';
+            return true;
+        }
+    };
 
-    // رسالة الخطأ لكلمة المرور
-    const passwordError = document.createElement("p");
-    passwordError.style.color = "black";
-    passwordError.style.fontSize = "14px";
-    passwordError.style.display = "none"; // إخفاء الرسالة في البداية
-    passwordError.textContent = "Password must be at least 6 characters.";
+    passwordInput.addEventListener('input', validatePassword);
+    confirmPasswordInput.addEventListener('input', validatePassword);
+
+  // Form submission handler
+  registerForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    if (!validatePassword()) {
+        return;
+    }
+
+    const isTourGuide = tourGuideSpan.classList.contains('active');
     
-    // إضافة الرسالة تحت حقل كلمة المرور
-    passwordInput.parentNode.appendChild(passwordError);
+    if (isTourGuide) {
+        // Tour Guide registration
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phoneNumber: document.getElementById('phone').value,
+            password: document.getElementById('password').value,
+            language: document.getElementById('language').value,
+            Experience: document.getElementById('experience').value,
+            destinationId: parseInt(document.getElementById('destination').value),
+            profilePic: previewImg.src || ''
+        };
 
-    // التحقق أثناء الكتابة
-    passwordInput.addEventListener("input", function () {
-        if (passwordInput.value.length < 6) {
-            passwordError.style.display = "block"; // إظهار الرسالة إذا كانت أقل من 6
-        } else {
-            passwordError.style.display = "none"; // إخفاء الرسالة إذا كانت 6 أو أكثر
+        try {
+            const response = await fetch('http://localhost:3000/api/tourguide/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert('Tour Guide registration successful!');
+                registerForm.reset();
+                previewImg.style.display = 'none';
+            } else {
+                alert('Registration failed: ' + data.message);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred during registration');
         }
-    });
+    } else {
+        // Tourist registration
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phoneNumber: document.getElementById('phone').value,
+            password: document.getElementById('password').value
+        };
 
-    // رسالة الخطأ لتأكيد كلمة المرور
-    const confirmPasswordError = document.createElement("p");
-    confirmPasswordError.style.color = "black";
-    confirmPasswordError.style.fontSize = "12px";
-    confirmPasswordError.style.display = "none"; // إخفاء الرسالة في البداية
-    confirmPasswordError.textContent = "Passwords do not match.";
+        try {
+            const response = await fetch('http://localhost:3000/api/tourist/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
 
-    confirmPasswordInput.parentNode.appendChild(confirmPasswordError);
+            const data = await response.json();
 
-    // التحقق أثناء الكتابة في حقل تأكيد كلمة المرور
-    confirmPasswordInput.addEventListener("input", function () {
-        if (passwordInput.value !== confirmPasswordInput.value) {
-            confirmPasswordError.style.display = "block"; // إظهار الرسالة إذا كانت الكلمات غير متطابقة
-        } else {
-            confirmPasswordError.style.display = "none"; // إخفاء الرسالة إذا كانت الكلمات متطابقة
+            if (response.ok) {
+                alert('Tourist registration successful!');
+                registerForm.reset();
+            } else {
+                alert('Registration failed: ' + data.message);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred during registration');
         }
-    });
-
-    // عند الضغط على زر Create
-    registerForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // منع إرسال النموذج مباشرة
-
-        // التحقق من كلمة المرور
-        if (passwordInput.value.length < 6) {
-            passwordError.style.display = "block";
-        } else if (passwordInput.value !== confirmPasswordInput.value) {
-            confirmPasswordError.style.display = "block";
-        } else {
-            // إذا كانت البيانات صحيحة، سيتم إظهار رسالة التنبيه
-            alert("Your account has been successfully created!");
-        }
-    });
-
-    // إخفاء الرسائل عند التركيز على أي حقل آخر
-    document.querySelectorAll("input").forEach(input => {
-        input.addEventListener("focus", function () {
-            // إخفاء رسائل الخطأ عند التركيز على أي حقل آخر
-            passwordError.style.display = "none";
-            confirmPasswordError.style.display = "none";
-        });
-    });
+    }
 });
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    const languageSelect = document.getElementById("language");
-    const createBtn = document.getElementById("createBtn");
-
-    // التحقق من اللغات المحددة قبل إرسال النموذج
-    createBtn.addEventListener("click", function(event) {
-        const selectedLanguages = Array.from(languageSelect.selectedOptions).map(option => option.value);
-
-        if (selectedLanguages.length === 0) {
-            alert("Please select at least one language.");
-            event.preventDefault(); // منع إرسال النموذج إذا لم يتم اختيار لغة
-        } else {
-            console.log("Selected languages:", selectedLanguages);
-        }
-    });
 });
-
 
 
 

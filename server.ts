@@ -1,4 +1,5 @@
 import express from 'express';
+import path from 'path';
 import destinationRoute from './src/Routes/DestinationRoute'
 import attractionRoute from './src/Routes/AttractionRoute'
 import restaurantRoute from './src/Routes/RestaurantRoute'
@@ -21,6 +22,12 @@ app.use(cors({
 }))
 
 app.use(express.json());
+
+// Serve static files from Frontend folder
+app.use(express.static(path.join(__dirname, 'Frontend')));
+console.log(path.join(__dirname, 'Frontend'));
+
+// API routes
 app.use('/api', 
     destinationRoute, 
     attractionRoute,
@@ -38,5 +45,6 @@ app.use('/api',
 
 app.listen(3000, () => {
   console.log('Server up and running on port: 3000');
+   console.log('Frontend available at: http://localhost:3000/Frontend');
 });
 

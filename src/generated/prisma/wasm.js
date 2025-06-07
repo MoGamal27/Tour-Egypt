@@ -156,7 +156,8 @@ exports.Prisma.TourGuideScalarFieldEnum = {
   language: 'language',
   Experience: 'Experience',
   destinationId: 'destinationId',
-  profilePic: 'profilePic'
+  rating: 'rating',
+  expertise: 'expertise'
 };
 
 exports.Prisma.TouristScalarFieldEnum = {
@@ -224,14 +225,74 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
-exports.Prisma.QueryMode = {
-  default: 'default',
-  insensitive: 'insensitive'
-};
-
 exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
+};
+
+exports.Prisma.DestinationOrderByRelevanceFieldEnum = {
+  name: 'name',
+  description: 'description'
+};
+
+exports.Prisma.AttractionOrderByRelevanceFieldEnum = {
+  name: 'name',
+  location: 'location'
+};
+
+exports.Prisma.RestaurantOrderByRelevanceFieldEnum = {
+  name: 'name',
+  location: 'location'
+};
+
+exports.Prisma.HotelOrderByRelevanceFieldEnum = {
+  name: 'name',
+  location: 'location'
+};
+
+exports.Prisma.TourGuideOrderByRelevanceFieldEnum = {
+  name: 'name',
+  email: 'email',
+  phoneNumber: 'phoneNumber',
+  password: 'password',
+  language: 'language',
+  Experience: 'Experience',
+  expertise: 'expertise'
+};
+
+exports.Prisma.TouristOrderByRelevanceFieldEnum = {
+  name: 'name',
+  email: 'email',
+  phoneNumber: 'phoneNumber',
+  password: 'password'
+};
+
+exports.Prisma.CategoryOrderByRelevanceFieldEnum = {
+  name: 'name'
+};
+
+exports.Prisma.SouvenirsOrderByRelevanceFieldEnum = {
+  name: 'name',
+  description: 'description'
+};
+
+exports.Prisma.BookingOrderByRelevanceFieldEnum = {
+  firstName: 'firstName',
+  lastName: 'lastName',
+  email: 'email',
+  phone: 'phone'
+};
+
+exports.Prisma.ActivityOrderByRelevanceFieldEnum = {
+  name: 'name',
+  location: 'location',
+  description: 'description',
+  duration: 'duration',
+  imageUrl: 'imageUrl'
+};
+
+exports.Prisma.ReviewOrderByRelevanceFieldEnum = {
+  comment: 'comment'
 };
 
 

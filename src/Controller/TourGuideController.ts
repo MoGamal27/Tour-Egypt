@@ -6,7 +6,7 @@ import { PrismaClient } from "../generated/prisma";
 const prisma = new PrismaClient()
 
 const RegisterTourGuide = asyncHandler(async(req: Request, res: Response, next: NextFunction) => {
-    const { name, email, phoneNumber, password, language, Experience, destinationId, profilePic } = req.body;
+    const { name, email, phoneNumber, password, language, Experience, destinationId } = req.body;
 
     try {
         // First check if the destination exists
@@ -29,7 +29,6 @@ const RegisterTourGuide = asyncHandler(async(req: Request, res: Response, next: 
                 password,
                 language,
                 Experience,
-                profilePic,
                 destination: {
                     connect: {
                         id: Number(destinationId)

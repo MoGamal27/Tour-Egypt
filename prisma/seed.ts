@@ -4,46 +4,27 @@ const prisma = new PrismaClient()
 
 async function main() {
    
-    const existingRedSea = await prisma.destination.findFirst({
+    const existingAswan = await prisma.destination.findFirst({
         where: {
-            name: 'Red Sea'
+            name: 'Aswan'
         }
     });
 
-    if (existingRedSea) {
+    if (existingAswan) {
         // Create restaurants for Red Sea destination
-        await prisma.restaurant.createMany({
+        await prisma.tourGuide.createMany({
             data: [
                 {
-                    name: 'Corallo Restaurant',
-                    location: 'Red Sea',
-                    destinationId: existingRedSea.id
-                    
+                    name: 'Ahmed Tarik',
+                    email: 'ahmed.tarik@tourguide.com',
+                    phoneNumber: '+201234567895',
+                    password: 'hashedPassword123',
+                    language: 'French English Arabic',
+                    Experience: '10 years',
+                    destinationId: existingAswan.id,
+                    expertise: 'Nile Cruise & Temple Tours',
+                    rating: 4.7
                 },
-                {
-                    name: 'Beach Restaurant',
-                    location: 'Red Sea',
-                    destinationId: existingRedSea.id
-                   
-                },
-                {
-                    name: 'Aqua Restaurant',
-                    location: 'Red Sea',
-                    destinationId: existingRedSea.id
-                    
-                },
-                {
-                    name: 'El Sayadin Restaurant',
-                    location: 'Red Sea',
-                    destinationId: existingRedSea.id
-                    
-                },
-                {
-                    name: 'Felucca Seafood Restaurant & Bar',
-                    location: 'Red Sea',
-                    destinationId: existingRedSea.id
-                   
-                }
             ]
         });
     }

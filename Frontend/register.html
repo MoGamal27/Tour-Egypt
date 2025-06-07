@@ -7,7 +7,7 @@
     <title>Register - Pharaoh's Way</title>
     <link rel="stylesheet" href="register.css">
 </head>
-
+`
 <body>
     <div class="register-container">
         <div class="left-panel">
@@ -47,43 +47,40 @@
                 </div>
 
                 <div id="extraFields" style="display: none;">
-                    <label for="language">Languages</label>
-                    <select id="language" name="languages[]" multiple size="5">
-                      <option value="English">English</option>
-                      <option value="Arabic">Arabic</option>
-                      <option value="French">French</option>
-                      <option value="Spanish">Spanish</option>
-                      <option value="German">German</option>
+                    <label>Language</label>
+                    <select id="language">
+                        <option value="" disabled selected >Select a language</option>
+                        <option value="English">English</option>
+                        <option value="Arabic">Arabic</option>
+                        <option value="French">French</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="German">German</option>
                     </select>
-                    
-                    
-
-                    
                     <label>Experience</label>
                     <input type="number" id="experience" min="0" max="5" placeholder="Enter years of experience">
                     <label>Destination</label>
-                    <select id="destination">
-                        <option value="" disabled selected >Select a destination</option>
-                        <option value="Cairo">Cairo</option>
-                        <option value="Alexandria">Alexandria</option>
-                        <option value="Red Sea">Red Sea</option>
-                        <option value="Luxor">Luxor</option>
-                        <option value="Aswan">Aswan</option>
-                        <option value="Sinai">Sinai</option>
+                    <select id="destination"> 
+                        <option value="" disabled selected>Select a destination</option> 
+                        <option value="1">Cairo</option> 
+                        <option value="2">Alexandria</option> 
+                        <option value="3">Red Sea</option> 
+                        <option value="4">Luxor</option> 
+                        <option value="5">Aswan</option> 
+                        <option value="6">Sinai</option> 
                     </select>
 
                 </div>
                 <div id="image-upload-container" style="display: none; margin-top: 5px;">
-                    <label for="profile-pic">Upload Certificate:</label>
+                    <label for="profile-pic">Upload Profile Picture:</label>
                     <input type="file" id="profile-pic" accept="image/*">
                     <img id="preview-img" src="#" alt="Image Preview"
                         style="display:none; width:100px; height:100px; margin-top:10px; border: 1px solid #ccc; border-radius: 10px;">
                 </div>
 
 
-                <p class="terms">By signing up you agree to <a href="terms.html">terms and conditions</a>.</p>
+                <p class="terms">By signing up you agree to <a href="#">terms and conditions</a>.</p>
                 <button type="submit" class="register-btn" id="createBtn">Create</button>
-                <a href="login.html" style="text-decoration: none; text-align: center; margin-top: 3px; color: #ff9800; font-size: 18px;">Login</a>
+                <p class="login">Login</p>
             </form>
         </div>
     </div>
