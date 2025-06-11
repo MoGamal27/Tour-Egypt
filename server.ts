@@ -27,6 +27,11 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'Frontend')));
 console.log(path.join(__dirname, 'Frontend'));
 
+app.get('/Frontend', (req, res) => {
+res.sendFile(path.join(__dirname, 'Frontend', 'home.html'));
+});
+
+
 // API routes
 app.use('/api', 
     destinationRoute, 

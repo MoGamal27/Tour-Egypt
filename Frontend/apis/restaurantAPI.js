@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:3000/api';
+const API_BASE_URL = 'https://bf9a6a07-cd1d-4ebc-b7a7-adde95f7b91e-00-2z7xusx8q8552.kirk.replit.dev/api';
 
 
 const restaurantImageMap = {
@@ -75,7 +75,7 @@ async function renderAllRestaurants() {
             const card = document.createElement('div');
             card.className = 'restaurant-card';
             card.innerHTML = `
-                <a href="information of restaurants.html#${restaurant.id}" target="_blank">
+                <a href="information of rest.html#${restaurant.id}" target="_self">
                     <img src="${restaurantImageMap[restaurant.id] || 'imgs/default-restaurant.png'}" alt="${restaurant.name}" loading="lazy">
                     <div class="overlay">
                         <div class="restaurant-info">

@@ -20,16 +20,29 @@
                 <a href="https://www.facebook.com/login/" target="_blank" class="social-icon"><img src="img/facebook.png" alt="Facebook"></a>
                 <a href="https://www.linkedin.com/login/" target="_blank" class="social-icon"><img src="img/linkedin.png" alt="LinkedIn"></a>
             </div>
-            
-            <form action="#">
-                <label for="email">E mail</label>
-                <input type="email" id="email" placeholder="name@gmail.com">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="6+ characters">
-                <a href="reset-password.html" class="forgot-password">Forgot Password?</a>
-                <p class="terms">By logging in, you agree to our <a href="terms.html" class="back-link">Terms & Conditions</a>.</p>
-                <button type="submit">Login</button>
-            </form>
+         <form id="loginForm">
+  <label for="email">E mail</label>
+  <input type="email" id="email" placeholder="name@gmail.com" required>
+
+  <label for="password">Password</label>
+  <input type="password" id="password" placeholder="6+ characters" required>
+
+  <a href="reset-password.html" class="forgot-password">Forgot Password?</a>
+  <p class="terms">
+    By logging in, you agree to our
+    <a href="terms.html" class="back-link">Terms & Conditions</a>.
+  </p>
+
+  <button type="submit">Login</button>
+</form>
+
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault(); 
+    window.location.href = "home.html"; // redirect to home page
+  });
+</script>
+
             <p>Don't have an account? <a href="register.html" class="back-link">Create Now</a></p>
             
     </div>

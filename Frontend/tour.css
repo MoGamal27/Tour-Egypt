@@ -558,3 +558,24 @@ footer {
             width: 100%;
         }
     }
+    .filter-message {
+        animation: fadeIn 0.3s ease-in;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .guide-card {
+        transition: all 0.3s ease;
+    }
+
+    .guide-card[style*="none"] {
+        display: none !important;
+    }
+
+    .search-btn:hover {
+        background-color: #0056b3;
+        transform: translateY(-1px);
+    }

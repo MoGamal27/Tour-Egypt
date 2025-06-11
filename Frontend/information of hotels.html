@@ -57,7 +57,7 @@
 
 
 
-    <div class="container" id="Kempinski">
+    <div class="container" id="1">
         <div class="hotel-name">Kempinski Nile Hotel</div>
         <div class="left">
             <img src="imgs/big.png" alt="Large Image">
@@ -163,18 +163,32 @@
         </div>
     </div>
     <div class="comment-form">
-        <h3>Feedback & Questions</h3>
-        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
+    <h3>Feedback & Questions</h3>
+    <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+    <form class="contact-form" id="feedback-form">
+        <input type="text" id="user-name" placeholder="Your Name" required>
+        <input type="email" id="user-email" placeholder="Your Email" required>
+        <textarea id="user-message" placeholder="Your Message" required></textarea>
+        <button type="submit" id="submit-btn">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-loading" style="display: none;">Analyzing...</span>
+        </button>
+    </form>
     
+     <!-- Sentiment Analysis Result -->
+    <div id="sentiment-result" class="sentiment-result" style="display: none;">
+        <div class="sentiment-card">
+            <h4>Message Analysis</h4>
+            <div class="sentiment-info">
+                <span class="sentiment-label">Sentiment:</span>
+                <span class="sentiment-value" id="sentiment-value"></span>
+            </div>
+            <p class="sentiment-message" id="sentiment-message"></p>
+        </div>
+    </div>
+</div>
 
-    <div class="container" id="LeMeridien">
+    <div class="container" id="2">
         <div class="hotel-name">Le Méridien Cairo Airport</div>
         <div class="left">
             <img src="imgs/le-meridien-cairo-airport.jpg" alt="Le Méridien Cairo Airport Main Image" class="main-image" style="  height: 450px;
@@ -271,7 +285,7 @@
         </form>
     </div>
 
-    <div class="container" id="LePassage">
+    <div class="container" id="3">
         <div class="hotel-name">Le Passage Cairo Hotel & Casino</div>
         <div class="left">
           <img src="imgs/hotel-entry.jpg" alt="Le Passage Cairo Main Image" class="main-image" style="height: 440px; object-fit: cover;">
@@ -360,7 +374,7 @@
         </form>
       </div>
       
-      <div class="container" id="RamsesHilton">
+      <div class="container" id="4">
         <div class="hotel-name">Ramses Hilton Hotel</div>
         <div class="left">
           <img src="imgs/exterior.jpg" alt="Ramses Hilton Cairo Main Image" class="main-image" style="height: 440px; object-fit: cover;">
@@ -446,7 +460,7 @@
         </form>
       </div>
       
-      <div class="container" id="NileRitzCarlton">
+      <div class="container" id="5">
         <div class="hotel-name">The Nile Ritz-Carlton, Cairo</div>
         <div class="left">
           <img src="imgs/456051765.jpg" alt="The Nile Ritz-Carlton Cairo Main Image" class="main-image" style="height: 440px; object-fit: cover;">
@@ -532,6 +546,2093 @@
           <button type="submit">Send Message</button>
         </form>
       </div>
+
+      <div class="container" id="6">
+        <div class="hotel-name">Hilton Alexandria King's Ranch</div>
+        <div class="left">
+            <img src="imgss/big2.jpg" alt="Large Image" style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="imgss/small2.jpg" alt="Small Image 1" style="height: 220px; object-fit: cover;">
+            <img src="imgss/small3.jpg" alt="Small Image 2" style="height: 220px; object-fit: cover;">
+        </div>
+
+    </div>
+    <div class="info-section">
+         <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <div class="score">(4.8)</div>
+                </div>
+            </div>
+
+            <div class="description">
+                Hilton Alexandria King’s Ranch is a luxurious 5-star hotel located in the King Mariout area of
+                Alexandria, near Borg El Arab Airport.
+                The hotel features modern design, spacious rooms, three swimming pools, a full-service spa, a fitness
+                center, and several dining options. It offers a relaxing atmosphere and high-quality
+                services, making it an ideal choice for both leisure travelers and business guests due to its convenient
+                location and excellent facilities.
+            </div>
+            <a href="https://maps.app.goo.gl/3X4cMiQpCerVN5Pk8" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+
+        </div>
+        <div class="actions-box">
+            <div class="price-label"> <span style="color:  #ff9800;">$82 </span>per Day</div>
+            <a href="payment.html" class="cta-button">Book Now!</a>
+        </div>
+    </div>
+    <div class="features">
+        <div class="feature-item">
+            <i class="fas fa-bed"></i> Spacious Bedroom(s)
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-couch"></i> Seating Area / Living Space
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-bath"></i> Modern Bathroom(s)
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-utensils"></i> On-site Restaurants & Room Service
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-wifi"></i> Free High-Speed Wi-Fi
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-swimmer"></i> Outdoor & Indoor Pools
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-dumbbell"></i> Fitness Center
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-spa"></i> Full-Service Spa
+        </div>
+
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Emily Carter:</strong> "Pure elegance! The executive lounge was worth the upgrade—fantastic
+                service and premium drinks.
+                The spa was relaxing, and our room was spotless. One of the best Hiltons I’ve stayed at in Egypt."
+
+            </p>
+        </div>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p><strong>James Wilson:</strong> "Amazing stay at Hilton Alexandria King's Ranch! The room was comfortable,
+                the
+                amenities were top-notch, and the location was perfect for relaxation."</p>
+        </div>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Kareem Ahmed:</strong> "The experience at Hilton Alexandria King's Ranch was unforgettable. From
+                the
+                luxurious decor to the exceptional dining, I truly felt pampered during my stay!"</p>
+        </div>
+    </div>
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+
+    <div class="container" id="7">
+        <div class="hotel-name">Steigenberger Cecil Hotel</div>
+        <div class="left">
+            <img src="imgss/steign.jpg" alt="Le Méridien Cairo Airport Main Image" class="main-image" style="  height: 450px;
+  object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="imgss/small4.jpg" alt="Le Méridien Cairo Airport Small Image 1" class="right-img small-custom"
+                style="  height: 220px;
+  object-fit: cover;">
+            <img src="imgss/small5.jpg" alt="Le Méridien Cairo Airport Small Image 2" class="small-image" style="  height: 230px;
+  object-fit: cover;">
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <div class="score">(4.3)</div>
+                </div>
+            </div>
+
+            <div class="description">
+                Steigenberger Cecil Hotel is a historic 4-star hotel located in the heart of Alexandria, Egypt.
+                Overlooking the Mediterranean Sea, it has welcomed guests since 1929 and is known for its classic
+                architecture, elegant interiors, and rich history. The hotel offers comfortable rooms,
+                fine dining, and easy access to Alexandria's main attractions, making it a popular choice for both
+                leisure and business travelers.
+            </div>
+            <a href="https://maps.app.goo.gl/iLsUEK7KoGof1AiV8" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+
+        <div class="actions-box">
+            <div class="price-label"><span style="color: #ff9800;">$85 </span>per Day</div>
+            <a href="payment.html" class="cta-button">Book Now!</a>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-item"><i class="fas fa-bed"></i> Comfortable Single Bed</div>
+        <div class="feature-item"><i class="fas fa-bath"></i> Private Bathroom with Premium Toiletries</div>
+        <div class="feature-item"><i class="fas fa-tv"></i> Flat-screen TV with International Channels</div>
+        <div class="feature-item"><i class="fas fa-wifi"></i> Free High-Speed Wi-Fi</div>
+        <div class="feature-item"><i class="fas fa-coffee"></i> Tea & Coffee Making Facilities</div>
+        <div class="feature-item"><i class="fas fa-snowflake"></i> Air Conditioning</div>
+        <div class="feature-item"><i class="fas fa-lock"></i> In-room Safe</div>
+        <div class="feature-item"><i class="fas fa-window-maximize"></i> Balcony with City or Sea View (in select rooms)
+        </div>
+
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Lee John:</strong> "We had a great stay at Cecil. Our room was spacious and had a side view of
+                the Mediterranean Sea. Amazing view throughout the day."</p>
+        </div>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p><strong>Mark Michael:</strong> "I liked the quietness of the room and the sea view. It was a very
+                relaxing experience. I will definitely come back!"</p>
+        </div>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Peterson Reynolds:</strong> "The hotel's classic decor is very beautiful, taking you back to a
+                beautiful era. It has many features, and the staff is friendly."</p>
+        </div>
+    </div>
+
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="container" id="8">
+        <div class="hotel-name">TOLIP Hotel</div>
+        <div class="left">
+            <img src="imgss/big3.webp" alt="Le Passage Cairo Main Image" class="main-image"
+                style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="imgss/small6.webp" alt="Le Passage Cairo Small Image 1" class="right-img"
+                style="height: 220px; object-fit: cover;">
+            <img src="imgss/small7.webp" alt="Le Passage Cairo Small Image 2" class="right-img"
+                style="height: 220px; object-fit: cover;">
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <div class="score">(4.3)</div>
+                </div>
+            </div>
+
+            <div class="description">
+                Tolip Hotel Alexandria is a luxurious 5-star hotel located in the heart of Alexandria, offering modern
+                accommodations with stunning sea or city views. The hotel features an outdoor pool, spa, gym, and
+                multiple dining options serving local and international cuisine. Guests can enjoy free Wi-Fi,
+                spacious rooms with balconies, and excellent hospitality, making it a great choice for both leisure and
+                business travelers.
+            </div>
+            <a href="https://maps.app.goo.gl/FgjGyK3vjThgxA7U6" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+
+        <div class="actions-box">
+            <div class="price-label"><span style="color: #ff9800;">$85 </span>per Day</div>
+            <a href="payment.html" class="cta-button">Book Now!</a>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-item"><i class="fas fa-bed"></i> Comfortable Rooms & Suites</div>
+        <div class="feature-item"><i class="fas fa-bath"></i> Private Bathroom with Luxury Amenities</div>
+        <div class="feature-item"><i class="fas fa-swimmer"></i> Outdoor Swimming Pool</div>
+        <div class="feature-item"><i class="fas fa-glass-cheers"></i> Casino & Entertainment Facilities</div>
+        <div class="feature-item"><i class="fas fa-shuttle-van"></i> Free Airport Shuttle Service</div>
+        <div class="feature-item"><i class="fas fa-wifi"></i> Complimentary High-Speed Wi-Fi</div>
+        <div class="feature-item"><i class="fas fa-tv"></i> Flat-screen TVs in Every Room</div>
+        <div class="feature-item"><i class="fas fa-spa"></i> Spa & Wellness Center</div>
+        <div class="feature-item"><i class="fas fa-dumbbell"></i> Fully Equipped Gym</div>
+
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p><strong>Turner James:</strong> "An unforgettable luxury experience! The elegant ambiance, impeccable
+                service, and stunning accommodations made our stay perfect."</p>
+        </div>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Hossam Ali:</strong> "Great hotel with modern amenities, but Wi-Fi could be improved. Overall, a
+                comfortable stay."</p>
+        </div>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>James Reynolds:</strong> "Check-in was fast, and the staff was always smiling. Room service was
+                quick, and breakfast was delicious despite the crowd."</p>
+        </div>
+    </div>
+
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="container" id="9">
+        <div class="hotel-name">Four Seasons Hotel</div>
+        <div class="left">
+            <img src="imgss/big4.jpg" alt="Ramses Hilton Cairo Main Image" class="main-image"
+                style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="imgss/small8.jpg" alt="Ramses Hilton Cairo Room View" class="right-img"
+                style="height: 220px; object-fit: cover;">
+            <img src="imgss/small9.jpg" alt="Ramses Hilton Cairo Pool" class="right-img"
+                style="height: 220px; object-fit: cover;">
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <div class="score">(4.7)</div>
+                </div>
+            </div>
+
+            <div class="description">
+                Four Seasons Hotel Alexandria at San Stefano is a luxurious seaside resort offering modern
+                accommodations with breathtaking Mediterranean views.
+                The hotel features a private beach, multiple fine-dining restaurants, a full-service spa, and an
+                infinity pool.
+                Guests can enjoy elegant rooms with balconies, world-class hospitality, and exclusive amenities,
+                making it a top choice for travelers seeking comfort and sophistication in Alexandria.
+            </div>
+            <a href="https://maps.app.goo.gl/HJzPUd87X9AXGTg19" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+
+        <div class="actions-box">
+            <div class="price-label"><span style="color: #ff9800;">$300 </span>per Day</div>
+            <a href="payment.html" class="cta-button">Book Now!</a>
+        </div>
+    </div>
+
+    <div class="features">
+       <div class="feature-item"><i class="fas fa-bed"></i> 1 Bedroom</div>
+<div class="feature-item"><i class="fas fa-bath"></i> 1 Bathroom</div>
+<div class="feature-item"><i class="fas fa-swimmer"></i> Outdoor & Indoor Pools</div>
+<div class="feature-item"><i class="fas fa-glass-cheers"></i> Exclusive Beachside Lounge</div>
+<div class="feature-item"><i class="fas fa-wifi"></i> Free High-Speed Wi-Fi</div>
+<div class="feature-item"><i class="fas fa-tv"></i> Flat-screen TV with Satellite Channels</div>
+<div class="feature-item"><i class="fas fa-spa"></i> Luxury Spa & Wellness Center</div>
+<div class="feature-item"><i class="fas fa-dumbbell"></i> Fitness Center & Squash Court</div>
+<div class="feature-item"><i class="fas fa-umbrella-beach"></i> Private Sandy Beach</div>
+
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Daniel Tomas:</strong>"A truly five-star experience! The attention to detail in every aspect of the hotel made my stay unforgettable."</p>
+        </div>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Emma John:</strong>"Loved everything about this hotel! The infinity pool, the restaurants, and the overall ambiance were perfect."</p>
+        </div>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Maya Samy:</strong>"The hotel is simply stunning! The sea view from my room was breathtaking, and the service was impeccable. Highly recommended!"</p>
+        </div>
+    </div>
+
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="container" id="10">
+        <div class="hotel-name">Romance Hotel</div>
+        <div class="left">
+            <img src="imgss/romance.jpg" alt="The Nile Ritz-Carlton Cairo Main Image" class="main-image"
+                style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="imgss/small10.jpg" alt="The Nile Ritz-Carlton Cairo Room View" class="right-img"
+                style="height: 220px; object-fit: cover;">
+            <img src="imgss/small11.jpg" alt="The Nile Ritz-Carlton Cairo Pool" class="right-img"
+                style="height: 220px; object-fit: cover;">
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <div class="score">(4.0)</div>
+                </div>
+            </div>
+
+            <div class="description">
+              Romance Alexandria Hotel is a 4-star hotel located on Alexandria’s Corniche. It offers comfortable rooms,
+               many with sea views, and is close to major attractions like Stanley Bridge. The hotel features restaurants, friendly service, and a relaxing atmosphere.             
+            </div>
+            <a href="https://maps.app.goo.gl/sizjCnxVQCvxzCJ17" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+
+        <div class="actions-box">
+            <div class="price-label"><span style="color: #ff9800;">$70 </span>per Day</div>
+            <a href="payment.html" class="cta-button">Book Now!</a>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-item"><i class="fas fa-bed"></i> 1 Bedroom</div>
+        <div class="feature-item"><i class="fas fa-bath"></i> 1 Bathroom</div>
+        <div class="feature-item"><i class="fas fa-swimmer"></i> Olympic-sized Pool</div>
+        <div class="feature-item"><i class="fas fa-utensils"></i> 9 Restaurants & Bars</div>
+        <div class="feature-item"><i class="fas fa-spa"></i> Full-Service Spa</div>
+        <div class="feature-item"><i class="fas fa-glass-cheers"></i> Casino</div>
+        <div class="feature-item"><i class="fas fa-wifi"></i> Free Wi-Fi</div>
+        <div class="feature-item"><i class="fas fa-tv"></i> Flat-screen TV</div>
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Layla Amgad:</strong>
+"Wonderful experience! Amazing view from the balcony, tasty breakfast, and very helpful staff. Would definitely come back."</p>
+        </div>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p><strong>Said Mohamed:</strong> 
+"The location is great, close to restaurants and Stanley Bridge. The room was okay, but a bit outdated. Still, good value for money."
+
+</p>
+        </div>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Smith Marco:</strong>"One of the best hotels I’ve stayed at! The staff was incredibly friendly, and the rooms were spacious and elegant."</p>
+        </div>
+    </div>
+
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+
+    <div class="container" id="11">
+        <div class="hotel-name">Pyramisa Hotel</div>
+        <div class="left">
+            <img src="imgss/big5.jpg" alt="Large Image" style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="imgss/small12.webp" alt="Small Image 1" style="height: 220px; object-fit: cover;">
+            <img src="imgss/small14.jpg" alt="Small Image 2" style="height: 220px; object-fit: cover;">
+        </div>
+
+    </div>
+    <div class="info-section">
+         <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-quarter-alt"></i>
+                    <div class="score">(4.1)</div>
+                </div>
+            </div>
+
+            <div class="description">
+               Pyramisa Hotel Luxor is a luxurious 5-star hotel located on the Nile River's east bank in the heart of Luxor. 
+               It offers spacious rooms with stunning views of the Nile or the lush gardens. The hotel features multiple restaurants, 
+               a large outdoor swimming pool, a spa, and modern amenities to ensure a comfortable stay.
+               Its prime location makes it an excellent base for exploring Luxor’s famous attractions, including Karnak Temple and Luxor Temple.
+            </div>
+            <a href="https://maps.app.goo.gl/5ebB7JABPPEkbmK57" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+
+        </div>
+        <div class="actions-box">
+            <div class="price-label"> <span style="color:  #ff9800;">$30 </span>per Day</div>
+            <a href="payment.html" class="cta-button">Book Now!</a>
+        </div>
+    </div>
+    <div class="features">
+<div class="feature-item">
+    <i class="fas fa-bed"></i> Spacious Nile or Garden View Rooms
+</div>
+<div class="feature-item">
+    <i class="fas fa-utensils"></i> Multiple Restaurants & Room Service
+</div>
+<div class="feature-item">
+    <i class="fas fa-swimmer"></i> Outdoor Swimming Pool
+</div>
+<div class="feature-item">
+    <i class="fas fa-spa"></i> Spa & Wellness Center
+</div>
+<div class="feature-item">
+    <i class="fas fa-dumbbell"></i> Fitness Center
+</div>
+<div class="feature-item">
+    <i class="fas fa-wifi"></i> Free Wi-Fi
+</div>
+<div class="feature-item">
+    <i class="fas fa-map-marker-alt"></i> Prime Location in Luxor City Center
+</div>
+<div class="feature-item">
+    <i class="fas fa-umbrella-beach"></i> Sun Terrace & Garden Areas
+</div>
+
+
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+        <div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+    </div>
+    <p><strong>Sophie Turner:</strong> "Beautiful location right by the Nile! The garden views from our balcony were amazing. The pool area was clean and relaxing. Staff were helpful, but Wi-Fi could be better in some areas."</p>
+</div>
+
+<div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p><strong>Mohamed El Sayed:</strong> "One of the best hotels in Luxor! Spacious room, excellent breakfast buffet, and very close to Luxor Temple. Definitely worth it for both comfort and location."</p>
+</div>
+
+<div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p><strong>Laura Bennett:</strong> "Absolutely loved our stay at Pyramisa. The spa was wonderful, and the staff were always smiling and ready to help. I especially enjoyed the sunset over the Nile from the terrace."</p>
+</div>
+
+    </div>
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+
+    <div class="container" id="12">
+        <div class="hotel-name">Pavillon Winter Hotel</div>
+        <div class="left">
+            <img src="imgss/pavillon.jpg" alt="Le Méridien Cairo Airport Main Image" class="main-image" style="  height: 450px;
+  object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="imgss/small16.jpg" alt="Le Méridien Cairo Airport Small Image 1" class="right-img small-custom"
+                style="  height: 220px;
+  object-fit: cover;">
+            <img src="imgss/small17.jpg" alt="Le Méridien Cairo Airport Small Image 2" class="small-image" style="  height: 230px;
+  object-fit: cover;">
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <div class="score">(4.5)</div>
+                </div>
+            </div>
+
+            <div class="description">
+                Located just steps away from the magnificent Luxor Temple, Pavillon Winter Hotel blends comfort with heritage.
+                 Surrounded by lush tropical gardens, this elegant hotel offers a peaceful escape in the heart of the city. 
+                 Guests can relax by the outdoor pool, enjoy a meal with garden views, or stroll along the nearby Nile Corniche. 
+                 With its classic design, warm hospitality, and central location, it’s a perfect base for discovering Luxor’s ancient treasures.
+         </div>
+            <a href="https://maps.app.goo.gl/6ndF2kcZ8qsxybpG8" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+
+        <div class="actions-box">
+            <div class="price-label"><span style="color: #ff9800;">$30 </span>per Day</div>
+            <a href="payment.html" class="cta-button">Book Now!</a>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-item"><i class="fas fa-bed"></i> Cozy Twin or King Bed</div>
+<div class="feature-item"><i class="fas fa-bath"></i> Private Bathroom</div>
+<div class="feature-item"><i class="fas fa-tv"></i> Satellite TV</div>
+<div class="feature-item"><i class="fas fa-wifi"></i> Free Wi-Fi</div>
+<div class="feature-item"><i class="fas fa-coffee"></i> Tea & Coffee Maker</div>
+<div class="feature-item"><i class="fas fa-snowflake"></i> Air Conditioning</div>
+<div class="feature-item"><i class="fas fa-lock"></i> Safe Box</div>
+<div class="feature-item"><i class="fas fa-tree"></i> Balcony with Garden View</div>
+
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+       <div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p><strong>Sarah Mitchell:</strong> "A wonderful experience! The location is perfect—right in the heart of Alexandria. The historic charm of the hotel made our stay special."</p>
+</div>
+
+<div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+    </div>
+    <p><strong>Ahmed Youssef:</strong> "Great view of the Corniche and the sea. Breakfast was delicious and the staff were very helpful. Just wish the room was a bit more modern."</p>
+</div>
+
+<div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p><strong>Emily Davis:</strong> "The building is full of character and history. I really enjoyed the peaceful atmosphere and the elegant interior design. Highly recommended!"</p>
+</div>
+
+    </div>
+
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="container" id="13">
+        <div class="hotel-name">Sonesta St. George Hotel</div>
+        <div class="left">
+            <img src="imgss/big6.jpg" alt="Le Passage Cairo Main Image" class="main-image"
+                style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="imgss/small8.jpg" alt="Le Passage Cairo Small Image 1" class="right-img"
+                style="height: 220px; object-fit: cover;">
+            <img src="imgss/small19.webp" alt="Le Passage Cairo Small Image 2" class="right-img"
+                style="height: 220px; object-fit: cover;">
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <div class="score">(4.5)</div>
+                </div>
+            </div>
+
+            <div class="description">
+                Sonesta St. George Hotel Luxor combines comfort, style, and prime location along the Nile River. 
+                This elegant 5-star hotel features spacious rooms with modern décor, many offering panoramic views of the Nile. 
+                Guests can enjoy a wide range of amenities including gourmet dining, a relaxing spa, and a beautiful outdoor pool. 
+                With its close proximity to Luxor Temple and the city center, it’s an excellent choice for both leisure and business travelers.
+            </div>
+            <a href="https://maps.app.goo.gl/P6MmxBJH6rAKxpHL8" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+
+        <div class="actions-box">
+            <div class="price-label"><span style="color: #ff9800;">$80 </span>per Day</div>
+            <a href="payment.html" class="cta-button">Book Now!</a>
+        </div>
+    </div>
+
+    <div class="features">
+       <div class="feature-item"><i class="fas fa-bed"></i> Stylish Rooms with Nile Views</div>
+<div class="feature-item"><i class="fas fa-bath"></i> Modern Bathrooms with Amenities</div>
+<div class="feature-item"><i class="fas fa-swimmer"></i> Outdoor Pool by the Nile</div>
+<div class="feature-item"><i class="fas fa-glass-cheers"></i> Bar & Evening Entertainment</div>
+<div class="feature-item"><i class="fas fa-shuttle-van"></i> Airport Shuttle on Request</div>
+<div class="feature-item"><i class="fas fa-wifi"></i> Free Wi-Fi</div>
+<div class="feature-item"><i class="fas fa-tv"></i> Satellite TV</div>
+<div class="feature-item"><i class="fas fa-spa"></i> Spa & Health Club</div>
+
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+       <div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+    </div>
+    <p><strong>Mera Mitchell:</strong> "Beautiful view of the Nile, and the room was clean and spacious. The spa was a great way to relax after sightseeing."</p>
+</div>
+<div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p><strong>Omar Youssef:</strong> "Excellent location and friendly staff. Breakfast had a wide variety and the hotel atmosphere felt very elegant."</p>
+</div>
+<div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p><strong>Linda Brown:</strong> "Loved the pool by the Nile! Everything was clean and the service exceeded our expectations."</p>
+</div>
+
+    </div>
+
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="container" id="14">
+        <div class="hotel-name">Iberotel Hotel</div>
+        <div class="left">
+            <img src="imgss/big7.jpg" alt="Ramses Hilton Cairo Main Image" class="main-image"
+                style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="imgss/small20.jpg" alt="Ramses Hilton Cairo Room View" class="right-img"
+                style="height: 220px; object-fit: cover;">
+            <img src="imgss/small22.jpg" alt="Ramses Hilton Cairo Pool" class="right-img"
+                style="height: 220px; object-fit: cover;">
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <div class="score">(4.3)</div>
+                </div>
+            </div>
+
+            <div class="description">
+               Iberotel Luxor Hotel is a charming 4-star hotel located on the east bank of the Nile River, just a short walk from Luxor Temple.
+                The hotel offers stunning river views, comfortable rooms, and a relaxing atmosphere ideal for both leisure and business travelers.
+                 Guests can enjoy a unique floating pool on the Nile, delicious dining options, and easy access to Luxor’s famous historical sites.
+            </div>
+            <a href="https://maps.app.goo.gl/tV7DReEVKgUdqF4R8" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+
+        <div class="actions-box">
+            <div class="price-label"><span style="color: #ff9800;">$60 </span>per Day</div>
+            <a href="payment.html" class="cta-button">Book Now!</a>
+        </div>
+    </div>
+
+    <div class="features">
+     <div class="feature-item"><i class="fas fa-bed"></i> Cozy Rooms with Nile View</div>
+<div class="feature-item"><i class="fas fa-swimmer"></i> Floating Pool on the Nile</div>
+<div class="feature-item"><i class="fas fa-wifi"></i> Free Wi-Fi</div>
+<div class="feature-item"><i class="fas fa-tv"></i> Satellite TV</div>
+<div class="feature-item"><i class="fas fa-utensils"></i> On-site Restaurant & Bar</div>
+<div class="feature-item"><i class="fas fa-tree"></i> Garden Courtyard and Relaxing Outdoor Areas</div>
+
+
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+        <div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p><strong>Oliver Smith:</strong> "The view of the Nile from the pool was incredible. Peaceful and relaxing atmosphere all around."</p>
+</div>
+<div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+    </div>
+    <p><strong>Mazen Ahmed:</strong> "Great location and clean rooms. Breakfast had many options. Would definitely return!"</p>
+</div>
+<div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p><strong>Mohamed Tarek:</strong> "Friendly staff and amazing Nile view. The floating pool is a unique touch!"</p>
+</div>
+
+    </div>
+
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="container" id="15">
+        <div class="hotel-name">Nefertiti Hotel</div>
+        <div class="left">
+            <img src="imgss/small24.jpg" alt="The Nile Ritz-Carlton Cairo Main Image" class="main-image"
+                style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="imgss/small23.jpg" alt="The Nile Ritz-Carlton Cairo Room View" class="right-img"
+                style="height: 220px; object-fit: cover;">
+            <img src="imgss/small25.jpg" alt="The Nile Ritz-Carlton Cairo Pool" class="right-img"
+                style="height: 220px; object-fit: cover;">
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <div class="score">(4.3)</div>
+                </div>
+            </div>
+
+            <div class="description">
+             Nefertiti Hotel is a budget-friendly hotel located in the heart of Luxor, right across from Luxor Temple. It offers clean rooms, 
+             friendly service, and a rooftop terrace with stunning views of the Nile and ancient ruins. The hotel also features an on-site 
+             restaurant and offers tour services, making it a great choice for travelers looking to explore the city on a budget.            
+            </div>
+            <a href="https://maps.app.goo.gl/gNSu5cJbZr4Vaagd8" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+
+        <div class="actions-box">
+            <div class="price-label"><span style="color: #ff9800;">$45 </span>per Day</div>
+            <a href="payment.html" class="cta-button">Book Now!</a>
+        </div>
+    </div>
+
+    <div class="features">
+      <div class="feature-item"><i class="fas fa-bed"></i> Comfortable Rooms</div>
+<div class="feature-item"><i class="fas fa-bath"></i> Private Bathroom</div>
+<div class="feature-item"><i class="fas fa-utensils"></i> On-site Rooftop Restaurant</div>
+<div class="feature-item"><i class="fas fa-wifi"></i> Free Wi-Fi</div>
+<div class="feature-item"><i class="fas fa-tv"></i> Satellite TV</div>
+<div class="feature-item"><i class="fas fa-map-marker-alt"></i> Prime Location Near Luxor Temple</div>
+<div class="feature-item"><i class="fas fa-coffee"></i> Free Breakfast Included</div>
+<div class="feature-item"><i class="fas fa-concierge-bell"></i> Tour Desk & Friendly Staff</div>
+
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+        <div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p><strong>Karim Youssef:</strong> "Amazing location just a few steps from Luxor Temple. Staff were kind and very helpful."</p>
+</div>
+
+<div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+    </div>
+    <p><strong>Linda Rose:</strong> "The rooftop restaurant has a lovely view. Room was basic but clean and comfortable."</p>
+</div>
+
+<div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p><strong>Mohamed Adel:</strong> "Perfect for budget travelers. Great service, and the team helped arrange tours easily."</p>
+</div>
+
+    </div>
+
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+      <div class="container" id="16">
+        <div class="hotel-name">Sofitel Legend Old Cataract</div>
+        <div class="left">
+            <img src="imgss/small27.jpg" alt="Large Image" style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="imgss/small26.webp" alt="Small Image 1" style="height: 220px; object-fit: cover;">
+            <img src="imgss/small29.jpeg" alt="Small Image 2" style="height: 220px; object-fit: cover;">
+        </div>
+
+    </div>
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <div class="score">(4.9)</div>
+                </div>
+            </div>
+
+            <div class="description">
+                Sofitel Legend Old Cataract in Aswan is a historic luxury hotel overlooking the Nile. Blending classic
+                elegance with modern comfort,
+                it features beautifully designed rooms, a riverside pool, fine dining, and a peaceful spa. Set in a
+                grand 19th-century palace,
+                the hotel offers breathtaking views and a unique experience in one of Egypt’s most iconic locations.
+            </div>
+            <a href="https://maps.app.goo.gl/y7hpN6Z8eFffUwfh7" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+
+        </div>
+        <div class="actions-box">
+            <div class="price-label"> <span style="color:  #ff9800;">$320 </span>per Day</div>
+            <a href="payment.html" class="cta-button">Book Now!</a>
+        </div>
+    </div>
+    <div class="features">
+        <div class="feature-item">
+            <i class="fas fa-bed"></i> Elegant Rooms with Nile or Garden Views
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-utensils"></i> Fine Dining Restaurants & 24h Room Service
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-swimmer"></i> Outdoor Infinity Pool Overlooking the Nile
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-spa"></i> Full-Service Spa & Hammam
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-dumbbell"></i> Modern Fitness Center
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-wifi"></i> Free Wi-Fi in All Areas
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-map-marker-alt"></i> Located Near Elephantine Island & Nubian Museum
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-umbrella-beach"></i> Sun Deck with Nile Views
+        </div>
+
+
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p><strong>Isabella Clarke:</strong> "Historic charm with stunning Nile views. The sunset from the terrace
+                was magical. Room service was a bit slow, but overall an amazing experience."</p>
+        </div>
+
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Ahmed Nabil:</strong> "Exceptional service, luxurious room, and perfect location in Aswan. The
+                staff made our anniversary unforgettable. Highly recommended!"</p>
+        </div>
+
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Emily Watson:</strong> "The spa experience was first-class and the architecture of the hotel is
+                breathtaking. A perfect mix of elegance and history."</p>
+        </div>
+
+
+    </div>
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+
+    <div class="container" id="17">
+        <div class="hotel-name">Basma Hotel</div>
+        <div class="left">
+            <img src="imgss/big9.jpg" alt="Le Méridien Cairo Airport Main Image" class="main-image" style="  height: 450px;
+  object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="imgss/small30.jpg" alt="Le Méridien Cairo Airport Small Image 1" class="right-img small-custom"
+                style="  height: 220px;
+  object-fit: cover;">
+            <img src="imgss/small31.jpg" alt="Le Méridien Cairo Airport Small Image 2" class="small-image" style="  height: 230px;
+  object-fit: cover;">
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <div class="score">(3.9)</div>
+                </div>
+            </div>
+
+            <div class="description">
+                Basma Hotel is beautifully located on the highest hill in Aswan, offering stunning panoramic views of
+                the Nile River.
+                Just a short walk from the Nubian Museum and the city center, the hotel combines modern comfort with
+                traditional charm.
+                Guests can enjoy spacious air-conditioned rooms, an outdoor swimming pool, a restaurant serving local
+                and international cuisine,
+                and friendly service. It’s an ideal choice for travelers looking for relaxation and scenic surroundings.
+            </div>
+            <a href="https://maps.app.goo.gl/ih6e3hWfXXFCGWbV7" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+
+        <div class="actions-box">
+            <div class="price-label"><span style="color: #ff9800;">$85 </span>per Day</div>
+            <a href="payment.html" class="cta-button">Book Now!</a>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-item"><i class="fas fa-bed"></i> Comfortable Twin or King Beds</div>
+        <div class="feature-item"><i class="fas fa-wifi"></i> Free Wi-Fi</div>
+        <div class="feature-item"><i class="fas fa-tv"></i> Satellite TV</div>
+        <div class="feature-item"><i class="fas fa-tree"></i> Balcony with Nile or Garden View</div>
+        <div class="feature-item"><i class="fas fa-swimmer"></i> Outdoor Swimming Pool</div>
+        <div class="feature-item"><i class="fas fa-utensils"></i> On-site Restaurant & Bar</div>
+        <div class="feature-item"><i class="fas fa-car"></i> Free Parking</div>
+        <div class="feature-item"><i class="fas fa-snowflake"></i> Air Conditioning</div>
+        <div class="feature-item"><i class="fas fa-concierge-bell"></i> 24-Hour Front Desk</div>
+
+
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>James Carter:</strong> "Stunning view of the Mediterranean from our balcony! The location is
+                unbeatable and the staff were very courteous."</p>
+        </div>
+
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Nour El Din:</strong> "Loved the old charm of the hotel and how close it is to the Citadel and
+                other attractions. The service was excellent."</p>
+        </div>
+
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Olivia Martin:</strong> "A peaceful and relaxing stay. The architecture is beautiful, and
+                breakfast with a sea view was the highlight of our trip."</p>
+        </div>
+
+    </div>
+
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="container" id="18">
+        <div class="hotel-name">Sonesta Nouba Hotel</div>
+        <div class="left">
+            <img src="imgss/big10.jpg" alt="Le Passage Cairo Main Image" class="main-image"
+                style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="imgss/small32.jpg" alt="Le Passage Cairo Small Image 1" class="right-img"
+                style="height: 220px; object-fit: cover;">
+            <img src="imgss/small33.jpg" alt="Le Passage Cairo Small Image 2" class="right-img"
+                style="height: 220px; object-fit: cover;">
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <div class="score">(4.6)</div>
+                </div>
+            </div>
+
+            <div class="description">
+                Sonesta Nouba Hotel Aswan is a boutique-style hotel that offers guests an authentic Nubian experience
+                combined with modern comfort.
+                Located on the banks of the Nile River, it features beautifully designed rooms with Nubian décor,
+                private terraces, and stunning views of the river.
+                The hotel is perfect for travelers seeking peace, culture, and a warm atmosphere, just a short distance
+                from Aswan’s major attractions.
+            </div>
+            <a href="https://maps.app.goo.gl/P6MmxBJH6rAKxpHL8" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+
+        <div class="actions-box">
+            <div class="price-label"><span style="color: #ff9800;">$90 </span>per Day</div>
+            <a href="payment.html" class="cta-button">Book Now!</a>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-item"><i class="fas fa-bed"></i> Stylish Nubian-style Rooms with Nile Views</div>
+        <div class="feature-item"><i class="fas fa-bath"></i> Modern Bathrooms with Full Amenities</div>
+        <div class="feature-item"><i class="fas fa-swimmer"></i> Outdoor Pool Overlooking the Nile</div>
+        <div class="feature-item"><i class="fas fa-glass-cheers"></i> Bar & Nubian-themed Evening Entertainment</div>
+        <div class="feature-item"><i class="fas fa-shuttle-van"></i> Airport Shuttle Service Available</div>
+        <div class="feature-item"><i class="fas fa-wifi"></i> Complimentary Wi-Fi Throughout the Hotel</div>
+        <div class="feature-item"><i class="fas fa-tv"></i> Flat-screen TVs with Satellite Channels</div>
+        <div class="feature-item"><i class="fas fa-spa"></i> Wellness Center with Massage Services</div>
+
+
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+        <div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+    </div>
+    <p><strong>Mera Mitchell:</strong> "Beautiful view of the Nile, and the room was clean and spacious. The spa was a great way to relax after sightseeing."</p>
+</div>
+
+<div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p><strong>Omar Youssef:</strong> "Excellent location and friendly staff. Breakfast had a wide variety and the hotel atmosphere felt very elegant."</p>
+</div>
+
+<div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p><strong>Linda Brown:</strong> "Loved the pool by the Nile! Everything was clean and the service exceeded our expectations."</p>
+</div>
+
+
+    </div>
+
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="container" id="19">
+        <div class="hotel-name">Kato Dool Wellness Resort</div>
+        <div class="left">
+            <img src="imgss/big11.jpg" alt="Ramses Hilton Cairo Main Image" class="main-image"
+                style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="imgss/small34.avif" alt="Ramses Hilton Cairo Room View" class="right-img"
+                style="height: 220px; object-fit: cover;">
+            <img src="imgss/small36.jpg" alt="Ramses Hilton Cairo Pool" class="right-img"
+                style="height: 220px; object-fit: cover;">
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <div class="score">(4.5)</div>
+                </div>
+            </div>
+            <div class="description">
+                Kato Dool Wellness Resort offers a unique Nubian experience right on the banks of the Nile. 
+                Blending traditional Nubian architecture with modern comfort, the resort features colorful, eco-friendly rooms, peaceful river views,
+                 and a calming atmosphere. It’s the perfect getaway for travelers looking to relax, explore Aswan’s culture, and enjoy wellness-focused hospitality.
+            </div>
+            <a href="https://maps.app.goo.gl/DAYGu1or3KAXN2WG8" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+
+        <div class="actions-box">
+            <div class="price-label"><span style="color: #ff9800;">$160 </span>per Day</div>
+            <a href="payment.html" class="cta-button">Book Now!</a>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-item"><i class="fas fa-bed"></i> Nubian-style rooms with Nile view</div>
+<div class="feature-item"><i class="fas fa-swimmer"></i> Floating pool over the Nile</div>
+<div class="feature-item"><i class="fas fa-wifi"></i> Free Wi-Fi</div>
+<div class="feature-item"><i class="fas fa-tv"></i> Satellite TV</div>
+<div class="feature-item"><i class="fas fa-utensils"></i> Local & international restaurant</div>
+<div class="feature-item"><i class="fas fa-tree"></i> Peaceful garden areas</div>
+
+
+
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+       <div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+    </div>
+    <p><strong>Sophie Allen:</strong> "Unique Nubian vibes and a calm setting. Loved relaxing in the garden after a long day exploring Aswan."</p>
+</div>
+
+<div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p><strong>Hassan Mostafa:</strong> "One of the most peaceful hotels I’ve ever stayed in. Staff were very polite and the food was delicious."</p>
+</div>
+
+<div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p><strong>Nadia Ibrahim:</strong> "The floating pool was amazing at sunset. Very clean, and the design of the rooms is warm and authentic."</p>
+</div>
+
+    </div>
+
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="container" id="20">
+        <div class="hotel-name">Movenpick Resort</div>
+        <div class="left">
+            <img src="imgss/big13.jpg" alt="The Nile Ritz-Carlton Cairo Main Image" class="main-image"
+                style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="imgss/small37.jpg" alt="The Nile Ritz-Carlton Cairo Room View" class="right-img"
+                style="height: 220px; object-fit: cover;">
+            <img src="imgss/small38.webp" alt="The Nile Ritz-Carlton Cairo Pool" class="right-img"
+                style="height: 220px; object-fit: cover;">
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <div class="score">(4.7)</div>
+                </div>
+            </div>
+
+            <div class="description">
+               Mövenpick Resort Aswan is a luxury 5-star resort located on Elephantine Island in the heart of the Nile.
+                Surrounded by lush gardens and panoramic river views, the resort offers elegant rooms and suites with private balconies.
+                 Guests can enjoy a rooftop restaurant, outdoor pool, fitness center, and easy access to Aswan’s major attractions. 
+                 It’s the perfect mix of relaxation, nature, and Swiss hospitality.
+            </div>
+            <a href="https://maps.app.goo.gl/s8BbRwyBVNbGbAwP6" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+
+        <div class="actions-box">
+            <div class="price-label"><span style="color: #ff9800;">$130 </span>per Day</div>
+            <a href="payment.html" class="cta-button">Book Now!</a>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-item"><i class="fas fa-bed"></i> Clean, Comfortable Rooms</div>
+<div class="feature-item"><i class="fas fa-bath"></i> Private Bathroom with Hot Water</div>
+<div class="feature-item"><i class="fas fa-utensils"></i> Rooftop Restaurant with City Views</div>
+<div class="feature-item"><i class="fas fa-wifi"></i> Free Wi-Fi in All Areas</div>
+<div class="feature-item"><i class="fas fa-tv"></i> Flat-screen Satellite TV</div>
+<div class="feature-item"><i class="fas fa-map-marker-alt"></i> Just Steps from Luxor Temple</div>
+<div class="feature-item"><i class="fas fa-coffee"></i> Daily Free Breakfast</div>
+<div class="feature-item"><i class="fas fa-concierge-bell"></i> Helpful Staff & Tour Services</div>
+
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+       <div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p><strong>Amira Khaled:</strong> "Fantastic location near all the main attractions in Luxor. The staff were welcoming and the breakfast was a nice start to the day."</p>
+</div>
+
+<div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+    </div>
+    <p><strong>George Martin:</strong> "Clean rooms and peaceful vibes. The rooftop view during sunset was beautiful. Could use some updates, but overall very good."</p>
+</div>
+
+<div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+    </div>
+    <p><strong>Nour El-Din:</strong> "Comfortable stay with helpful staff. Great value for money and close to shops and temples."</p>
+</div>
+
+
+    </div>
+
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+<div class="container" id="21">
+        <div class="hotel-name">Premier Le Reve Hotel & Spa</div>
+        <div class="left">
+            <img src="imgss/big14.jpg" alt="Large Image" style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="imgss/small39.jpg" alt="Small Image 1" style="height: 220px; object-fit: cover;">
+            <img src="imgss/small40.jpg" alt="Small Image 2" style="height: 220px; object-fit: cover;">
+        </div>
+
+    </div>
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <div class="score">(4.7)</div>
+                </div>
+            </div>
+
+            <div class="description">
+                Premier Le Rêve Hotel & Spa is a luxury adults-only resort in Sahl Hasheesh, Hurghada. It offers elegant
+                rooms, a private beach,
+                several pools, and a relaxing spa. Guests enjoy fine dining, peaceful surroundings, and excellent
+                service — perfect for couples looking for a quiet, romantic getaway by the Red Sea.
+                The resort features a variety of international restaurants and beautifully landscaped gardens. With its
+                serene atmosphere and high-end amenities, it’s one of Hurghada’s top-rated destinations.
+            </div>
+            <a href="https://maps.app.goo.gl/F5kGbM4SqS1LDHCs9" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+
+        </div>
+        <div class="actions-box">
+            <div class="price-label"> <span style="color:  #ff9800;">$170 </span>per Day</div>
+            <a href="payment.html" class="cta-button">Book Now!</a>
+        </div>
+    </div>
+    <div class="features">
+        <div class="feature-item">
+            <i class="fas fa-bed"></i> Elegant Room with Sea or Pool View
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-bath"></i> Private Bathroom with Bathtub & Toiletries
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-utensils"></i> 24-Hour Room Service Available
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-tv"></i> Flat-Screen TV with Satellite Channels
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-wifi"></i> Free High-Speed Wi-Fi in Room
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-coffee"></i> In-Room Tea & Coffee Facilities
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-temperature-low"></i> Air Conditioning
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-lock"></i> Safety Deposit Box
+        </div>
+
+
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>James Carter:</strong> "One of the most beautiful hotels I’ve ever stayed at. The view of the
+                Nile from the terrace was unforgettable, and the architecture is full of history and elegance."</p>
+        </div>
+
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p><strong>Maha ElSharkawy:</strong> "Luxurious rooms and very friendly staff. Breakfast was excellent. Spa
+                services were great, but booking a massage took longer than expected."</p>
+        </div>
+
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Michael Lee:</strong> "Incredible place full of history. The atmosphere at sunset is magical.
+                Loved every moment of our stay!"</p>
+        </div>
+
+
+
+    </div>
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+
+    <div class="container" id="22">
+        <div class="hotel-name">SUNRISE Arabian Beach Resort</div>
+        <div class="left">
+            <img src="imgss/big15.jpg" alt="Le Méridien Cairo Airport Main Image" class="main-image" style="  height: 450px;
+  object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="imgss/small41.jpg" alt="Le Méridien Cairo Airport Small Image 1" class="right-img small-custom"
+                style="  height: 220px;
+  object-fit: cover;">
+            <img src="imgss/small42.webp" alt="Le Méridien Cairo Airport Small Image 2" class="small-image" style="  height: 230px;
+  object-fit: cover;">
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <div class="score">(4.8)</div>
+                </div>
+            </div>
+
+            <div class="description">
+                SUNRISE Arabian Beach Resort is a 5-star luxury hotel located right on the beach in Sharm El Sheikh.
+                It offers spacious and stylish rooms with a balcony or terrace. The resort features a private beach,
+                several outdoor pools,
+                a relaxing spa, and a modern gym. Guests can enjoy a variety of international cuisines at the on-site
+                restaurants.
+                It’s a perfect place for both relaxation and water activities like snorkeling and diving in the Red Sea.
+                The staff is friendly, and the atmosphere is peaceful.
+            </div>
+            <a href="https://maps.app.goo.gl/JPR5TqKoBWhKZith9" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+
+        <div class="actions-box">
+            <div class="price-label"><span style="color: #ff9800;">$200 </span>per Day</div>
+            <a href="payment.html" class="cta-button">Book Now!</a>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-item"><i class="fas fa-bed"></i> Elegant Room with Private Balcony/Terrace</div>
+        <div class="feature-item"><i class="fas fa-tv"></i> Flat‑Screen Satellite TV</div>
+        <div class="feature-item"><i class="fas fa-wifi"></i> Free High‑Speed Wi‑Fi</div>
+        <div class="feature-item"><i class="fas fa-coffee"></i> Tea & Coffee Facilities</div>
+        <div class="feature-item"><i class="fas fa-snowflake"></i> Air Conditioning</div>
+        <div class="feature-item"><i class="fas fa-umbrella-beach"></i> View of Garden, Pool, or Sea</div>
+        <div class="feature-item"><i class="fas fa-tint"></i> Private Bathroom with Bathtub</div>
+        <div class="feature-item"><i class="fas fa-concierge-bell"></i> 24‑Hour Room Service</div>
+
+
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Anna Müller:</strong> "The resort is absolutely beautiful! The pools, the gardens, and the beach
+                are all very clean and well-maintained. Great place for families."</p>
+        </div>
+
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p><strong>Mohamed El Sayed:</strong> "Food was excellent with many options at every meal. The staff were
+                always smiling and ready to help. Would definitely come back!"</p>
+        </div>
+
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Chloe Adams:</strong> "I loved the spa and the sea view from our room. Everything was relaxing
+                and peaceful. Perfect for a romantic getaway."</p>
+        </div>
+
+
+    </div>
+
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="container" id="23">
+        <div class="hotel-name">Rixos Hotel</div>
+        <div class="left">
+            <img src="imgss/big16.jpg" alt="Le Passage Cairo Main Image" class="main-image"
+                style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="imgss/small43.jpg" alt="Le Passage Cairo Small Image 1" class="right-img"
+                style="height: 220px; object-fit: cover;">
+            <img src="imgss/small44.jpg" alt="Le Passage Cairo Small Image 2" class="right-img"
+                style="height: 220px; object-fit: cover;">
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <div class="score">(4.9)</div>
+                </div>
+            </div>
+
+            <div class="description">
+                Rixos Hotel is a luxury resort located in beautiful Sharm El Sheikh. It offers spacious rooms,
+                private beaches, and multiple swimming pools. Guests can enjoy delicious food at several restaurants,
+                relax at the spa, or take part in fun activities and entertainment shows. With excellent service and
+                amazing views,
+                Rixos is perfect for both families and couples looking for a relaxing holiday by the Red Sea.
+            </div>
+            <a href="https://maps.app.goo.gl/hX2KDCCZoR8vRKnf6" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+
+        <div class="actions-box">
+            <div class="price-label"><span style="color: #ff9800;">$300 </span>per Day</div>
+            <a href="payment.html" class="cta-button">Book Now!</a>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-item"><i class="fas fa-bed"></i> Stylish Rooms with Balcony (Sea, Garden, or Pool View)
+        </div>
+        <div class="feature-item"><i class="fas fa-utensils"></i> Minibar Refilled Daily & 24‑Hour Room Service</div>
+        <div class="feature-item"><i class="fas fa-swimmer"></i> Free Access to 7 Outdoor Pools & Private Beach</div>
+        <div class="feature-item"><i class="fas fa-spa"></i> Spa with Sauna, Hammam & Massage Treatments</div>
+        <div class="feature-item"><i class="fas fa-dumbbell"></i> Fully Equipped Fitness Center & Sports Facilities
+        </div>
+        <div class="feature-item"><i class="fas fa-wifi"></i> Complimentary Wi‑Fi in Room & Public Areas</div>
+        <div class="feature-item"><i class="fas fa-tv"></i> Flat‑Screen TV with Satellite Channels</div>
+        <div class="feature-item"><i class="fas fa-car"></i> Free Self‑Parking & Valet Service</div>
+
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Anna Rodriguez:</strong> "Everything was perfect! The beach was clean, the food options were
+                amazing, and the evening shows were so entertaining."</p>
+        </div>
+
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p><strong>Karim Hassan:</strong> "Great service and very relaxing atmosphere. The rooms were modern and
+                very comfortable. Only issue was the Wi-Fi speed sometimes."</p>
+        </div>
+
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Emily Johnson:</strong> "Best vacation I've had in years. The adults-only setting made it
+                peaceful, and the pools and bars were fantastic."</p>
+        </div>
+
+
+    </div>
+
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="container" id="24">
+        <div class="hotel-name">Savoy Hotel</div>
+        <div class="left">
+            <img src="imgss/big17.jpg" alt="Ramses Hilton Cairo Main Image" class="main-image"
+                style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="imgss/small45.jpg" alt="Ramses Hilton Cairo Room View" class="right-img"
+                style="height: 220px; object-fit: cover;">
+            <img src="imgss/small46.jpg" alt="Ramses Hilton Cairo Pool" class="right-img"
+                style="height: 220px; object-fit: cover;">
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <div class="score">(4.6)</div>
+                </div>
+            </div>
+            <div class="description">
+                Savoy Hotel Sharm El Sheikh is a 5-star luxury resort located in the heart of Soho Square, just steps
+                away from the Red Sea.
+                The hotel offers elegant rooms and suites with stunning views of the sea, gardens, or pools. Guests can
+                enjoy multiple swimming pools, a private beach, world-class restaurants,
+                and a relaxing spa. It’s perfect for couples, families, and anyone looking for comfort and entertainment
+                in Sharm El Sheikh.
+            </div>
+            <a href="https://maps.app.goo.gl/6p9ukkAsc1LqZfqo6" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+
+        <div class="actions-box">
+            <div class="price-label"><span style="color: #ff9800;">$165 </span>per Day</div>
+            <a href="payment.html" class="cta-button">Book Now!</a>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-item"><i class="fas fa-bed"></i> Elegant rooms with private balcony or terrace</div>
+        <div class="feature-item"><i class="fas fa-tv"></i> Flat-screen satellite TV</div>
+        <div class="feature-item"><i class="fas fa-swimmer"></i> 5 outdoor pools and private beach</div>
+        <div class="feature-item"><i class="fas fa-spa"></i> Full-service spa with sauna & steam room</div>
+        <div class="feature-item"><i class="fas fa-dumbbell"></i> Fitness center & sports facilities</div>
+        <div class="feature-item"><i class="fas fa-wifi"></i> Free Wi‑Fi in public areas</div>
+        <div class="feature-item"><i class="fas fa-utensils"></i> 5 restaurants & 5 bars on site</div>
+        <div class="feature-item"><i class="fas fa-car"></i> Free parking & airport shuttle (surcharge)</div>
+
+
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Alex Morgan:</strong> "Amazing location near SOHO Square. The beach was clean and the coral reef
+                right in front of the hotel was beautiful for snorkeling."</p>
+        </div>
+
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p><strong>Mona Youssef:</strong> "Very elegant hotel. Our room was spacious and had a great sea view.
+                Breakfast was varied and tasty."</p>
+        </div>
+
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Thomas Lee:</strong> "Perfect for a relaxing holiday. The staff were very friendly and the pools
+                and gardens were well-maintained. Will definitely come back!"</p>
+        </div>
+
+    </div>
+
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="container" id="25">
+        <div class="hotel-name">Meraki Resort</div>
+        <div class="left">
+            <img src="imgss/big18.jpg" alt="The Nile Ritz-Carlton Cairo Main Image" class="main-image"
+                style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="imgss/small47.jpg" alt="The Nile Ritz-Carlton Cairo Room View" class="right-img"
+                style="height: 220px; object-fit: cover;">
+            <img src="imgss/small48.jpg" alt="The Nile Ritz-Carlton Cairo Pool" class="right-img"
+                style="height: 220px; object-fit: cover;">
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <div class="score">(4.9)</div>
+                </div>
+            </div>
+
+            <div class="description">
+
+                Meraki Resort is an adults-only beachfront hotel located in Hurghada, Egypt. It’s known for its vibrant
+                boho-chic style,
+                relaxing atmosphere, and fun social vibe. The resort offers a private sandy beach, multiple pools, and
+                daily entertainment
+                including live music and beach parties. With stylish rooms, delicious international cuisine, and
+                friendly staff, Meraki is a
+                great choice for couples and friends looking to enjoy the Red Sea in a lively and youthful setting.
+
+
+            </div>
+            <a href="https://maps.app.goo.gl/ThbikY8EQvJ4NoCKA" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+
+        <div class="actions-box">
+            <div class="price-label"><span style="color: #ff9800;">$200 </span>per Day</div>
+            <a href="payment.html" class="cta-button">Book Now!</a>
+        </div>
+    </div>
+
+    <div class="features">
+       <div class="feature-item"><i class="fas fa-bed"></i> Stylish Boho-Chic Rooms & Suites</div>
+<div class="feature-item"><i class="fas fa-swimmer"></i> Multiple Outdoor Pools</div>
+<div class="feature-item"><i class="fas fa-utensils"></i> 10+ Restaurants & Bars</div>
+<div class="feature-item"><i class="fas fa-wifi"></i> Free Wi-Fi Across the Resort</div>
+<div class="feature-item"><i class="fas fa-glass-cheers"></i> Beach Parties & Live DJs</div>
+<div class="feature-item"><i class="fas fa-spa"></i> Full-Service Spa & Wellness Center</div>
+<div class="feature-item"><i class="fas fa-water"></i> Private Sandy Beach</div>
+<div class="feature-item"><i class="fas fa-dumbbell"></i> Gym & Sports Facilities</div>
+<div class="feature-item"><i class="fas fa-users"></i> Adults Only – Relaxed & Fun Atmosphere</div>
+
+
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+       <div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <p><strong>Liam Roberts:</strong> "The beach parties were amazing! Loved the music and energy. Perfect place for couples and friends."</p>
+</div>
+
+<div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+    </div>
+    <p><strong>Salma Hassan:</strong> "Beautiful resort with a relaxing vibe. The room was stylish and clean. Food was tasty with lots of options."</p>
+</div>
+
+<div class="comment">
+    <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+    </div>
+    <p><strong>Marco De Luca:</strong> "Cool design and friendly staff. Some delays at check-in, but everything else made up for it. Will definitely come back!"</p>
+</div>
+
+
+
+    </div>
+
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+
       
       <a href="index.html" class="chat-icon" title="Chat with us!">
         <i class="fas fa-comments"></i>
@@ -567,7 +2668,8 @@
             </div>
         </div>
     </footer>
-    <script src="information of hotels.js"></script>
-</body>
+    <script src="information-of-hotels.js"></script>
+     
+  </body>
 
 </html>

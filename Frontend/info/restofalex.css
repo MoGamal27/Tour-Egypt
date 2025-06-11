@@ -156,7 +156,6 @@ body {
 .login-btn:active {
     transform: scale(0.95);
 }
-
 footer {
     background: linear-gradient(135deg, #45403b, #3877b6); /* برتقالي دافئ مع رمادي فحمي لمظهر عصري وأنيق */
     color: white;
@@ -364,7 +363,6 @@ footer {
   background-color: #e68900;
   transform: scale(1.1);
 }
-
 .container {
     display: flex;
     gap: 10px;
@@ -388,7 +386,6 @@ footer {
     height: auto;
     border-radius: 12px;
     transition: transform 0.5s ease, box-shadow 0.5s ease; 
-
   }
   
   .right {
@@ -406,10 +403,10 @@ footer {
   }
 
   .left img:hover,
-  .right img:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
-  }
+.right img:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+}
   .info-section {
     display: flex;
     justify-content: space-between;
@@ -740,110 +737,4 @@ footer {
     margin-left: -10%;
   }
 }
-
-/* Sentiment Analysis Styles */
-.sentiment-result {
-    margin-top: 20px;
-    animation: slideIn 0.5s ease-out;
-}
-
-.sentiment-card {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-left: 4px solid #007bff;
-}
-
-.sentiment-card h4 {
-    margin: 0 0 15px 0;
-    color: #333;
-    font-size: 18px;
-}
-
-.sentiment-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-.sentiment-label {
-    font-weight: 600;
-    color: #555;
-}
-
-.sentiment-badge {
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.sentiment-badge.positive {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-}
-
-.sentiment-badge.negative {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-}
-
-.sentiment-message {
-    margin: 0;
-    color: #666;
-    font-style: italic;
-    line-height: 1.5;
-}
-
-/* Button loading state */
-.btn-loading {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.btn-loading::after {
-    content: '';
-    width: 16px;
-    height: 16px;
-    border: 2px solid #ffffff;
-    border-top: 2px solid transparent;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Form improvements */
-#submit-btn:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-}
-
-.contact-form textarea {
-    min-height: 100px;
-    resize: vertical;
-}
-
-
 
