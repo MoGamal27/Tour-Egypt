@@ -65,84 +65,84 @@ document.addEventListener('DOMContentLoaded', () => {
     passwordInput.addEventListener('input', validatePassword);
     confirmPasswordInput.addEventListener('input', validatePassword);
 
-  // Form submission handler
-  registerForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
+    // Form submission handler
+    registerForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-    if (!validatePassword()) {
-        return;
-    }
-
-    const isTourGuide = tourGuideSpan.classList.contains('active');
-    
-    if (isTourGuide) {
-        // Tour Guide registration
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            phoneNumber: document.getElementById('phone').value,
-            password: document.getElementById('password').value,
-            language: document.getElementById('language').value,
-            Experience: document.getElementById('experience').value,
-            destinationId: parseInt(document.getElementById('destination').value),
-            profilePic: previewImg.src || ''
-        };
-
-        try {
-            const response = await fetch('https://bf9a6a07-cd1d-4ebc-b7a7-adde95f7b91e-00-2z7xusx8q8552.kirk.replit.dev/api/tourguide/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                alert('Tour Guide registration successful!');
-                registerForm.reset();
-                previewImg.style.display = 'none';
-            } else {
-                alert('Registration failed: ' + data.message);
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('An error occurred during registration');
+        if (!validatePassword()) {
+            return;
         }
-    } else {
-        // Tourist registration
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            phoneNumber: document.getElementById('phone').value,
-            password: document.getElementById('password').value
-        };
 
-        try {
-            const response = await fetch('https://bf9a6a07-cd1d-4ebc-b7a7-adde95f7b91e-00-2z7xusx8q8552.kirk.replit.dev/api/tourist/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            });
+        const isTourGuide = tourGuideSpan.classList.contains('active');
+        
+        if (isTourGuide) {
+            // Tour Guide registration
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phoneNumber: document.getElementById('phone').value,
+                password: document.getElementById('password').value,
+                language: document.getElementById('language').value,
+                Experience: document.getElementById('experience').value,
+                destinationId: parseInt(document.getElementById('destination').value),
+                profilePic: previewImg.src || ''
+            };
 
-            const data = await response.json();
+            try {
+                const response = await fetch('https://bf9a6a07-cd1d-4ebc-b7a7-adde95f7b91e-00-2z7xusx8q8552.kirk.replit.dev/api/tourguide/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'include', // Include cookies
+                    body: JSON.stringify(formData)
+                });
 
-            if (response.ok) {
-                alert('Tourist registration successful!');
-                registerForm.reset();
-            } else {
-                alert('Registration failed: ' + data.message);
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('Tour Guide registration successful!');
+                    // Redirect to home page
+                    window.location.href = '/home.html';
+                } else {
+                    alert('Registration failed: ' + data.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred during registration');
             }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('An error occurred during registration');
+        } else {
+            // Tourist registration
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phoneNumber: document.getElementById('phone').value,
+                password: document.getElementById('password').value
+            };
+
+            try {
+                const response = await fetch('https://bf9a6a07-cd1d-4ebc-b7a7-adde95f7b91e-00-2z7xusx8q8552.kirk.replit.dev/api/tourist/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'include', // Include cookies
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('Tourist registration successful!');
+                    // Redirect to home page
+                    window.location.href = '/home.html';
+                } else {
+                    alert('Registration failed: ' + data.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred during registration');
+            }
         }
-    }
+    });
 });
-});
-
-
-

@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+import cookieParser from 'cookie-parser';
 import destinationRoute from './src/Routes/DestinationRoute'
 import attractionRoute from './src/Routes/AttractionRoute'
 import restaurantRoute from './src/Routes/RestaurantRoute'
@@ -11,6 +12,8 @@ import souvenirRoute from './src/Routes/SouvenirRoute';
 import bookingRoute from './src/Routes/BookingRoute'
 import activityRoute from './src/Routes/ActivityRoute';
 import reviewRoute from './src/Routes/ReviewRoute';
+import verifyToken from './src/middleware/verifyToken';
+import authenticateUser from './src/middleware/authMiddleware';
 
 import cors from 'cors'
 const app = express();
@@ -19,18 +22,33 @@ const app = express();
 app.use(cors({
   origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true
 }))
 
 app.use(express.json());
+app.use(cookieParser());
 
-// Serve static files from Frontend folder
+// Serve ALL static files (CSS, JS, images) from Frontend folder
 app.use(express.static(path.join(__dirname, 'Frontend')));
-console.log(path.join(__dirname, 'Frontend'));
 
-app.get('/Frontend', (req, res) => {
-res.sendFile(path.join(__dirname, 'Frontend', 'home.html'));
+
+// Public HTML routes (no authentication required)
+app.get('/login.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Frontend', 'login.html'));
 });
 
+app.get('/register.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Frontend', 'register.html'));
+});
+
+// Protected HTML routes (authentication required)
+app.get('/home.html', authenticateUser, (req, res) => {
+  res.sendFile(path.join(__dirname, 'Frontend', 'home.html'));
+});
+
+app.get('/Frontend', authenticateUser, (req, res) => {
+  res.sendFile(path.join(__dirname, 'Frontend', 'home.html'));
+});
 
 // API routes
 app.use('/api', 
@@ -47,9 +65,12 @@ app.use('/api',
     reviewRoute  
 );
 
+// Redirect root to login if not authenticated
+app.get('/', (req, res) => {
+  res.redirect('/login.html');
+});
 
 app.listen(3000, () => {
   console.log('Server up and running on port: 3000');
-   console.log('Frontend available at: http://localhost:3000/Frontend');
+  console.log('Login page available at: http://localhost:3000/login.html');
 });
-

@@ -11,24 +11,85 @@ const RegisterTourist = asyncHandler(async(req: Request, res: Response, next: Ne
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
+    const tourist = await prisma.tourist.create({
+        data: {
+            name,
+            email,
+            phoneNumber,
+            password: hashedPassword
+        }
+    });
 
-   
-        const tourist = await prisma.tourist.create({
-            data: {
-                name,
-                email,
-                phoneNumber,
-                password: hashedPassword
-            }
-        });
+    const token = await generateToken({ id: tourist.id });
 
-        const token = await generateToken({ id: tourist.id });
+    // Set HTTP-only cookie
+    res.cookie('token', token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'strict',
+        maxAge: 24 * 60 * 60 * 1000 // 24 hours
+    });
 
-        res.status(201).json({
-            success: true,
-            data: tourist,
-            token: token
-        });
+    res.status(201).json({
+        success: true,
+        data: tourist,
+        token: token
+    });
 });
 
-export { RegisterTourist };
+/*
+const loginTourist = asyncHandler(async(req: Request, res: Response, next: NextFunction) => {
+
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+         return res.status(400).json({
+            status: "fail",
+            message: "Please provide email and password",
+        });
+    }
+
+    const tourist = await prisma.tourist.findUnique({
+        where: { email },
+    });
+
+    if (!tourist) {
+        return res.status(401).json({
+            status: "fail",
+            message: "Invalid email",
+        });
+    }
+
+    const isPasswordCorrect = await bcrypt.compare(password, tourist.password);
+    if (!isPasswordCorrect) {
+         return res.status(401).json({
+            status: "fail",
+            message: "Invalid password",
+        });
+    }
+
+    const token = await generateToken({ id: tourist.id });
+
+    // Set HTTP-only cookie
+    res.cookie('token', token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'strict',
+        maxAge: 24 * 60 * 60 * 1000 // 24 hours
+    });
+
+    res.status(200).json({
+        status: "success",
+        message: "Tourist logged in successfully",
+        token: token
+    });
+const logoutTourist = asyncHandler(async(req: Request, res: Response, next: NextFunction) => {
+    res.clearCookie('token');
+    res.status(200).json({
+        status: "success",
+        message: "Tourist logged out successfully"
+    });
+});
+*/
+
+export { RegisterTourist};
