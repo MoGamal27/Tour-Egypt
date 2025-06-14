@@ -52,306 +52,115 @@ document.addEventListener('DOMContentLoaded', function () {
     // تهيئة الفرز عند التحميل بـ "Most Popular" افتراضيًا
     sortSelect.value = 'mostPopular';
     sortSelect.dispatchEvent(new Event('change'));
+});
+document.addEventListener("DOMContentLoaded", function () {
+    let cards = document.querySelectorAll(".card");
+    cards.forEach((card, index) => {
+      setTimeout(() => {
+        card.style.transform = "scale(1)";
+        card.style.opacity = "1";
+      }, index * 200); // التأخير التدريجي بين كل كارد
+    });
+  });
+  
 
-    // Book Now functionality
-    const bookBtn = document.querySelector('.book-btn');
-    const checkInInput = document.querySelector('input[type="date"]:first-of-type');
-    const checkOutInput = document.querySelector('input[type="date"]:last-of-type');
-    const guestsInput = document.querySelector('input[type="number"]');
+  document.addEventListener('DOMContentLoaded', function () {
+    // Function to handle booking for each activity
+    function setupActivityBooking() {
+        const bookButtons = document.querySelectorAll('.book-activity-btn');
+        
+        bookButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const activityCard = this.closest('.activity-card');
+                const activityName = activityCard.querySelector('h3').textContent;
+                const activityPrice = activityCard.querySelector('.price').textContent;
+                
+                // Get dates from the main booking form
+                const checkInDate = document.querySelector('.booking-form .input-box:nth-child(1) input').value;
+                const checkOutDate = document.querySelector('.booking-form .input-box:nth-child(2) input').value;
+                const guests = document.querySelector('.booking-form .input-box:nth-child(3) input').value;
+                
+                if (!checkInDate || !checkOutDate) {
+                    alert('Please select check-in and check-out dates first');
+                    return;
+                }
+                
+                const bookingDetails = `
+                    Activity: ${activityName}
+                    Price: ${activityPrice}
+                    Check-In: ${checkInDate}
+                    Check-Out: ${checkOutDate}
+                    Guests: ${guests}
+                `;
+                
+                alert(`Booking Confirmation:\n\n${bookingDetails}\n\nThank you! We will contact you shortly.`);
+            });
+        });
+    }
 
-    if (bookBtn) {
-        bookBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const checkIn = checkInInput.value;
-            const checkOut = checkOutInput.value;
-            const guests = guestsInput.value;
+    // Initialize the booking functionality
+    setupActivityBooking();
+});
 
-            // Validate form
-            if (!validateBookingForm(checkIn, checkOut, guests)) {
+
+  document.addEventListener('DOMContentLoaded', function () {
+    function setupActivityBooking() {
+        const bookButtons = document.querySelectorAll('.book-activity-btn');
+
+        bookButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const activityCard = this.closest('.activity-card');
+                const activityName = activityCard.querySelector('h3').textContent;
+                const priceText = activityCard.querySelector('.price').textContent.replace('💰 $', '').trim();
+                const activityPrice = parseFloat(priceText);
+
+                // الحصول على التواريخ وعدد الأشخاص من النموذج الرئيسي
+                const checkInDate = document.querySelector('.booking-form .input-box:nth-child(1) input').value;
+                const checkOutDate = document.querySelector('.booking-form .input-box:nth-child(2) input').value;
+                const guests = parseInt(document.querySelector('.booking-form .input-box:nth-child(3) input').value) || 1;
+
+                if (!checkInDate || !checkOutDate) {
+                    alert('Please select check-in and check-out dates first.');
+                    return;
+                }
+
+                const totalPrice = (isNaN(activityPrice) ? 0 : activityPrice) * guests;
+
+                const bookingDetails = `
+Booking Confirmation ✅
+
+Activity: ${activityName}
+Price per person: $${activityPrice.toFixed(2)}
+Number of guests: ${guests}
+Total Price: $${totalPrice.toFixed(2)}
+Check-In: ${checkInDate}
+Check-Out: ${checkOutDate}
+
+Thank you! We will contact you shortly.
+                `;
+
+                alert(bookingDetails);
+            });
+        });
+    }
+
+    setupActivityBooking();
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const bookNowBtn = document.getElementById('book-now-btn');
+
+    if (bookNowBtn) {
+        bookNowBtn.addEventListener('click', function () {
+            const checkInDate = document.querySelector('.booking-form .input-box:nth-child(1) input').value;
+            const checkOutDate = document.querySelector('.booking-form .input-box:nth-child(2) input').value;
+
+            if (!checkInDate || !checkOutDate) {
+                alert('Please select check-in and check-out dates first.');
                 return;
             }
 
-            // Show booking confirmation
-            showBookingModal(checkIn, checkOut, guests);
+            // ✅ الرسالة البسيطة المطلوبة
+            alert('✅ Booking submitted! Please scroll down and choose your preferred activity.');
         });
     }
-
-    // Add click handlers to individual activity cards
-    const activityCards = document.querySelectorAll('.activity-card');
-    activityCards.forEach(card => {
-        // Add a book button to each card
-        const cardDetails = card.querySelector('.activity-details');
-        const bookButton = document.createElement('button');
-        bookButton.className = 'card-book-btn';
-        bookButton.innerHTML = '<i class="fas fa-calendar-check"></i> Book This Activity';
-        cardDetails.appendChild(bookButton);
-
-        bookButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            const activityName = card.querySelector('h3').textContent;
-            const activityPrice = card.querySelector('.price').textContent;
-            const activityLocation = card.querySelector('.location').textContent;
-            
-            showActivityBookingModal(activityName, activityPrice, activityLocation);
-        });
-    });
-});
-
-// Validation function
-function validateBookingForm(checkIn, checkOut, guests) {
-    const today = new Date().toISOString().split('T')[0];
-    
-    if (!checkIn) {
-        showAlert('Please select a check-in date', 'error');
-        return false;
-    }
-    
-    if (!checkOut) {
-        showAlert('Please select a check-out date', 'error');
-        return false;
-    }
-    
-    if (checkIn < today) {
-        showAlert('Check-in date cannot be in the past', 'error');
-        return false;
-    }
-    
-    if (checkOut <= checkIn) {
-        showAlert('Check-out date must be after check-in date', 'error');
-        return false;
-    }
-    
-    if (guests < 1 || guests > 50) {
-        showAlert('Number of guests must be between 1 and 50', 'error');
-        return false;
-    }
-    
-    return true;
-}
-
-// Show booking modal for general booking
-function showBookingModal(checkIn, checkOut, guests) {
-    const modal = createModal(`
-        <div class="booking-modal">
-            <div class="modal-header">
-                <h2><i class="fas fa-calendar-check"></i> Booking Confirmation</h2>
-                <button class="close-modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="booking-summary">
-                    <h3>Booking Details</h3>
-                    <div class="detail-row">
-                        <span class="label">Check-in:</span>
-                        <span class="value">${formatDate(checkIn)}</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="label">Check-out:</span>
-                        <span class="value">${formatDate(checkOut)}</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="label">Guests:</span>
-                        <span class="value">${guests} ${guests == 1 ? 'person' : 'people'}</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="label">Duration:</span>
-                        <span class="value">${calculateDays(checkIn, checkOut)} days</span>
-                    </div>
-                </div>
-                <div class="modal-actions">
-                    <button class="btn-secondary cancel-booking">Cancel</button>
-                    <button class="btn-primary confirm-booking">Confirm Booking</button>
-                </div>
-            </div>
-        </div>
-    `);
-    
-    setupModalEvents(modal);
-}
-
-// Show booking modal for specific activity
-function showActivityBookingModal(activityName, activityPrice, activityLocation) {
-    const modal = createModal(`
-        <div class="booking-modal">
-            <div class="modal-header">
-                <h2><i class="fas fa-map-marker-alt"></i> Book Activity</h2>
-                <button class="close-modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="activity-booking-summary">
-                    <h3>${activityName}</h3>
-                    <p class="activity-location">${activityLocation}</p>
-                    <p class="activity-price">${activityPrice}</p>
-                    
-                    <div class="booking-form-modal">
-                        <div class="form-group">
-                            <label>Select Date:</label>
-                            <input type="date" id="activity-date" min="${new Date().toISOString().split('T')[0]}">
-                        </div>
-                        <div class="form-group">
-                            <label>Number of Participants:</label>
-                            <input type="number" id="activity-participants" min="1" max="25" value="1">
-                        </div>
-                        <div class="form-group">
-                            <label>Contact Information:</label>
-                            <input type="email" id="contact-email" placeholder="Your email address">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-actions">
-                    <button class="btn-secondary cancel-booking">Cancel</button>
-                    <button class="btn-primary confirm-activity-booking">Book Now</button>
-                </div>
-            </div>
-        </div>
-    `);
-    
-    setupActivityModalEvents(modal, activityName, activityPrice);
-}
-
-// Create modal element
-function createModal(content) {
-    const modal = document.createElement('div');
-    modal.className = 'modal-overlay';
-    modal.innerHTML = content;
-    document.body.appendChild(modal);
-    
-    // Animate modal in
-    setTimeout(() => modal.classList.add('show'), 10);
-    
-    return modal;
-}
-
-// Setup modal events for general booking
-function setupModalEvents(modal) {
-    const closeBtn = modal.querySelector('.close-modal');
-    const cancelBtn = modal.querySelector('.cancel-booking');
-    const confirmBtn = modal.querySelector('.confirm-booking');
-    
-    const closeModal = () => {
-        modal.classList.remove('show');
-        setTimeout(() => modal.remove(), 300);
-    };
-    
-    closeBtn.addEventListener('click', closeModal);
-    cancelBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-    });
-    
-    confirmBtn.addEventListener('click', () => {
-        showAlert('Booking confirmed! You will receive a confirmation email shortly.', 'success');
-        closeModal();
-        // Here you would typically send the booking data to your backend
-        setTimeout(() => {
-            window.location.href = 'payment.html';
-        }, 2000);
-    });
-}
-
-// Setup modal events for activity booking
-function setupActivityModalEvents(modal, activityName, activityPrice) {
-    const closeBtn = modal.querySelector('.close-modal');
-    const cancelBtn = modal.querySelector('.cancel-booking');
-    const confirmBtn = modal.querySelector('.confirm-activity-booking');
-    
-    const closeModal = () => {
-        modal.classList.remove('show');
-        setTimeout(() => modal.remove(), 300);
-    };
-    
-    closeBtn.addEventListener('click', closeModal);
-    cancelBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-    });
-    
-    confirmBtn.addEventListener('click', () => {
-        const date = document.getElementById('activity-date').value;
-        const participants = document.getElementById('activity-participants').value;
-        const email = document.getElementById('contact-email').value;
-        
-        if (!date || !participants || !email) {
-            showAlert('Please fill in all fields', 'error');
-            return;
-        }
-        
-        if (!isValidEmail(email)) {
-            showAlert('Please enter a valid email address', 'error');
-            return;
-        }
-        
-        showAlert(`${activityName} booked successfully for ${formatDate(date)}!`, 'success');
-        closeModal();
-        
-        // Store booking data (you can send this to backend)
-        const bookingData = {
-            activity: activityName,
-            price: activityPrice,
-            date: date,
-            participants: participants,
-            email: email,
-            timestamp: new Date().toISOString()
-        };
-        
-        localStorage.setItem('lastBooking', JSON.stringify(bookingData));
-        
-        setTimeout(() => {
-            window.location.href = 'payment.html';
-        }, 2000);
-    });
-}
-
-// Utility functions
-function formatDate(dateString) {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    });
-}
-
-function calculateDays(checkIn, checkOut) {
-    const date1 = new Date(checkIn);
-    const date2 = new Date(checkOut);
-    const diffTime = Math.abs(date2 - date1);
-    return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-}
-
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-function showAlert(message, type = 'info') {
-    const alert = document.createElement('div');
-    alert.className = `alert alert-${type}`;
-    alert.innerHTML = `
-        <div class="alert-content">
-            <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
-            <span>${message}</span>
-        </div>
-    `;
-    
-    document.body.appendChild(alert);
-    
-    setTimeout(() => alert.classList.add('show'), 10);
-    
-    setTimeout(() => {
-        alert.classList.remove('show');
-        setTimeout(() => alert.remove(), 300);
-    }, 4000);
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    let cards = document.querySelectorAll(".activity-card");
-    cards.forEach((card, index) => {
-        setTimeout(() => {
-            card.style.transform = "scale(1)";
-            card.style.opacity = "1";
-        }, index * 200);
-    });
 });

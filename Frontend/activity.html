@@ -78,10 +78,11 @@
                 <i class="fa-solid fa-user"></i>
                 <input type="number" min="1" value="1">
             </div>
-            <button class="book-btn">
-                <i class="fas fa-calendar-check"></i>
-                Book Now
-            </button>
+<button class="book-btn" id="book-now-btn" onclick="bookActivity()">
+    <i class="fas fa-calendar-check"></i>
+    Book Now
+</button>
+
         </div>
     </section>
     
@@ -100,186 +101,197 @@
         </div>
     </div>
     
-    <div class="activities-container">
-        <!-- Card 1 -->
-        <div class="activity-card">
-            <div class="activity-image">
-                <img src="img/pyrmids .jpg" alt="Pyramids of Giza">
-            </div>
-            <div class="activity-details">
-                <div class="rating">⭐⭐⭐⭐⭐ <span>(4.9)</span></div>
-                <h3>Pyramids of Giza Tour</h3>
-                <p class="location">📍 Giza, Egypt</p>
-                <p class="price">💰 $50</p>
-                <p class="description">Explore the Great Pyramids and Sphinx with a guided tour.</p>
-                <div class="card-price-details">
-                    <span>⏳ 4 hours</span>
-                    <span>👥 25 people</span>
-                   
-
-                </div>
-            </div>
+   <div class="activities-container">
+    <!-- Card Template -->
+    <div class="activity-card">
+        <div class="activity-image">
+            <img src="img/pyrmids .jpg" alt="Pyramids of Giza">
         </div>
-
-        <!-- Card 2 -->
-        <div class="activity-card">
-            <div class="activity-image">
-                <img src="img/istockphoto-1327507461-612x612 1.png" alt="Nile River Cruise">
+        <div class="activity-details">
+            <div class="rating">⭐⭐⭐⭐⭐ <span>(4.9)</span></div>
+            <h3>Pyramids of Giza Tour</h3>
+            <p class="location">📍 Giza, Egypt</p>
+            <p class="price">💰 $50</p>
+            <p class="description">Explore the Great Pyramids and Sphinx with a guided tour.</p>
+            <div class="card-price-details">
+                <span>⏳ 4 hours</span>
+                <span>👥 25 people</span>
             </div>
-            <div class="activity-details">
-                <div class="rating">⭐⭐⭐⭐ <span>(4.5)</span></div>
-                <h3>Nile River Cruise</h3>
-                <p class="location">📍 Cairo, Egypt</p>
-                <p class="price">💰 $30</p>
-                <p class="description">Enjoy a relaxing cruise on the Nile with breathtaking views.</p>
-                <div class="card-price-details">
-                    <span>⏳ 2 hours</span>
-                    <span>👥 25 people</span>
-                  
-
-                </div>
-            </div>
+            <button class="book-activity-btn">
+                <i class="fas fa-calendar-check"></i> Book Now
+            </button>
         </div>
+    </div>
 
-        <!-- Card 3 -->
-        <div class="activity-card">
-            <div class="activity-image">
-                <img src="img/karnek.png" alt="Karnak Temple">
-            </div>
-            <div class="activity-details">
-                <div class="rating">⭐⭐⭐⭐⭐ <span>(4.8)</span></div>
-                <h3>Karnak Temple Visit</h3>
-                <p class="location">📍 Luxor, Egypt</p>
-                <p class="price">💰 $40</p>
-                <p class="description">Discover the ancient wonders of Karnak, Egypt's largest temple complex.</p>
-                <div class="card-price-details">
-                    <span>⏳ 3 hours</span>
-                    <span>👥 25 people</span>
-                   
-
-                </div>
-            </div>
+    <!-- Card 2 -->
+    <div class="activity-card">
+        <div class="activity-image">
+            <img src="img/istockphoto-1327507461-612x612 1.png" alt="Nile River Cruise">
         </div>
-
-        <!-- Card 4 -->
-        <div class="activity-card">
-            <div class="activity-image">
-                <img src="img/parachute.jpg" alt="Hot Air Balloon">
+        <div class="activity-details">
+            <div class="rating">⭐⭐⭐⭐ <span>(4.5)</span></div>
+            <h3>Nile River Cruise</h3>
+            <p class="location">📍 Cairo, Egypt</p>
+            <p class="price">💰 $30</p>
+            <p class="description">Enjoy a relaxing cruise on the Nile with breathtaking views.</p>
+            <div class="card-price-details">
+                <span>⏳ 2 hours</span>
+                <span>👥 25 people</span>
             </div>
-            <div class="activity-details">
-                <div class="rating">⭐⭐⭐⭐ <span>(4.4)</span></div>
-                <h3>Valley of the Kings Adventure</h3>
-                <p class="location">📍 Luxor, Egypt</p>
-                <p class="price">💰 $45</p>
-                <p class="description">Experience an unforgettable hot air balloon ride over the Valley of the Kings.</p>
-                <div class="card-price-details">
-                    <span>⏳ 4 hours</span>
-                    <span>👥 25 people</span>
-               
-                </div>
-            </div>
+            <button class="book-activity-btn">
+                <i class="fas fa-calendar-check"></i> Book Now
+            </button>
         </div>
+    </div>
 
-        <!-- Card 5 -->
-        <div class="activity-card">
-            <div class="activity-image">
-                <img src="img/marsa .jpg" alt="Sandboarding in Marsa Matruh">
-            </div>
-            <div class="activity-details">
-                <div class="rating">⭐⭐⭐⭐⭐ <span>(4.7)</span></div>
-                <h3>Sandboarding in Marsa Matruh</h3>
-                <p class="location">📍 Marsa Matruh, Egypt</p>
-                <p class="price">💰 $25</p>
-                <p class="description">Try an exciting sandboarding adventure in the stunning desert dunes.</p>
-                <div class="card-price-details">
-                    <span>⏳ 2 hours</span>
-                    <span>👥 25 people</span>
-                    
-                </div>
-            </div>
+    <!-- Card 3 -->
+    <div class="activity-card">
+        <div class="activity-image">
+            <img src="img/karnek.png" alt="Karnak Temple">
         </div>
-
-        <!-- Card 6 -->
-        <div class="activity-card">
-            <div class="activity-image">
-                <img src="img/desert.jpg" alt="Desert Safari in Hurghada">
+        <div class="activity-details">
+            <div class="rating">⭐⭐⭐⭐⭐ <span>(4.8)</span></div>
+            <h3>Karnak Temple Visit</h3>
+            <p class="location">📍 Luxor, Egypt</p>
+            <p class="price">💰 $40</p>
+            <p class="description">Discover the ancient wonders of Karnak, Egypt's largest temple complex.</p>
+            <div class="card-price-details">
+                <span>⏳ 3 hours</span>
+                <span>👥 25 people</span>
             </div>
-            <div class="activity-details">
-                <div class="rating">⭐⭐⭐⭐ <span>(4.6)</span></div>
-                <h3>Desert Safari in Hurghada</h3>
-                <p class="location">📍 Hurghada, Egypt</p>
-                <p class="price">💰 $55</p>
-                <p class="description">Explore the vast desert of Hurghada with an adrenaline-filled safari tour.</p>
-                <div class="card-price-details">
-                    <span>⏳ 5 hours</span>
-                    <span>👥 25 people</span>
-                 
-
-                </div>
-            </div>
+            <button class="book-activity-btn">
+                <i class="fas fa-calendar-check"></i> Book Now
+            </button>
         </div>
+    </div>
 
-        <!-- Card 7 -->
-        <div class="activity-card">
-            <div class="activity-image">
-                <img src="img/river.jpg" alt="Felucca Sailing on the Nile">
-            </div>
-            <div class="activity-details">
-                <div class="rating">⭐⭐⭐⭐⭐ <span>(4.9)</span></div>
-                <h3>Felucca Sailing on the Nile</h3>
-                <p class="location">📍 Aswan, Egypt</p>
-                <p class="price">💰 $25</p>
-                <p class="description">Enjoy a peaceful Felucca ride on the Nile and admire the beautiful scenery of Aswan.</p>
-                <div class="card-price-details">
-                    <span>⏳ 2 hours</span>
-                    <span>👥 25 people</span>
-                  
-
-                </div>
-            </div>
+    <!-- Card 4 -->
+    <div class="activity-card">
+        <div class="activity-image">
+            <img src="img/parachute.jpg" alt="Hot Air Balloon">
         </div>
-
-        <!-- Card 8 -->
-        <div class="activity-card">
-            <div class="activity-image">
-                <img src="img/istockphoto-2130416586-612x612.jpg" alt="Siwa Oasis Adventure">
+        <div class="activity-details">
+            <div class="rating">⭐⭐⭐⭐ <span>(4.4)</span></div>
+            <h3>Valley of the Kings Adventure</h3>
+            <p class="location">📍 Luxor, Egypt</p>
+            <p class="price">💰 $45</p>
+            <p class="description">Experience an unforgettable hot air balloon ride over the Valley of the Kings.</p>
+            <div class="card-price-details">
+                <span>⏳ 4 hours</span>
+                <span>👥 25 people</span>
             </div>
-            <div class="activity-details">
-                <div class="rating">⭐⭐⭐⭐ <span>(4.3)</span></div>
-                <h3>Siwa Oasis Adventure</h3>
-                <p class="location">📍 Siwa Oasis, Egypt</p>
-                <p class="price">💰 $100</p>
-                <p class="description">Discover the unique landscapes of Siwa, famous for its stunning salt lakes and rich history.</p>
-                <div class="card-price-details">
-                    <span>⏳ Full-day tour</span>
-                    <span>👥 25 people</span>
-                   
-
-                </div>
-            </div>
+            <button class="book-activity-btn">
+                <i class="fas fa-calendar-check"></i> Book Now
+            </button>
         </div>
+    </div>
 
-        <!-- Card 9 -->
-        <div class="activity-card">
-            <div class="activity-image">
-                <img src="img/istockphoto-1737551998-612x612.jpg" alt="Alexandria City Tour">
+    <!-- Card 5 -->
+    <div class="activity-card">
+        <div class="activity-image">
+            <img src="img/marsa .jpg" alt="Sandboarding in Marsa Matruh">
+        </div>
+        <div class="activity-details">
+            <div class="rating">⭐⭐⭐⭐⭐ <span>(4.7)</span></div>
+            <h3>Sandboarding in Marsa Matruh</h3>
+            <p class="location">📍 Marsa Matruh, Egypt</p>
+            <p class="price">💰 $25</p>
+            <p class="description">Try an exciting sandboarding adventure in the stunning desert dunes.</p>
+            <div class="card-price-details">
+                <span>⏳ 2 hours</span>
+                <span>👥 25 people</span>
             </div>
-            <div class="activity-details">
-                <div class="rating">⭐⭐⭐⭐⭐ <span>(4.8)</span></div>
-                <h3>Alexandria City Tour</h3>
-                <p class="location">📍 Alexandria, Egypt</p>
-                <p class="price">💰 $75</p>
-                <p class="description">Explore the historical landmarks of Alexandria, from the Citadel to the ancient library ruins.</p>
-                <div class="card-price-details">
-                    <span>⏳ 6 hours</span>
-                    <span>👥 25 people</span>
-                   
+            <button class="book-activity-btn">
+                <i class="fas fa-calendar-check"></i> Book Now
+            </button>
+        </div>
+    </div>
 
-                </div>
+    <!-- Card 6 -->
+    <div class="activity-card">
+        <div class="activity-image">
+            <img src="img/desert.jpg" alt="Desert Safari in Hurghada">
+        </div>
+        <div class="activity-details">
+            <div class="rating">⭐⭐⭐⭐ <span>(4.6)</span></div>
+            <h3>Desert Safari in Hurghada</h3>
+            <p class="location">📍 Hurghada, Egypt</p>
+            <p class="price">💰 $55</p>
+            <p class="description">Explore the vast desert of Hurghada with an adrenaline-filled safari tour.</p>
+            <div class="card-price-details">
+                <span>⏳ 5 hours</span>
+                <span>👥 25 people</span>
             </div>
+            <button class="book-activity-btn">
+                <i class="fas fa-calendar-check"></i> Book Now
+            </button>
+        </div>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="activity-card">
+        <div class="activity-image">
+            <img src="img/river.jpg" alt="Felucca Sailing on the Nile">
+        </div>
+        <div class="activity-details">
+            <div class="rating">⭐⭐⭐⭐⭐ <span>(4.9)</span></div>
+            <h3>Felucca Sailing on the Nile</h3>
+            <p class="location">📍 Aswan, Egypt</p>
+            <p class="price">💰 $25</p>
+            <p class="description">Enjoy a peaceful Felucca ride on the Nile and admire the beautiful scenery of Aswan.</p>
+            <div class="card-price-details">
+                <span>⏳ 2 hours</span>
+                <span>👥 25 people</span>
+            </div>
+            <button class="book-activity-btn">
+                <i class="fas fa-calendar-check"></i> Book Now
+            </button>
+        </div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="activity-card">
+        <div class="activity-image">
+            <img src="img/istockphoto-2130416586-612x612.jpg" alt="Siwa Oasis Adventure">
+        </div>
+        <div class="activity-details">
+            <div class="rating">⭐⭐⭐⭐ <span>(4.3)</span></div>
+            <h3>Siwa Oasis Adventure</h3>
+            <p class="location">📍 Siwa Oasis, Egypt</p>
+            <p class="price">💰 $100</p>
+            <p class="description">Discover the unique landscapes of Siwa, famous for its stunning salt lakes and rich history.</p>
+            <div class="card-price-details">
+                <span>⏳ Full-day tour</span>
+                <span>👥 25 people</span>
+            </div>
+            <button class="book-activity-btn">
+                <i class="fas fa-calendar-check"></i> Book Now
+            </button>
+        </div>
+    </div>
+
+    <!-- Card 9 -->
+    <div class="activity-card">
+        <div class="activity-image">
+            <img src="img/istockphoto-1737551998-612x612.jpg" alt="Alexandria City Tour">
+        </div>
+        <div class="activity-details">
+            <div class="rating">⭐⭐⭐⭐⭐ <span>(4.8)</span></div>
+            <h3>Alexandria City Tour</h3>
+            <p class="location">📍 Alexandria, Egypt</p>
+            <p class="price">💰 $75</p>
+            <p class="description">Explore the historical landmarks of Alexandria, from the Citadel to the ancient library ruins.</p>
+            <div class="card-price-details">
+                <span>⏳ 6 hours</span>
+                <span>👥 25 people</span>
+            </div>
+            <button class="book-activity-btn">
+                <i class="fas fa-calendar-check"></i> Book Now
+            </button>
         </div>
     </div>
 </div>
+
       
     <a href="index.html" class="chat-icon" title="Chat with us!">
         <i class="fas fa-comments"></i>
@@ -293,10 +305,10 @@
         <div class="footer-section">
             <h3>Quick Links</h3>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
                 <li><a href="#">Services</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </div>
         <div class="footer-section">
@@ -317,7 +329,6 @@
 </footer>
     <script src="act.js"></script>
     
+    
 </body>
 </html>
-
-

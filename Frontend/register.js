@@ -89,12 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-                const response = await fetch('https://bf9a6a07-cd1d-4ebc-b7a7-adde95f7b91e-00-2z7xusx8q8552.kirk.replit.dev/api/tourguide/register', {
+                const response = await fetch('http://localhost:3000/api/tourguide/register', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    credentials: 'include', // Include cookies
+                  
                     body: JSON.stringify(formData)
                 });
 
@@ -121,12 +121,12 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-                const response = await fetch('https://bf9a6a07-cd1d-4ebc-b7a7-adde95f7b91e-00-2z7xusx8q8552.kirk.replit.dev/api/tourist/register', {
+                const response = await fetch('http://localhost:3000/api/tourist/register', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    credentials: 'include', // Include cookies
+                  
                     body: JSON.stringify(formData)
                 });
 

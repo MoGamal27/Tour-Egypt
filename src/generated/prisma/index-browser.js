@@ -20,12 +20,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 6.7.0
- * Query Engine version: 3cff47a7f5d65c3ea74883f1d736e41d68ce91ed
+ * Prisma Client JS version: 6.9.0
+ * Query Engine version: 81e4af48011447c3cc503a190e86995b66d2a28e
  */
 Prisma.prismaVersion = {
-  client: "6.7.0",
-  engine: "3cff47a7f5d65c3ea74883f1d736e41d68ce91ed"
+  client: "6.9.0",
+  engine: "81e4af48011447c3cc503a190e86995b66d2a28e"
 }
 
 Prisma.PrismaClientKnownRequestError = () => {
@@ -220,6 +220,18 @@ exports.Prisma.ReviewScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.HotelReviewScalarFieldEnum = {
+  id: 'id',
+  hotelId: 'hotelId',
+  name: 'name',
+  email: 'email',
+  message: 'message',
+  rating: 'rating',
+  sentiment: 'sentiment',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -295,6 +307,13 @@ exports.Prisma.ReviewOrderByRelevanceFieldEnum = {
   comment: 'comment'
 };
 
+exports.Prisma.HotelReviewOrderByRelevanceFieldEnum = {
+  name: 'name',
+  email: 'email',
+  message: 'message',
+  sentiment: 'sentiment'
+};
+
 
 exports.Prisma.ModelName = {
   Destination: 'Destination',
@@ -307,7 +326,8 @@ exports.Prisma.ModelName = {
   Souvenirs: 'Souvenirs',
   Booking: 'Booking',
   Activity: 'Activity',
-  Review: 'Review'
+  Review: 'Review',
+  HotelReview: 'HotelReview'
 };
 
 /**

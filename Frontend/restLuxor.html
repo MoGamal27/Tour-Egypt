@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants in Luxor</title>
+    <link rel="stylesheet" href="restLuxor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <div class="pharaoh-wrapper">
+                    <span class="pharaoh">PHAR</span>
+                    <img src="img/egypt.png" alt="Logo" class="logo-img" />
+                    <span class="pharaoh">AOH'S</span>
+                </div>
+                <span class="way">WAY</span>
+            </div>
+              <div class="menu-toggle" onclick="toggleMenu()">
+                ☰
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+
+                <li class="dropdown">
+                    <a href="#">Destination ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="destination.html">Top attractions</a></li>
+                        <li><a href="activity.html">Activities</a></li>
+                        <li><a href="tour.html">Tour Guide</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">Travel Services ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="hotel.html">Hotels</a></li>
+                        <li><a href="Restaurants.html">Restaurants</a></li>
+                        <li><a href="payment.html">Booking</a></li>
+                        <li><a href="flight.html">Flight</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="SOUV.HTML">Souvenirs</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <a href="login.html" class="login-btn">Login / Register</a>
+        </nav>
+    </header>
+
+    <div class="container" id="ElTarboush">
+        <div class="hotel-name">El Tarboush Restaurant</div>
+        <div class="left">
+            <img src="img/El Tarboush Restaurant1.jpg" alt="El Tarboush Restaurant" style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="img/El Tarboush Restaurant123.jpg" alt="El Tarboush Interior" style="height: 220px; object-fit: cover;">
+            <img src="img/El Tarboush Restaurant3.jpg" alt="El Tarboush Food" style="height: 220px; object-fit: cover;">
+        </div>
+    </div>
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <div class="score">(4.6)</div>
+                </div>
+            </div>
+
+            <div class="description">
+                El Tarboush offers an authentic Egyptian dining experience with a modern twist. Known for its traditional 
+                Egyptian cuisine with contemporary presentation, the restaurant features a warm, inviting atmosphere 
+                with subtle nods to Egyptian heritage. The menu includes classic dishes like stuffed pigeon, molokhia, 
+                and a variety of grilled meats, all prepared with premium ingredients.
+            </div>
+            <a href="https://maps.app.goo.gl/6gD1ur8dYhm4221q9" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+        <div class="actions-box">
+            <div class="price-label"> <span style="color: #ff9800;">$35 </span>per Meal</div>
+            <a href="tel:+20123456789" class="cta-button">
+                📞 Call to Reserve
+            </a>
+        </div>
+    </div>
+    <div class="features">
+        <div class="feature-item">
+            <i class="fas fa-utensils"></i> Egyptian Fusion Cuisine
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-wine-glass-alt"></i> Full Bar Service
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-wifi"></i> Free Wi-Fi
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-smoking-ban"></i> Non-smoking Area
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-music"></i> Live Egyptian Music
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-parking"></i> Valet Parking
+        </div>
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Ahmed Mahmoud:</strong> "El Tarboush offers the perfect blend of traditional flavors with modern presentation. The stuffed pigeon was exceptional, and the service was impeccable. A must-visit for anyone wanting authentic Egyptian cuisine in a refined setting."</p>
+        </div>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p><strong>Sophie Laurent:</strong> "Wonderful dining experience! The molokhia was the best I've ever tasted, and the ambiance was perfect for our anniversary dinner. The staff went above and beyond to make our evening special."</p>
+        </div>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Youssef Kamal:</strong> "As an Egyptian living abroad, El Tarboush brought back all the flavors of home but with an elegant twist. The grilled meats were perfectly seasoned and cooked. Highly recommend the mixed grill platter!"</p>
+        </div>
+    </div>
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="container" id="CasaDiNapoli">
+        <div class="hotel-name">Casa Di Napoli</div>
+        <div class="left">
+            <img src="img/Casa Di Napoli3.jpg" alt="Casa Di Napoli Restaurant" style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="img/Casa Di Napoli1.jpg" alt="Casa Di Napoli Pizza" style="height: 220px; object-fit: cover;">
+            <img src="img/casa-di-napoli4.jpg" alt="Casa Di Napoli Pasta" style="height: 220px; object-fit: cover;">
+        </div>
+    </div>
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <div class="score">(4.9)</div>
+                </div>
+            </div>
+
+            <div class="description">
+                Casa Di Napoli brings authentic Italian cuisine to the heart of Cairo. With a wood-fired oven imported from Naples 
+                and ingredients sourced directly from Italy, this restaurant offers genuine Italian flavors. The elegant yet 
+                cozy atmosphere features rustic Italian decor, making it perfect for romantic dinners or family gatherings. 
+                Their signature dishes include handmade pastas, traditional pizzas, and exquisite tiramisu.
+            </div>
+            <a href="https://maps.app.goo.gl/jb4yVMxWApZmXhNP9" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+        <div class="actions-box">
+            <div class="price-label"> <span style="color: #ff9800;">$45 </span>per Meal</div>
+            <a href="tel:+20123456789" class="cta-button">
+                📞 Call to Reserve
+            </a>
+        </div>
+    </div>
+    <div class="features">
+        <div class="feature-item">
+            <i class="fas fa-pizza-slice"></i> Authentic Italian Cuisine
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-wine-glass-alt"></i> Extensive Italian Wine List
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-utensils"></i> Handmade Pasta Daily
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-fire"></i> Wood-Fired Pizza Oven
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-music"></i> Live Italian Music (Weekends)
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-child"></i> Kids Menu Available
+        </div>
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Marco Rossi:</strong> "As an Italian living in Cairo, Casa Di Napoli is the closest I've found to home cooking. Their pasta is al dente perfection, and the risotto milanese rivals what I grew up with in Milan. The tiramisu is divine!"</p>
+        </div>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p><strong>Layla Abdelrahman:</strong> "The best Italian restaurant in Cairo! The quattro formaggi pizza was heavenly, with the perfect crispy crust. The ambiance is romantic and authentic. We'll definitely be regulars!"</p>
+        </div>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>David Johnson:</strong> "Exceptional dining experience from start to finish. The osso buco was tender and flavorful, and the wine pairing recommendation was spot on. Service was attentive without being intrusive. A true gem!"</p>
+        </div>
+    </div>
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="container" id="AlSahabyLane">
+        <div class="hotel-name">Al-Sahaby Lane Restaurant</div>
+        <div class="left">
+            <img src="img/Al-Sahaby Lane Restaurant1.jpg" alt="Al-Sahaby Lane Restaurant" style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="img/Al-Sahaby Lane Restaurant2.jpg" alt="Al-Sahaby Lane View" style="height: 220px; object-fit: cover;">
+            <img src="img/Al-Sahaby Lane Restaurant3.jpg" alt="Al-Sahaby Lane Food" style="height: 220px; object-fit: cover;">
+        </div>
+    </div>
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <div class="score">(4.7)</div>
+                </div>
+            </div>
+
+            <div class="description">
+                Nestled in the historic Khan El Khalili district, Al-Sahaby Lane Restaurant offers breathtaking views of 
+                Al-Azhar Mosque along with authentic Egyptian cuisine. The rooftop setting provides a magical atmosphere, 
+                especially at sunset. Specializing in traditional Egyptian dishes with recipes passed down through generations, 
+                the restaurant is famous for its mezze platters, grilled meats, and homemade desserts. The decor features 
+                beautiful Islamic art and antique furnishings.
+            </div>
+            <a href="https://maps.app.goo.gl/ZVZLdUajSt9eZRHc6" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+        <div class="actions-box">
+            <div class="price-label"> <span style="color: #ff9800;">$30 </span>per Meal</div>
+            <a href="tel:+20123456789" class="cta-button">
+                📞 Call to Reserve
+            </a>
+        </div>
+    </div>
+    <div class="features">
+        <div class="feature-item">
+            <i class="fas fa-mosque"></i> View of Al-Azhar Mosque
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-utensils"></i> Traditional Egyptian Cuisine
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-building"></i> Historic Khan El Khalili Location
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-sun"></i> Rooftop Dining
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-smoking"></i> Shisha Available
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-birthday-cake"></i> Special Occasion Menus
+        </div>
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Fatima Hassan:</strong> "Dining at Al-Sahaby Lane while watching the sunset over Al-Azhar was the highlight of our trip to Cairo. The food was delicious, especially the stuffed vine leaves and lamb chops. The view is worth visiting for alone!"</p>
+        </div>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p><strong>James Wilson:</strong> "This hidden gem offers the perfect combination of amazing views and authentic Egyptian food. The mezze platter was incredible, with flavors I'd never experienced before. The staff were friendly and knowledgeable about the menu."</p>
+        </div>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Nourhan Samir:</strong> "Al-Sahaby Lane captures the essence of old Cairo. The decor, the view, the food - everything transports you to another time. The molokhia was exactly like my grandmother used to make. A truly special dining experience."</p>
+        </div>
+    </div>
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="container" id="1886Restaurant">
+        <div class="hotel-name">1886 Restaurant</div>
+        <div class="left">
+            <img src="img/1886 Restaurant1.jpg" alt="1886 Restaurant" style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="img/1886 Restaurant2.jpg" alt="1886 Restaurant Interior" style="height: 220px; object-fit: cover;">
+            <img src="img/1886 Restaurant3.webp" alt="1886 Restaurant Food" style="height: 220px; object-fit: cover;">
+        </div>
+    </div>
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <div class="score">(5.0)</div>
+                </div>
+            </div>
+
+            <div class="description">
+                1886 Restaurant is a fine dining establishment located in the historic center of Cairo. Housed in a 
+                beautifully restored 19th-century building, the restaurant offers an elegant atmosphere with high ceilings, 
+                antique chandeliers, and period furnishings. The menu features contemporary European cuisine with Egyptian 
+                influences, prepared with locally sourced ingredients. Known for its impeccable service and extensive wine 
+                cellar, 1886 is perfect for special occasions and business dinners.
+            </div>
+            <a href="https://maps.app.goo.gl/HG9GpaoXqxhTNWVf7" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+        <div class="actions-box">
+            <div class="price-label"> <span style="color: #ff9800;">$80 </span>per Meal</div>
+            <a href="tel:+20123456789" class="cta-button">
+                📞 Call to Reserve
+            </a>
+        </div>
+    </div>
+    <div class="features">
+        <div class="feature-item">
+            <i class="fas fa-landmark"></i> Historic Building
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-utensils"></i> Fine Dining Experience
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-wine-bottle"></i> Extensive Wine Selection
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-music"></i> Live Piano Music
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-chess-queen"></i> Private Dining Rooms
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-vest"></i> Jacket Recommended
+        </div>
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Robert Chamberlain:</strong> "1886 Restaurant is without doubt the finest dining experience in Cairo. The duck confit was perfection, and the wine pairing was expertly chosen. The ambiance of the historic building adds to the magical evening. Worth every penny for a special occasion."</p>
+        </div>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Amira Salah:</strong> "We celebrated our anniversary at 1886 and it was unforgettable. The staff decorated our table with rose petals, and the sommelier helped us select a perfect Egyptian wine. The beef Wellington was cooked to perfection. This is fine dining at its best."</p>
+        </div>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p><strong>Thomas Weber:</strong> "As a frequent business traveler, I've dined in top restaurants worldwide. 1886 stands among the best. The attention to detail in both food and service is remarkable. The tasting menu with wine pairing was an exquisite journey through Egyptian-influenced French cuisine."</p>
+        </div>
+    </div>
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="container" id="MetroRestaurant">
+        <div class="hotel-name">Metro Restaurant</div>
+        <div class="left">
+            <img src="img/Metro Restaurant1.jpg" alt="Metro Restaurant" style="height: 440px; object-fit: cover;">
+        </div>
+        <div class="right">
+            <img src="img/Metro Restaurant2.jpg" alt="Metro Restaurant Interior" style="height: 220px; object-fit: cover;">
+            <img src="img/Metro Restaurant3.webp" alt="Metro Restaurant Food" style="height: 220px; object-fit: cover;">
+        </div>
+    </div>
+    <div class="info-section">
+        <div class="details">
+            <div class="header-row">
+                <div class="title">About the place</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <div class="score">(4.5)</div>
+                </div>
+            </div>
+
+            <div class="description">
+                Metro Restaurant is a beloved Cairo institution, serving delicious Egyptian and Middle Eastern cuisine 
+                since 1937. Known for its casual, friendly atmosphere and consistently good food, Metro offers a wide 
+                range of traditional dishes at reasonable prices. The restaurant's art deco interior has remained largely 
+                unchanged over the decades, giving it a charming retro vibe. Popular dishes include ful medames, taameya, 
+                and their famous stuffed pigeon.
+            </div>
+            <a href="https://maps.app.goo.gl/NuoMdtU4WUkthjUB6" target="_blank" class="cta-button">
+                <i class="fas fa-map-marker-alt"></i> Location
+            </a>
+        </div>
+        <div class="actions-box">
+            <div class="price-label"> <span style="color: #ff9800;">$20 </span>per Meal</div>
+            <a href="tel:+20123456789" class="cta-button">
+                📞 Call to Reserve
+            </a>
+        </div>
+    </div>
+    <div class="features">
+        <div class="feature-item">
+            <i class="fas fa-history"></i> Established 1937
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-utensils"></i> Egyptian & Middle Eastern
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-building"></i> Art Deco Interior
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-coffee"></i> Traditional Egyptian Breakfast
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-bus"></i> Central Location
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-users"></i> Family-Friendly
+        </div>
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Visitors Say</h2>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Hani Farouk:</strong> "Metro Restaurant is a Cairo classic that never disappoints. I've been coming here for over 30 years, and the quality remains excellent. The ful medames breakfast is the best in the city, and the prices are very reasonable for the quality and portions."</p>
+        </div>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p><strong>Sarah Johnson:</strong> "For authentic Egyptian food in a no-frills, historic setting, Metro can't be beat. The stuffed pigeon was flavorful and tender, and the lentil soup was hearty and delicious. The art deco interior makes you feel like you've stepped back in time."</p>
+        </div>
+        <div class="comment">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p><strong>Mohamed Ali:</strong> "Metro Restaurant is my go-to place for traditional Egyptian comfort food. The koshari is excellent, and the taameya (Egyptian falafel) is crispy on the outside, fluffy on the inside. The service is fast and friendly, and the retro atmosphere is charming. Great value for money!"</p>
+        </div>
+    </div>
+    <div class="comment-form">
+        <h3>Feedback & Questions</h3>
+        <p>If you have any inquiries or would like to share your experience, feel free to get in touch with us.</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <a href="index.html" class="chat-icon" title="Chat with us!">
+        <i class="fas fa-comments"></i>
+    </a>
+
+    <footer style="margin-top: 3%;">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Pharaoh's Way</h3>
+                <p>Explore the wonders of ancient Egypt and enjoy the beauty of modern cities.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Need Help?</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Cairo, Egypt</p>
+                <p><i class="fa-solid fa-phone"></i> +20-123-456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank"><img src="imgs/image 12.png" alt="Facebook"></a>
+                    <a href="https://instagram.com" target="_blank"><img src="imgs/Social.png" alt="Instagram"></a>
+                    <a href="https://twitter.com" target="_blank"><img src="imgs/icon.png" alt="Twitter"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="restLuxor.js"></script>
+</body>
+
+</html>

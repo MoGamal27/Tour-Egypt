@@ -68,6 +68,11 @@ export type Activity = $Result.DefaultSelection<Prisma.$ActivityPayload>
  * 
  */
 export type Review = $Result.DefaultSelection<Prisma.$ReviewPayload>
+/**
+ * Model HotelReview
+ * 
+ */
+export type HotelReview = $Result.DefaultSelection<Prisma.$HotelReviewPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -303,6 +308,16 @@ export class PrismaClient<
     * ```
     */
   get review(): Prisma.ReviewDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.hotelReview`: Exposes CRUD operations for the **HotelReview** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more HotelReviews
+    * const hotelReviews = await prisma.hotelReview.findMany()
+    * ```
+    */
+  get hotelReview(): Prisma.HotelReviewDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -361,8 +376,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 6.7.0
-   * Query Engine version: 3cff47a7f5d65c3ea74883f1d736e41d68ce91ed
+   * Prisma Client JS version: 6.9.0
+   * Query Engine version: 81e4af48011447c3cc503a190e86995b66d2a28e
    */
   export type PrismaVersion = {
     client: string
@@ -753,7 +768,8 @@ export namespace Prisma {
     Souvenirs: 'Souvenirs',
     Booking: 'Booking',
     Activity: 'Activity',
-    Review: 'Review'
+    Review: 'Review',
+    HotelReview: 'HotelReview'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -772,7 +788,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "destination" | "attraction" | "restaurant" | "hotel" | "tourGuide" | "tourist" | "category" | "souvenirs" | "booking" | "activity" | "review"
+      modelProps: "destination" | "attraction" | "restaurant" | "hotel" | "tourGuide" | "tourist" | "category" | "souvenirs" | "booking" | "activity" | "review" | "hotelReview"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1502,6 +1518,72 @@ export namespace Prisma {
           }
         }
       }
+      HotelReview: {
+        payload: Prisma.$HotelReviewPayload<ExtArgs>
+        fields: Prisma.HotelReviewFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.HotelReviewFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HotelReviewPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.HotelReviewFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HotelReviewPayload>
+          }
+          findFirst: {
+            args: Prisma.HotelReviewFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HotelReviewPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.HotelReviewFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HotelReviewPayload>
+          }
+          findMany: {
+            args: Prisma.HotelReviewFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HotelReviewPayload>[]
+          }
+          create: {
+            args: Prisma.HotelReviewCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HotelReviewPayload>
+          }
+          createMany: {
+            args: Prisma.HotelReviewCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.HotelReviewDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HotelReviewPayload>
+          }
+          update: {
+            args: Prisma.HotelReviewUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HotelReviewPayload>
+          }
+          deleteMany: {
+            args: Prisma.HotelReviewDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.HotelReviewUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.HotelReviewUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HotelReviewPayload>
+          }
+          aggregate: {
+            args: Prisma.HotelReviewAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateHotelReview>
+          }
+          groupBy: {
+            args: Prisma.HotelReviewGroupByArgs<ExtArgs>
+            result: $Utils.Optional<HotelReviewGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.HotelReviewCountArgs<ExtArgs>
+            result: $Utils.Optional<HotelReviewCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1597,6 +1679,7 @@ export namespace Prisma {
     booking?: BookingOmit
     activity?: ActivityOmit
     review?: ReviewOmit
+    hotelReview?: HotelReviewOmit
   }
 
   /* Types for Logging */
@@ -1750,6 +1833,37 @@ export namespace Prisma {
    */
   export type DestinationCountOutputTypeCountActivitiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: ActivityWhereInput
+  }
+
+
+  /**
+   * Count Type HotelCountOutputType
+   */
+
+  export type HotelCountOutputType = {
+    reviews: number
+  }
+
+  export type HotelCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    reviews?: boolean | HotelCountOutputTypeCountReviewsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * HotelCountOutputType without action
+   */
+  export type HotelCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HotelCountOutputType
+     */
+    select?: HotelCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * HotelCountOutputType without action
+   */
+  export type HotelCountOutputTypeCountReviewsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HotelReviewWhereInput
   }
 
 
@@ -4974,6 +5088,8 @@ export namespace Prisma {
     location?: boolean
     destinationId?: boolean
     destination?: boolean | DestinationDefaultArgs<ExtArgs>
+    reviews?: boolean | Hotel$reviewsArgs<ExtArgs>
+    _count?: boolean | HotelCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["hotel"]>
 
 
@@ -4988,12 +5104,15 @@ export namespace Prisma {
   export type HotelOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "location" | "destinationId", ExtArgs["result"]["hotel"]>
   export type HotelInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     destination?: boolean | DestinationDefaultArgs<ExtArgs>
+    reviews?: boolean | Hotel$reviewsArgs<ExtArgs>
+    _count?: boolean | HotelCountOutputTypeDefaultArgs<ExtArgs>
   }
 
   export type $HotelPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Hotel"
     objects: {
       destination: Prisma.$DestinationPayload<ExtArgs>
+      reviews: Prisma.$HotelReviewPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -5341,6 +5460,7 @@ export namespace Prisma {
   export interface Prisma__HotelClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     destination<T extends DestinationDefaultArgs<ExtArgs> = {}>(args?: Subset<T, DestinationDefaultArgs<ExtArgs>>): Prisma__DestinationClient<$Result.GetResult<Prisma.$DestinationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    reviews<T extends Hotel$reviewsArgs<ExtArgs> = {}>(args?: Subset<T, Hotel$reviewsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HotelReviewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -5714,6 +5834,30 @@ export namespace Prisma {
      * Limit how many Hotels to delete.
      */
     limit?: number
+  }
+
+  /**
+   * Hotel.reviews
+   */
+  export type Hotel$reviewsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HotelReview
+     */
+    select?: HotelReviewSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HotelReview
+     */
+    omit?: HotelReviewOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HotelReviewInclude<ExtArgs> | null
+    where?: HotelReviewWhereInput
+    orderBy?: HotelReviewOrderByWithRelationInput | HotelReviewOrderByWithRelationInput[]
+    cursor?: HotelReviewWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: HotelReviewScalarFieldEnum | HotelReviewScalarFieldEnum[]
   }
 
   /**
@@ -12593,6 +12737,1021 @@ export namespace Prisma {
 
 
   /**
+   * Model HotelReview
+   */
+
+  export type AggregateHotelReview = {
+    _count: HotelReviewCountAggregateOutputType | null
+    _avg: HotelReviewAvgAggregateOutputType | null
+    _sum: HotelReviewSumAggregateOutputType | null
+    _min: HotelReviewMinAggregateOutputType | null
+    _max: HotelReviewMaxAggregateOutputType | null
+  }
+
+  export type HotelReviewAvgAggregateOutputType = {
+    id: number | null
+    hotelId: number | null
+    rating: number | null
+  }
+
+  export type HotelReviewSumAggregateOutputType = {
+    id: number | null
+    hotelId: number | null
+    rating: number | null
+  }
+
+  export type HotelReviewMinAggregateOutputType = {
+    id: number | null
+    hotelId: number | null
+    name: string | null
+    email: string | null
+    message: string | null
+    rating: number | null
+    sentiment: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type HotelReviewMaxAggregateOutputType = {
+    id: number | null
+    hotelId: number | null
+    name: string | null
+    email: string | null
+    message: string | null
+    rating: number | null
+    sentiment: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type HotelReviewCountAggregateOutputType = {
+    id: number
+    hotelId: number
+    name: number
+    email: number
+    message: number
+    rating: number
+    sentiment: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type HotelReviewAvgAggregateInputType = {
+    id?: true
+    hotelId?: true
+    rating?: true
+  }
+
+  export type HotelReviewSumAggregateInputType = {
+    id?: true
+    hotelId?: true
+    rating?: true
+  }
+
+  export type HotelReviewMinAggregateInputType = {
+    id?: true
+    hotelId?: true
+    name?: true
+    email?: true
+    message?: true
+    rating?: true
+    sentiment?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type HotelReviewMaxAggregateInputType = {
+    id?: true
+    hotelId?: true
+    name?: true
+    email?: true
+    message?: true
+    rating?: true
+    sentiment?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type HotelReviewCountAggregateInputType = {
+    id?: true
+    hotelId?: true
+    name?: true
+    email?: true
+    message?: true
+    rating?: true
+    sentiment?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type HotelReviewAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HotelReview to aggregate.
+     */
+    where?: HotelReviewWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HotelReviews to fetch.
+     */
+    orderBy?: HotelReviewOrderByWithRelationInput | HotelReviewOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: HotelReviewWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HotelReviews from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HotelReviews.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned HotelReviews
+    **/
+    _count?: true | HotelReviewCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: HotelReviewAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: HotelReviewSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: HotelReviewMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: HotelReviewMaxAggregateInputType
+  }
+
+  export type GetHotelReviewAggregateType<T extends HotelReviewAggregateArgs> = {
+        [P in keyof T & keyof AggregateHotelReview]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateHotelReview[P]>
+      : GetScalarType<T[P], AggregateHotelReview[P]>
+  }
+
+
+
+
+  export type HotelReviewGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HotelReviewWhereInput
+    orderBy?: HotelReviewOrderByWithAggregationInput | HotelReviewOrderByWithAggregationInput[]
+    by: HotelReviewScalarFieldEnum[] | HotelReviewScalarFieldEnum
+    having?: HotelReviewScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: HotelReviewCountAggregateInputType | true
+    _avg?: HotelReviewAvgAggregateInputType
+    _sum?: HotelReviewSumAggregateInputType
+    _min?: HotelReviewMinAggregateInputType
+    _max?: HotelReviewMaxAggregateInputType
+  }
+
+  export type HotelReviewGroupByOutputType = {
+    id: number
+    hotelId: number
+    name: string
+    email: string
+    message: string
+    rating: number
+    sentiment: string | null
+    createdAt: Date
+    updatedAt: Date
+    _count: HotelReviewCountAggregateOutputType | null
+    _avg: HotelReviewAvgAggregateOutputType | null
+    _sum: HotelReviewSumAggregateOutputType | null
+    _min: HotelReviewMinAggregateOutputType | null
+    _max: HotelReviewMaxAggregateOutputType | null
+  }
+
+  type GetHotelReviewGroupByPayload<T extends HotelReviewGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<HotelReviewGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof HotelReviewGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], HotelReviewGroupByOutputType[P]>
+            : GetScalarType<T[P], HotelReviewGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type HotelReviewSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    hotelId?: boolean
+    name?: boolean
+    email?: boolean
+    message?: boolean
+    rating?: boolean
+    sentiment?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    hotel?: boolean | HotelDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["hotelReview"]>
+
+
+
+  export type HotelReviewSelectScalar = {
+    id?: boolean
+    hotelId?: boolean
+    name?: boolean
+    email?: boolean
+    message?: boolean
+    rating?: boolean
+    sentiment?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type HotelReviewOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "hotelId" | "name" | "email" | "message" | "rating" | "sentiment" | "createdAt" | "updatedAt", ExtArgs["result"]["hotelReview"]>
+  export type HotelReviewInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    hotel?: boolean | HotelDefaultArgs<ExtArgs>
+  }
+
+  export type $HotelReviewPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "HotelReview"
+    objects: {
+      hotel: Prisma.$HotelPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      hotelId: number
+      name: string
+      email: string
+      message: string
+      rating: number
+      sentiment: string | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["hotelReview"]>
+    composites: {}
+  }
+
+  type HotelReviewGetPayload<S extends boolean | null | undefined | HotelReviewDefaultArgs> = $Result.GetResult<Prisma.$HotelReviewPayload, S>
+
+  type HotelReviewCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<HotelReviewFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: HotelReviewCountAggregateInputType | true
+    }
+
+  export interface HotelReviewDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['HotelReview'], meta: { name: 'HotelReview' } }
+    /**
+     * Find zero or one HotelReview that matches the filter.
+     * @param {HotelReviewFindUniqueArgs} args - Arguments to find a HotelReview
+     * @example
+     * // Get one HotelReview
+     * const hotelReview = await prisma.hotelReview.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends HotelReviewFindUniqueArgs>(args: SelectSubset<T, HotelReviewFindUniqueArgs<ExtArgs>>): Prisma__HotelReviewClient<$Result.GetResult<Prisma.$HotelReviewPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one HotelReview that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {HotelReviewFindUniqueOrThrowArgs} args - Arguments to find a HotelReview
+     * @example
+     * // Get one HotelReview
+     * const hotelReview = await prisma.hotelReview.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends HotelReviewFindUniqueOrThrowArgs>(args: SelectSubset<T, HotelReviewFindUniqueOrThrowArgs<ExtArgs>>): Prisma__HotelReviewClient<$Result.GetResult<Prisma.$HotelReviewPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HotelReview that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HotelReviewFindFirstArgs} args - Arguments to find a HotelReview
+     * @example
+     * // Get one HotelReview
+     * const hotelReview = await prisma.hotelReview.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends HotelReviewFindFirstArgs>(args?: SelectSubset<T, HotelReviewFindFirstArgs<ExtArgs>>): Prisma__HotelReviewClient<$Result.GetResult<Prisma.$HotelReviewPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first HotelReview that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HotelReviewFindFirstOrThrowArgs} args - Arguments to find a HotelReview
+     * @example
+     * // Get one HotelReview
+     * const hotelReview = await prisma.hotelReview.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends HotelReviewFindFirstOrThrowArgs>(args?: SelectSubset<T, HotelReviewFindFirstOrThrowArgs<ExtArgs>>): Prisma__HotelReviewClient<$Result.GetResult<Prisma.$HotelReviewPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more HotelReviews that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HotelReviewFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all HotelReviews
+     * const hotelReviews = await prisma.hotelReview.findMany()
+     * 
+     * // Get first 10 HotelReviews
+     * const hotelReviews = await prisma.hotelReview.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const hotelReviewWithIdOnly = await prisma.hotelReview.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends HotelReviewFindManyArgs>(args?: SelectSubset<T, HotelReviewFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HotelReviewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a HotelReview.
+     * @param {HotelReviewCreateArgs} args - Arguments to create a HotelReview.
+     * @example
+     * // Create one HotelReview
+     * const HotelReview = await prisma.hotelReview.create({
+     *   data: {
+     *     // ... data to create a HotelReview
+     *   }
+     * })
+     * 
+     */
+    create<T extends HotelReviewCreateArgs>(args: SelectSubset<T, HotelReviewCreateArgs<ExtArgs>>): Prisma__HotelReviewClient<$Result.GetResult<Prisma.$HotelReviewPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many HotelReviews.
+     * @param {HotelReviewCreateManyArgs} args - Arguments to create many HotelReviews.
+     * @example
+     * // Create many HotelReviews
+     * const hotelReview = await prisma.hotelReview.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends HotelReviewCreateManyArgs>(args?: SelectSubset<T, HotelReviewCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a HotelReview.
+     * @param {HotelReviewDeleteArgs} args - Arguments to delete one HotelReview.
+     * @example
+     * // Delete one HotelReview
+     * const HotelReview = await prisma.hotelReview.delete({
+     *   where: {
+     *     // ... filter to delete one HotelReview
+     *   }
+     * })
+     * 
+     */
+    delete<T extends HotelReviewDeleteArgs>(args: SelectSubset<T, HotelReviewDeleteArgs<ExtArgs>>): Prisma__HotelReviewClient<$Result.GetResult<Prisma.$HotelReviewPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one HotelReview.
+     * @param {HotelReviewUpdateArgs} args - Arguments to update one HotelReview.
+     * @example
+     * // Update one HotelReview
+     * const hotelReview = await prisma.hotelReview.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends HotelReviewUpdateArgs>(args: SelectSubset<T, HotelReviewUpdateArgs<ExtArgs>>): Prisma__HotelReviewClient<$Result.GetResult<Prisma.$HotelReviewPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more HotelReviews.
+     * @param {HotelReviewDeleteManyArgs} args - Arguments to filter HotelReviews to delete.
+     * @example
+     * // Delete a few HotelReviews
+     * const { count } = await prisma.hotelReview.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends HotelReviewDeleteManyArgs>(args?: SelectSubset<T, HotelReviewDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more HotelReviews.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HotelReviewUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many HotelReviews
+     * const hotelReview = await prisma.hotelReview.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends HotelReviewUpdateManyArgs>(args: SelectSubset<T, HotelReviewUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one HotelReview.
+     * @param {HotelReviewUpsertArgs} args - Arguments to update or create a HotelReview.
+     * @example
+     * // Update or create a HotelReview
+     * const hotelReview = await prisma.hotelReview.upsert({
+     *   create: {
+     *     // ... data to create a HotelReview
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the HotelReview we want to update
+     *   }
+     * })
+     */
+    upsert<T extends HotelReviewUpsertArgs>(args: SelectSubset<T, HotelReviewUpsertArgs<ExtArgs>>): Prisma__HotelReviewClient<$Result.GetResult<Prisma.$HotelReviewPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of HotelReviews.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HotelReviewCountArgs} args - Arguments to filter HotelReviews to count.
+     * @example
+     * // Count the number of HotelReviews
+     * const count = await prisma.hotelReview.count({
+     *   where: {
+     *     // ... the filter for the HotelReviews we want to count
+     *   }
+     * })
+    **/
+    count<T extends HotelReviewCountArgs>(
+      args?: Subset<T, HotelReviewCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], HotelReviewCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a HotelReview.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HotelReviewAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends HotelReviewAggregateArgs>(args: Subset<T, HotelReviewAggregateArgs>): Prisma.PrismaPromise<GetHotelReviewAggregateType<T>>
+
+    /**
+     * Group by HotelReview.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HotelReviewGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends HotelReviewGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: HotelReviewGroupByArgs['orderBy'] }
+        : { orderBy?: HotelReviewGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, HotelReviewGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetHotelReviewGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the HotelReview model
+   */
+  readonly fields: HotelReviewFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for HotelReview.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__HotelReviewClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    hotel<T extends HotelDefaultArgs<ExtArgs> = {}>(args?: Subset<T, HotelDefaultArgs<ExtArgs>>): Prisma__HotelClient<$Result.GetResult<Prisma.$HotelPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the HotelReview model
+   */
+  interface HotelReviewFieldRefs {
+    readonly id: FieldRef<"HotelReview", 'Int'>
+    readonly hotelId: FieldRef<"HotelReview", 'Int'>
+    readonly name: FieldRef<"HotelReview", 'String'>
+    readonly email: FieldRef<"HotelReview", 'String'>
+    readonly message: FieldRef<"HotelReview", 'String'>
+    readonly rating: FieldRef<"HotelReview", 'Float'>
+    readonly sentiment: FieldRef<"HotelReview", 'String'>
+    readonly createdAt: FieldRef<"HotelReview", 'DateTime'>
+    readonly updatedAt: FieldRef<"HotelReview", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * HotelReview findUnique
+   */
+  export type HotelReviewFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HotelReview
+     */
+    select?: HotelReviewSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HotelReview
+     */
+    omit?: HotelReviewOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HotelReviewInclude<ExtArgs> | null
+    /**
+     * Filter, which HotelReview to fetch.
+     */
+    where: HotelReviewWhereUniqueInput
+  }
+
+  /**
+   * HotelReview findUniqueOrThrow
+   */
+  export type HotelReviewFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HotelReview
+     */
+    select?: HotelReviewSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HotelReview
+     */
+    omit?: HotelReviewOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HotelReviewInclude<ExtArgs> | null
+    /**
+     * Filter, which HotelReview to fetch.
+     */
+    where: HotelReviewWhereUniqueInput
+  }
+
+  /**
+   * HotelReview findFirst
+   */
+  export type HotelReviewFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HotelReview
+     */
+    select?: HotelReviewSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HotelReview
+     */
+    omit?: HotelReviewOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HotelReviewInclude<ExtArgs> | null
+    /**
+     * Filter, which HotelReview to fetch.
+     */
+    where?: HotelReviewWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HotelReviews to fetch.
+     */
+    orderBy?: HotelReviewOrderByWithRelationInput | HotelReviewOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HotelReviews.
+     */
+    cursor?: HotelReviewWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HotelReviews from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HotelReviews.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HotelReviews.
+     */
+    distinct?: HotelReviewScalarFieldEnum | HotelReviewScalarFieldEnum[]
+  }
+
+  /**
+   * HotelReview findFirstOrThrow
+   */
+  export type HotelReviewFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HotelReview
+     */
+    select?: HotelReviewSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HotelReview
+     */
+    omit?: HotelReviewOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HotelReviewInclude<ExtArgs> | null
+    /**
+     * Filter, which HotelReview to fetch.
+     */
+    where?: HotelReviewWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HotelReviews to fetch.
+     */
+    orderBy?: HotelReviewOrderByWithRelationInput | HotelReviewOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for HotelReviews.
+     */
+    cursor?: HotelReviewWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HotelReviews from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HotelReviews.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of HotelReviews.
+     */
+    distinct?: HotelReviewScalarFieldEnum | HotelReviewScalarFieldEnum[]
+  }
+
+  /**
+   * HotelReview findMany
+   */
+  export type HotelReviewFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HotelReview
+     */
+    select?: HotelReviewSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HotelReview
+     */
+    omit?: HotelReviewOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HotelReviewInclude<ExtArgs> | null
+    /**
+     * Filter, which HotelReviews to fetch.
+     */
+    where?: HotelReviewWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of HotelReviews to fetch.
+     */
+    orderBy?: HotelReviewOrderByWithRelationInput | HotelReviewOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing HotelReviews.
+     */
+    cursor?: HotelReviewWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` HotelReviews from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` HotelReviews.
+     */
+    skip?: number
+    distinct?: HotelReviewScalarFieldEnum | HotelReviewScalarFieldEnum[]
+  }
+
+  /**
+   * HotelReview create
+   */
+  export type HotelReviewCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HotelReview
+     */
+    select?: HotelReviewSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HotelReview
+     */
+    omit?: HotelReviewOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HotelReviewInclude<ExtArgs> | null
+    /**
+     * The data needed to create a HotelReview.
+     */
+    data: XOR<HotelReviewCreateInput, HotelReviewUncheckedCreateInput>
+  }
+
+  /**
+   * HotelReview createMany
+   */
+  export type HotelReviewCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many HotelReviews.
+     */
+    data: HotelReviewCreateManyInput | HotelReviewCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * HotelReview update
+   */
+  export type HotelReviewUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HotelReview
+     */
+    select?: HotelReviewSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HotelReview
+     */
+    omit?: HotelReviewOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HotelReviewInclude<ExtArgs> | null
+    /**
+     * The data needed to update a HotelReview.
+     */
+    data: XOR<HotelReviewUpdateInput, HotelReviewUncheckedUpdateInput>
+    /**
+     * Choose, which HotelReview to update.
+     */
+    where: HotelReviewWhereUniqueInput
+  }
+
+  /**
+   * HotelReview updateMany
+   */
+  export type HotelReviewUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update HotelReviews.
+     */
+    data: XOR<HotelReviewUpdateManyMutationInput, HotelReviewUncheckedUpdateManyInput>
+    /**
+     * Filter which HotelReviews to update
+     */
+    where?: HotelReviewWhereInput
+    /**
+     * Limit how many HotelReviews to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * HotelReview upsert
+   */
+  export type HotelReviewUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HotelReview
+     */
+    select?: HotelReviewSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HotelReview
+     */
+    omit?: HotelReviewOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HotelReviewInclude<ExtArgs> | null
+    /**
+     * The filter to search for the HotelReview to update in case it exists.
+     */
+    where: HotelReviewWhereUniqueInput
+    /**
+     * In case the HotelReview found by the `where` argument doesn't exist, create a new HotelReview with this data.
+     */
+    create: XOR<HotelReviewCreateInput, HotelReviewUncheckedCreateInput>
+    /**
+     * In case the HotelReview was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<HotelReviewUpdateInput, HotelReviewUncheckedUpdateInput>
+  }
+
+  /**
+   * HotelReview delete
+   */
+  export type HotelReviewDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HotelReview
+     */
+    select?: HotelReviewSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HotelReview
+     */
+    omit?: HotelReviewOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HotelReviewInclude<ExtArgs> | null
+    /**
+     * Filter which HotelReview to delete.
+     */
+    where: HotelReviewWhereUniqueInput
+  }
+
+  /**
+   * HotelReview deleteMany
+   */
+  export type HotelReviewDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which HotelReviews to delete
+     */
+    where?: HotelReviewWhereInput
+    /**
+     * Limit how many HotelReviews to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * HotelReview without action
+   */
+  export type HotelReviewDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HotelReview
+     */
+    select?: HotelReviewSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the HotelReview
+     */
+    omit?: HotelReviewOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HotelReviewInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -12739,6 +13898,21 @@ export namespace Prisma {
   export type ReviewScalarFieldEnum = (typeof ReviewScalarFieldEnum)[keyof typeof ReviewScalarFieldEnum]
 
 
+  export const HotelReviewScalarFieldEnum: {
+    id: 'id',
+    hotelId: 'hotelId',
+    name: 'name',
+    email: 'email',
+    message: 'message',
+    rating: 'rating',
+    sentiment: 'sentiment',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type HotelReviewScalarFieldEnum = (typeof HotelReviewScalarFieldEnum)[keyof typeof HotelReviewScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
@@ -12851,6 +14025,16 @@ export namespace Prisma {
   };
 
   export type ReviewOrderByRelevanceFieldEnum = (typeof ReviewOrderByRelevanceFieldEnum)[keyof typeof ReviewOrderByRelevanceFieldEnum]
+
+
+  export const HotelReviewOrderByRelevanceFieldEnum: {
+    name: 'name',
+    email: 'email',
+    message: 'message',
+    sentiment: 'sentiment'
+  };
+
+  export type HotelReviewOrderByRelevanceFieldEnum = (typeof HotelReviewOrderByRelevanceFieldEnum)[keyof typeof HotelReviewOrderByRelevanceFieldEnum]
 
 
   /**
@@ -13064,6 +14248,7 @@ export namespace Prisma {
     location?: StringNullableFilter<"Hotel"> | string | null
     destinationId?: IntFilter<"Hotel"> | number
     destination?: XOR<DestinationScalarRelationFilter, DestinationWhereInput>
+    reviews?: HotelReviewListRelationFilter
   }
 
   export type HotelOrderByWithRelationInput = {
@@ -13072,6 +14257,7 @@ export namespace Prisma {
     location?: SortOrderInput | SortOrder
     destinationId?: SortOrder
     destination?: DestinationOrderByWithRelationInput
+    reviews?: HotelReviewOrderByRelationAggregateInput
     _relevance?: HotelOrderByRelevanceInput
   }
 
@@ -13084,6 +14270,7 @@ export namespace Prisma {
     location?: StringNullableFilter<"Hotel"> | string | null
     destinationId?: IntFilter<"Hotel"> | number
     destination?: XOR<DestinationScalarRelationFilter, DestinationWhereInput>
+    reviews?: HotelReviewListRelationFilter
   }, "id">
 
   export type HotelOrderByWithAggregationInput = {
@@ -13590,6 +14777,84 @@ export namespace Prisma {
     updatedAt?: DateTimeWithAggregatesFilter<"Review"> | Date | string
   }
 
+  export type HotelReviewWhereInput = {
+    AND?: HotelReviewWhereInput | HotelReviewWhereInput[]
+    OR?: HotelReviewWhereInput[]
+    NOT?: HotelReviewWhereInput | HotelReviewWhereInput[]
+    id?: IntFilter<"HotelReview"> | number
+    hotelId?: IntFilter<"HotelReview"> | number
+    name?: StringFilter<"HotelReview"> | string
+    email?: StringFilter<"HotelReview"> | string
+    message?: StringFilter<"HotelReview"> | string
+    rating?: FloatFilter<"HotelReview"> | number
+    sentiment?: StringNullableFilter<"HotelReview"> | string | null
+    createdAt?: DateTimeFilter<"HotelReview"> | Date | string
+    updatedAt?: DateTimeFilter<"HotelReview"> | Date | string
+    hotel?: XOR<HotelScalarRelationFilter, HotelWhereInput>
+  }
+
+  export type HotelReviewOrderByWithRelationInput = {
+    id?: SortOrder
+    hotelId?: SortOrder
+    name?: SortOrder
+    email?: SortOrder
+    message?: SortOrder
+    rating?: SortOrder
+    sentiment?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    hotel?: HotelOrderByWithRelationInput
+    _relevance?: HotelReviewOrderByRelevanceInput
+  }
+
+  export type HotelReviewWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: HotelReviewWhereInput | HotelReviewWhereInput[]
+    OR?: HotelReviewWhereInput[]
+    NOT?: HotelReviewWhereInput | HotelReviewWhereInput[]
+    hotelId?: IntFilter<"HotelReview"> | number
+    name?: StringFilter<"HotelReview"> | string
+    email?: StringFilter<"HotelReview"> | string
+    message?: StringFilter<"HotelReview"> | string
+    rating?: FloatFilter<"HotelReview"> | number
+    sentiment?: StringNullableFilter<"HotelReview"> | string | null
+    createdAt?: DateTimeFilter<"HotelReview"> | Date | string
+    updatedAt?: DateTimeFilter<"HotelReview"> | Date | string
+    hotel?: XOR<HotelScalarRelationFilter, HotelWhereInput>
+  }, "id">
+
+  export type HotelReviewOrderByWithAggregationInput = {
+    id?: SortOrder
+    hotelId?: SortOrder
+    name?: SortOrder
+    email?: SortOrder
+    message?: SortOrder
+    rating?: SortOrder
+    sentiment?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: HotelReviewCountOrderByAggregateInput
+    _avg?: HotelReviewAvgOrderByAggregateInput
+    _max?: HotelReviewMaxOrderByAggregateInput
+    _min?: HotelReviewMinOrderByAggregateInput
+    _sum?: HotelReviewSumOrderByAggregateInput
+  }
+
+  export type HotelReviewScalarWhereWithAggregatesInput = {
+    AND?: HotelReviewScalarWhereWithAggregatesInput | HotelReviewScalarWhereWithAggregatesInput[]
+    OR?: HotelReviewScalarWhereWithAggregatesInput[]
+    NOT?: HotelReviewScalarWhereWithAggregatesInput | HotelReviewScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"HotelReview"> | number
+    hotelId?: IntWithAggregatesFilter<"HotelReview"> | number
+    name?: StringWithAggregatesFilter<"HotelReview"> | string
+    email?: StringWithAggregatesFilter<"HotelReview"> | string
+    message?: StringWithAggregatesFilter<"HotelReview"> | string
+    rating?: FloatWithAggregatesFilter<"HotelReview"> | number
+    sentiment?: StringNullableWithAggregatesFilter<"HotelReview"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"HotelReview"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"HotelReview"> | Date | string
+  }
+
   export type DestinationCreateInput = {
     name: string
     description?: string | null
@@ -13743,6 +15008,7 @@ export namespace Prisma {
     name: string
     location?: string | null
     destination: DestinationCreateNestedOneWithoutHotelsInput
+    reviews?: HotelReviewCreateNestedManyWithoutHotelInput
   }
 
   export type HotelUncheckedCreateInput = {
@@ -13750,12 +15016,14 @@ export namespace Prisma {
     name: string
     location?: string | null
     destinationId: number
+    reviews?: HotelReviewUncheckedCreateNestedManyWithoutHotelInput
   }
 
   export type HotelUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
     location?: NullableStringFieldUpdateOperationsInput | string | null
     destination?: DestinationUpdateOneRequiredWithoutHotelsNestedInput
+    reviews?: HotelReviewUpdateManyWithoutHotelNestedInput
   }
 
   export type HotelUncheckedUpdateInput = {
@@ -13763,6 +15031,7 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     location?: NullableStringFieldUpdateOperationsInput | string | null
     destinationId?: IntFieldUpdateOperationsInput | number
+    reviews?: HotelReviewUncheckedUpdateManyWithoutHotelNestedInput
   }
 
   export type HotelCreateManyInput = {
@@ -14275,6 +15544,86 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type HotelReviewCreateInput = {
+    name: string
+    email: string
+    message: string
+    rating: number
+    sentiment?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    hotel: HotelCreateNestedOneWithoutReviewsInput
+  }
+
+  export type HotelReviewUncheckedCreateInput = {
+    id?: number
+    hotelId: number
+    name: string
+    email: string
+    message: string
+    rating: number
+    sentiment?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type HotelReviewUpdateInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    rating?: FloatFieldUpdateOperationsInput | number
+    sentiment?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    hotel?: HotelUpdateOneRequiredWithoutReviewsNestedInput
+  }
+
+  export type HotelReviewUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    hotelId?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    rating?: FloatFieldUpdateOperationsInput | number
+    sentiment?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HotelReviewCreateManyInput = {
+    id?: number
+    hotelId: number
+    name: string
+    email: string
+    message: string
+    rating: number
+    sentiment?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type HotelReviewUpdateManyMutationInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    rating?: FloatFieldUpdateOperationsInput | number
+    sentiment?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HotelReviewUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    hotelId?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    rating?: FloatFieldUpdateOperationsInput | number
+    sentiment?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type IntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[]
@@ -14532,6 +15881,16 @@ export namespace Prisma {
   export type RestaurantSumOrderByAggregateInput = {
     id?: SortOrder
     destinationId?: SortOrder
+  }
+
+  export type HotelReviewListRelationFilter = {
+    every?: HotelReviewWhereInput
+    some?: HotelReviewWhereInput
+    none?: HotelReviewWhereInput
+  }
+
+  export type HotelReviewOrderByRelationAggregateInput = {
+    _count?: SortOrder
   }
 
   export type HotelOrderByRelevanceInput = {
@@ -15004,6 +16363,65 @@ export namespace Prisma {
     rating?: SortOrder
   }
 
+  export type HotelScalarRelationFilter = {
+    is?: HotelWhereInput
+    isNot?: HotelWhereInput
+  }
+
+  export type HotelReviewOrderByRelevanceInput = {
+    fields: HotelReviewOrderByRelevanceFieldEnum | HotelReviewOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type HotelReviewCountOrderByAggregateInput = {
+    id?: SortOrder
+    hotelId?: SortOrder
+    name?: SortOrder
+    email?: SortOrder
+    message?: SortOrder
+    rating?: SortOrder
+    sentiment?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type HotelReviewAvgOrderByAggregateInput = {
+    id?: SortOrder
+    hotelId?: SortOrder
+    rating?: SortOrder
+  }
+
+  export type HotelReviewMaxOrderByAggregateInput = {
+    id?: SortOrder
+    hotelId?: SortOrder
+    name?: SortOrder
+    email?: SortOrder
+    message?: SortOrder
+    rating?: SortOrder
+    sentiment?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type HotelReviewMinOrderByAggregateInput = {
+    id?: SortOrder
+    hotelId?: SortOrder
+    name?: SortOrder
+    email?: SortOrder
+    message?: SortOrder
+    rating?: SortOrder
+    sentiment?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type HotelReviewSumOrderByAggregateInput = {
+    id?: SortOrder
+    hotelId?: SortOrder
+    rating?: SortOrder
+  }
+
   export type AttractionCreateNestedManyWithoutDestinationInput = {
     create?: XOR<AttractionCreateWithoutDestinationInput, AttractionUncheckedCreateWithoutDestinationInput> | AttractionCreateWithoutDestinationInput[] | AttractionUncheckedCreateWithoutDestinationInput[]
     connectOrCreate?: AttractionCreateOrConnectWithoutDestinationInput | AttractionCreateOrConnectWithoutDestinationInput[]
@@ -15264,12 +16682,54 @@ export namespace Prisma {
     connect?: DestinationWhereUniqueInput
   }
 
+  export type HotelReviewCreateNestedManyWithoutHotelInput = {
+    create?: XOR<HotelReviewCreateWithoutHotelInput, HotelReviewUncheckedCreateWithoutHotelInput> | HotelReviewCreateWithoutHotelInput[] | HotelReviewUncheckedCreateWithoutHotelInput[]
+    connectOrCreate?: HotelReviewCreateOrConnectWithoutHotelInput | HotelReviewCreateOrConnectWithoutHotelInput[]
+    createMany?: HotelReviewCreateManyHotelInputEnvelope
+    connect?: HotelReviewWhereUniqueInput | HotelReviewWhereUniqueInput[]
+  }
+
+  export type HotelReviewUncheckedCreateNestedManyWithoutHotelInput = {
+    create?: XOR<HotelReviewCreateWithoutHotelInput, HotelReviewUncheckedCreateWithoutHotelInput> | HotelReviewCreateWithoutHotelInput[] | HotelReviewUncheckedCreateWithoutHotelInput[]
+    connectOrCreate?: HotelReviewCreateOrConnectWithoutHotelInput | HotelReviewCreateOrConnectWithoutHotelInput[]
+    createMany?: HotelReviewCreateManyHotelInputEnvelope
+    connect?: HotelReviewWhereUniqueInput | HotelReviewWhereUniqueInput[]
+  }
+
   export type DestinationUpdateOneRequiredWithoutHotelsNestedInput = {
     create?: XOR<DestinationCreateWithoutHotelsInput, DestinationUncheckedCreateWithoutHotelsInput>
     connectOrCreate?: DestinationCreateOrConnectWithoutHotelsInput
     upsert?: DestinationUpsertWithoutHotelsInput
     connect?: DestinationWhereUniqueInput
     update?: XOR<XOR<DestinationUpdateToOneWithWhereWithoutHotelsInput, DestinationUpdateWithoutHotelsInput>, DestinationUncheckedUpdateWithoutHotelsInput>
+  }
+
+  export type HotelReviewUpdateManyWithoutHotelNestedInput = {
+    create?: XOR<HotelReviewCreateWithoutHotelInput, HotelReviewUncheckedCreateWithoutHotelInput> | HotelReviewCreateWithoutHotelInput[] | HotelReviewUncheckedCreateWithoutHotelInput[]
+    connectOrCreate?: HotelReviewCreateOrConnectWithoutHotelInput | HotelReviewCreateOrConnectWithoutHotelInput[]
+    upsert?: HotelReviewUpsertWithWhereUniqueWithoutHotelInput | HotelReviewUpsertWithWhereUniqueWithoutHotelInput[]
+    createMany?: HotelReviewCreateManyHotelInputEnvelope
+    set?: HotelReviewWhereUniqueInput | HotelReviewWhereUniqueInput[]
+    disconnect?: HotelReviewWhereUniqueInput | HotelReviewWhereUniqueInput[]
+    delete?: HotelReviewWhereUniqueInput | HotelReviewWhereUniqueInput[]
+    connect?: HotelReviewWhereUniqueInput | HotelReviewWhereUniqueInput[]
+    update?: HotelReviewUpdateWithWhereUniqueWithoutHotelInput | HotelReviewUpdateWithWhereUniqueWithoutHotelInput[]
+    updateMany?: HotelReviewUpdateManyWithWhereWithoutHotelInput | HotelReviewUpdateManyWithWhereWithoutHotelInput[]
+    deleteMany?: HotelReviewScalarWhereInput | HotelReviewScalarWhereInput[]
+  }
+
+  export type HotelReviewUncheckedUpdateManyWithoutHotelNestedInput = {
+    create?: XOR<HotelReviewCreateWithoutHotelInput, HotelReviewUncheckedCreateWithoutHotelInput> | HotelReviewCreateWithoutHotelInput[] | HotelReviewUncheckedCreateWithoutHotelInput[]
+    connectOrCreate?: HotelReviewCreateOrConnectWithoutHotelInput | HotelReviewCreateOrConnectWithoutHotelInput[]
+    upsert?: HotelReviewUpsertWithWhereUniqueWithoutHotelInput | HotelReviewUpsertWithWhereUniqueWithoutHotelInput[]
+    createMany?: HotelReviewCreateManyHotelInputEnvelope
+    set?: HotelReviewWhereUniqueInput | HotelReviewWhereUniqueInput[]
+    disconnect?: HotelReviewWhereUniqueInput | HotelReviewWhereUniqueInput[]
+    delete?: HotelReviewWhereUniqueInput | HotelReviewWhereUniqueInput[]
+    connect?: HotelReviewWhereUniqueInput | HotelReviewWhereUniqueInput[]
+    update?: HotelReviewUpdateWithWhereUniqueWithoutHotelInput | HotelReviewUpdateWithWhereUniqueWithoutHotelInput[]
+    updateMany?: HotelReviewUpdateManyWithWhereWithoutHotelInput | HotelReviewUpdateManyWithWhereWithoutHotelInput[]
+    deleteMany?: HotelReviewScalarWhereInput | HotelReviewScalarWhereInput[]
   }
 
   export type DestinationCreateNestedOneWithoutTourGuidesInput = {
@@ -15374,6 +16834,20 @@ export namespace Prisma {
     upsert?: DestinationUpsertWithoutActivitiesInput
     connect?: DestinationWhereUniqueInput
     update?: XOR<XOR<DestinationUpdateToOneWithWhereWithoutActivitiesInput, DestinationUpdateWithoutActivitiesInput>, DestinationUncheckedUpdateWithoutActivitiesInput>
+  }
+
+  export type HotelCreateNestedOneWithoutReviewsInput = {
+    create?: XOR<HotelCreateWithoutReviewsInput, HotelUncheckedCreateWithoutReviewsInput>
+    connectOrCreate?: HotelCreateOrConnectWithoutReviewsInput
+    connect?: HotelWhereUniqueInput
+  }
+
+  export type HotelUpdateOneRequiredWithoutReviewsNestedInput = {
+    create?: XOR<HotelCreateWithoutReviewsInput, HotelUncheckedCreateWithoutReviewsInput>
+    connectOrCreate?: HotelCreateOrConnectWithoutReviewsInput
+    upsert?: HotelUpsertWithoutReviewsInput
+    connect?: HotelWhereUniqueInput
+    update?: XOR<XOR<HotelUpdateToOneWithWhereWithoutReviewsInput, HotelUpdateWithoutReviewsInput>, HotelUncheckedUpdateWithoutReviewsInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -15604,12 +17078,14 @@ export namespace Prisma {
   export type HotelCreateWithoutDestinationInput = {
     name: string
     location?: string | null
+    reviews?: HotelReviewCreateNestedManyWithoutHotelInput
   }
 
   export type HotelUncheckedCreateWithoutDestinationInput = {
     id?: number
     name: string
     location?: string | null
+    reviews?: HotelReviewUncheckedCreateNestedManyWithoutHotelInput
   }
 
   export type HotelCreateOrConnectWithoutDestinationInput = {
@@ -15968,6 +17444,37 @@ export namespace Prisma {
     create: XOR<DestinationCreateWithoutHotelsInput, DestinationUncheckedCreateWithoutHotelsInput>
   }
 
+  export type HotelReviewCreateWithoutHotelInput = {
+    name: string
+    email: string
+    message: string
+    rating: number
+    sentiment?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type HotelReviewUncheckedCreateWithoutHotelInput = {
+    id?: number
+    name: string
+    email: string
+    message: string
+    rating: number
+    sentiment?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type HotelReviewCreateOrConnectWithoutHotelInput = {
+    where: HotelReviewWhereUniqueInput
+    create: XOR<HotelReviewCreateWithoutHotelInput, HotelReviewUncheckedCreateWithoutHotelInput>
+  }
+
+  export type HotelReviewCreateManyHotelInputEnvelope = {
+    data: HotelReviewCreateManyHotelInput | HotelReviewCreateManyHotelInput[]
+    skipDuplicates?: boolean
+  }
+
   export type DestinationUpsertWithoutHotelsInput = {
     update: XOR<DestinationUpdateWithoutHotelsInput, DestinationUncheckedUpdateWithoutHotelsInput>
     create: XOR<DestinationCreateWithoutHotelsInput, DestinationUncheckedCreateWithoutHotelsInput>
@@ -15996,6 +17503,37 @@ export namespace Prisma {
     restaurants?: RestaurantUncheckedUpdateManyWithoutDestinationNestedInput
     tourGuides?: TourGuideUncheckedUpdateManyWithoutDestinationNestedInput
     activities?: ActivityUncheckedUpdateManyWithoutDestinationNestedInput
+  }
+
+  export type HotelReviewUpsertWithWhereUniqueWithoutHotelInput = {
+    where: HotelReviewWhereUniqueInput
+    update: XOR<HotelReviewUpdateWithoutHotelInput, HotelReviewUncheckedUpdateWithoutHotelInput>
+    create: XOR<HotelReviewCreateWithoutHotelInput, HotelReviewUncheckedCreateWithoutHotelInput>
+  }
+
+  export type HotelReviewUpdateWithWhereUniqueWithoutHotelInput = {
+    where: HotelReviewWhereUniqueInput
+    data: XOR<HotelReviewUpdateWithoutHotelInput, HotelReviewUncheckedUpdateWithoutHotelInput>
+  }
+
+  export type HotelReviewUpdateManyWithWhereWithoutHotelInput = {
+    where: HotelReviewScalarWhereInput
+    data: XOR<HotelReviewUpdateManyMutationInput, HotelReviewUncheckedUpdateManyWithoutHotelInput>
+  }
+
+  export type HotelReviewScalarWhereInput = {
+    AND?: HotelReviewScalarWhereInput | HotelReviewScalarWhereInput[]
+    OR?: HotelReviewScalarWhereInput[]
+    NOT?: HotelReviewScalarWhereInput | HotelReviewScalarWhereInput[]
+    id?: IntFilter<"HotelReview"> | number
+    hotelId?: IntFilter<"HotelReview"> | number
+    name?: StringFilter<"HotelReview"> | string
+    email?: StringFilter<"HotelReview"> | string
+    message?: StringFilter<"HotelReview"> | string
+    rating?: FloatFilter<"HotelReview"> | number
+    sentiment?: StringNullableFilter<"HotelReview"> | string | null
+    createdAt?: DateTimeFilter<"HotelReview"> | Date | string
+    updatedAt?: DateTimeFilter<"HotelReview"> | Date | string
   }
 
   export type DestinationCreateWithoutTourGuidesInput = {
@@ -16196,6 +17734,48 @@ export namespace Prisma {
     tourGuides?: TourGuideUncheckedUpdateManyWithoutDestinationNestedInput
   }
 
+  export type HotelCreateWithoutReviewsInput = {
+    name: string
+    location?: string | null
+    destination: DestinationCreateNestedOneWithoutHotelsInput
+  }
+
+  export type HotelUncheckedCreateWithoutReviewsInput = {
+    id?: number
+    name: string
+    location?: string | null
+    destinationId: number
+  }
+
+  export type HotelCreateOrConnectWithoutReviewsInput = {
+    where: HotelWhereUniqueInput
+    create: XOR<HotelCreateWithoutReviewsInput, HotelUncheckedCreateWithoutReviewsInput>
+  }
+
+  export type HotelUpsertWithoutReviewsInput = {
+    update: XOR<HotelUpdateWithoutReviewsInput, HotelUncheckedUpdateWithoutReviewsInput>
+    create: XOR<HotelCreateWithoutReviewsInput, HotelUncheckedCreateWithoutReviewsInput>
+    where?: HotelWhereInput
+  }
+
+  export type HotelUpdateToOneWithWhereWithoutReviewsInput = {
+    where?: HotelWhereInput
+    data: XOR<HotelUpdateWithoutReviewsInput, HotelUncheckedUpdateWithoutReviewsInput>
+  }
+
+  export type HotelUpdateWithoutReviewsInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    location?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: DestinationUpdateOneRequiredWithoutHotelsNestedInput
+  }
+
+  export type HotelUncheckedUpdateWithoutReviewsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    location?: NullableStringFieldUpdateOperationsInput | string | null
+    destinationId?: IntFieldUpdateOperationsInput | number
+  }
+
   export type AttractionCreateManyDestinationInput = {
     id?: number
     name: string
@@ -16277,12 +17857,14 @@ export namespace Prisma {
   export type HotelUpdateWithoutDestinationInput = {
     name?: StringFieldUpdateOperationsInput | string
     location?: NullableStringFieldUpdateOperationsInput | string | null
+    reviews?: HotelReviewUpdateManyWithoutHotelNestedInput
   }
 
   export type HotelUncheckedUpdateWithoutDestinationInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     location?: NullableStringFieldUpdateOperationsInput | string | null
+    reviews?: HotelReviewUncheckedUpdateManyWithoutHotelNestedInput
   }
 
   export type HotelUncheckedUpdateManyWithoutDestinationInput = {
@@ -16363,6 +17945,49 @@ export namespace Prisma {
     duration?: StringFieldUpdateOperationsInput | string
     maxPeople?: IntFieldUpdateOperationsInput | number
     imageUrl?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HotelReviewCreateManyHotelInput = {
+    id?: number
+    name: string
+    email: string
+    message: string
+    rating: number
+    sentiment?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type HotelReviewUpdateWithoutHotelInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    rating?: FloatFieldUpdateOperationsInput | number
+    sentiment?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HotelReviewUncheckedUpdateWithoutHotelInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    rating?: FloatFieldUpdateOperationsInput | number
+    sentiment?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type HotelReviewUncheckedUpdateManyWithoutHotelInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    message?: StringFieldUpdateOperationsInput | string
+    rating?: FloatFieldUpdateOperationsInput | number
+    sentiment?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }

@@ -43,11 +43,51 @@ if (slides.length > 0) {
     setInterval(nextSlide, 5000);
 }
 
-// Sentiment Analysis Configuration
+// API Configuration
+const API_BASE_URL = 'http://localhost:3000/api'; // Update with your backend URL
 const SENTIMENT_API_URL = 'https://morsymahmoud.pythonanywhere.com/predict';
+const CURRENT_HOTEL_ID = 1; // You can make this dynamic based on the current page
+
+// Backend API Functions
+async function saveReviewToDatabase(reviewData) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/reviews`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(reviewData)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error saving review to database:', error);
+        throw error;
+    }
+}
+
+async function loadHotelReviews(hotelId) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/reviews/${hotelId}`);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data.data; // Reviews array
+    } catch (error) {
+        console.error('Error loading reviews:', error);
+        return [];
+    }
+}
 
 // Sentiment Analysis Function
-// Alternative sentiment analysis using a CORS proxy
 async function analyzeSentiment(message) {
     try {
         // Option 1: Try direct API call first
@@ -96,10 +136,11 @@ async function analyzeSentiment(message) {
             
         } catch (proxyError) {
             console.log('CORS proxy also failed, using local analysis...', proxyError);
-
+            return 'neutral'; // Fallback to neutral
         }
     }
 }
+
 // Get star rating based on sentiment
 function getStarsForSentiment(sentiment) {
     if (sentiment === 'positive') {
@@ -126,6 +167,15 @@ function getStarsForSentiment(sentiment) {
             <i class="fas fa-star-half-alt"></i>
             <i class="far fa-star"></i>
         `;
+    }
+}
+
+// Convert sentiment to rating
+function sentimentToRating(sentiment) {
+    switch (sentiment) {
+        case 'positive': return 5.0;
+        case 'negative': return 2.0;
+        default: return 3.5;
     }
 }
 
@@ -180,8 +230,64 @@ function showSentimentResult(sentiment, name, message) {
     }
 }
 
-// Enhanced contact form handler with sentiment analysis
+// Display a review in the UI
+function displayReview(review) {
+    const commentSection = document.querySelector('.reviews-section');
+    if (!commentSection) return;
+
+    const newComment = document.createElement('div');
+    newComment.classList.add('comment');
+    newComment.style.cssText = `
+        border-left: 3px solid ${review.sentiment === 'positive' ? '#28a745' : review.sentiment === 'negative' ? '#dc3545' : '#ffc107'};
+        padding-left: 15px;
+        margin-left: 10px;
+        background-color: ${review.sentiment === 'positive' ? '#f8fff9' : review.sentiment === 'negative' ? '#fff8f8' : '#fffef8'};
+        border-radius: 5px;
+        padding: 15px;
+        margin-bottom: 15px;
+        animation: slideInUp 0.5s ease-out;
+    `;
+    
+    // Format date
+    const reviewDate = new Date(review.createdAt).toLocaleDateString();
+    
+    newComment.innerHTML = `
+        <div class="stars">
+            ${getStarsForSentiment(review.sentiment)}
+        </div>
+        <p><strong>${review.name}:</strong> "${review.message}"</p>
+        <small style="color: #666; font-style: italic;">
+            ${reviewDate} • Rating: ${review.rating}/5 • Sentiment: ${review.sentiment.charAt(0).toUpperCase() + review.sentiment.slice(1)}
+        </small>
+    `;
+    
+    commentSection.appendChild(newComment);
+}
+
+// Load and display existing reviews
+async function loadAndDisplayReviews() {
+    try {
+        const reviews = await loadHotelReviews(CURRENT_HOTEL_ID);
+        const reviewsSection = document.querySelector('.reviews-section');
+        
+        if (reviewsSection && reviews.length > 0) {
+            // Clear existing reviews (except the form)
+            const existingComments = reviewsSection.querySelectorAll('.comment');
+            existingComments.forEach(comment => comment.remove());
+            
+            // Display all reviews
+            reviews.forEach(review => displayReview(review));
+        }
+    } catch (error) {
+        console.error('Error loading reviews:', error);
+    }
+}
+
+// Enhanced contact form handler with sentiment analysis and database integration
 document.addEventListener('DOMContentLoaded', function() {
+    // Load existing reviews when page loads
+    loadAndDisplayReviews();
+    
     const contactForms = document.querySelectorAll('.contact-form');
     
     contactForms.forEach(form => {
@@ -208,46 +314,40 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Show loading state
             const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Analyzing...';
+            submitBtn.textContent = 'Analyzing & Saving...';
             submitBtn.disabled = true;
             
             try {
                 // Analyze sentiment
                 const sentiment = await analyzeSentiment(message);
+                const rating = sentimentToRating(sentiment);
+                
+                // Prepare review data for database
+                const reviewData = {
+                    hotelId: CURRENT_HOTEL_ID,
+                    name,
+                    email,
+                    message,
+                    rating,
+                    sentiment
+                };
+                
+                // Save to database
+                const savedReview = await saveReviewToDatabase(reviewData);
                 
                 // Show sentiment result
                 showSentimentResult(sentiment, name, message);
                 
-                // Add comment to reviews section
-                const commentSection = document.querySelector('.reviews-section');
-                if (commentSection) {
-                    const newComment = document.createElement('div');
-                    newComment.classList.add('comment', 'new-comment');
-                    newComment.style.cssText = `
-                        animation: slideInUp 0.5s ease-out;
-                        border-left: 3px solid ${sentiment === 'positive' ? '#28a745' : sentiment === 'negative' ? '#dc3545' : '#ffc107'};
-                        padding-left: 15px;
-                        margin-left: 10px;
-                        background-color: ${sentiment === 'positive' ? '#f8fff9' : sentiment === 'negative' ? '#fff8f8' : '#fffef8'};
-                        border-radius: 5px;
-                        padding: 15px;
-                        margin-bottom: 15px;
-                    `;
-                    
-                    newComment.innerHTML = `
-                        <div class="stars">
-                            ${getStarsForSentiment(sentiment)}
-                        </div>
-                        <p><strong>${name}:</strong> "${message}"</p>
-                        <small style="color: #666; font-style: italic;">
-                            Just now • Sentiment: ${sentiment.charAt(0).toUpperCase() + sentiment.slice(1)}
-                        </small>
-                    `;
-                    
-                    commentSection.appendChild(newComment);
-                    
-                    // Scroll to new comment
-                    newComment.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                // Display the new review immediately
+                displayReview(savedReview.data);
+                
+                // Scroll to new comment
+                const reviewsSection = document.querySelector('.reviews-section');
+                if (reviewsSection) {
+                    const lastComment = reviewsSection.lastElementChild;
+                    if (lastComment) {
+                        lastComment.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
                 }
                 
                 // Reset form
@@ -255,36 +355,37 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Success message based on sentiment
                 const successMessages = {
-                    positive: "Thank you for your positive feedback! 😊 We're delighted to hear about your great experience!",
-                    negative: "Thank you for your honest feedback. 🙏 We take all concerns seriously and will work to improve!",
-                    neutral: "Thank you for your feedback! 💬 We appreciate you taking the time to share your thoughts."
+                    positive: "Thank you for your positive feedback! 😊 Your review has been saved successfully!",
+                    negative: "Thank you for your honest feedback. 🙏 Your review has been saved and we'll work to improve!",
+                    neutral: "Thank you for your feedback! 💬 Your review has been saved successfully."
                 };
                 
                 alert(successMessages[sentiment]);
                 
             } catch (error) {
                 console.error('Error processing feedback:', error);
-                alert("Thank you for your feedback! Your message has been received.");
                 
-                // Still add the comment even if sentiment analysis fails
-                const commentSection = document.querySelector('.reviews-section');
-                if (commentSection) {
-                    const newComment = document.createElement('div');
-                    newComment.classList.add('comment');
-                    newComment.innerHTML = `
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <p><strong>${name}:</strong> "${message}"</p>
-                    `;
-                    commentSection.appendChild(newComment);
+                // Fallback: Still try to save without sentiment analysis
+                try {
+                    const fallbackReviewData = {
+                        hotelId: CURRENT_HOTEL_ID,
+                        name,
+                        email,
+                        message,
+                        rating: 3.5,
+                        sentiment: 'neutral'
+                    };
+                    
+                    const savedReview = await saveReviewToDatabase(fallbackReviewData);
+                    displayReview(savedReview.data);
+                    form.reset();
+                    alert("Thank you for your feedback! Your review has been saved.");
+                    
+                } catch (dbError) {
+                    console.error('Database save also failed:', dbError);
+                    alert("Sorry, there was an error saving your review. Please try again later.");
                 }
                 
-                form.reset();
             } finally {
                 // Reset button
                 submitBtn.textContent = originalText;
@@ -327,6 +428,27 @@ style.textContent = `
         border-radius: 10px;
         font-size: 10px;
         font-weight: bold;
+    }
+    
+    .reviews-section {
+        max-height: 600px;
+        overflow-y: auto;
+    }
+    
+    .loading-spinner {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border: 2px solid #ccc;
+        border-top: 2px solid #007bff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-left: 5px;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
     }
 `;
 document.head.appendChild(style);

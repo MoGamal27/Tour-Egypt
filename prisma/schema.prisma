@@ -44,6 +44,7 @@ model Hotel {
   location  String?
   destinationId Int
   destination Destination @relation(fields: [destinationId], references: [id])
+  reviews   HotelReview[] 
 }
 
 model TourGuide {
@@ -121,4 +122,19 @@ model Review {
   rating      Float
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+}
+
+model HotelReview {
+  id        Int      @id @default(autoincrement())
+  hotelId   Int
+  hotel     Hotel    @relation(fields: [hotelId], references: [id], onDelete: Cascade)
+  name      String
+  email     String
+  message   String
+  rating    Float
+  sentiment String?  // positive, negative, neutral
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("hotel_reviews")
 }

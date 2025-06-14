@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://bf9a6a07-cd1d-4ebc-b7a7-adde95f7b91e-00-2z7xusx8q8552.kirk.replit.dev/api';
+const API_BASE_URL = 'http://localhost:3000/api';
 
 // Map hotel IDs to local images
 const hotelImageMap = {

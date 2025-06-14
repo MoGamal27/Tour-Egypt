@@ -14,6 +14,7 @@ import activityRoute from './src/Routes/ActivityRoute';
 import reviewRoute from './src/Routes/ReviewRoute';
 import verifyToken from './src/middleware/verifyToken';
 import authenticateUser from './src/middleware/authMiddleware';
+import { createReview, getHotelReviews } from './src/api/reviews';
 
 import cors from 'cors'
 const app = express();
@@ -26,7 +27,7 @@ app.use(cors({
 }))
 
 app.use(express.json());
-app.use(cookieParser());
+
 
 // Serve ALL static files (CSS, JS, images) from Frontend folder
 app.use(express.static(path.join(__dirname, 'Frontend')));
@@ -41,14 +42,8 @@ app.get('/register.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'Frontend', 'register.html'));
 });
 
-// Protected HTML routes (authentication required)
-app.get('/home.html', authenticateUser, (req, res) => {
-  res.sendFile(path.join(__dirname, 'Frontend', 'home.html'));
-});
 
-app.get('/Frontend', authenticateUser, (req, res) => {
-  res.sendFile(path.join(__dirname, 'Frontend', 'home.html'));
-});
+
 
 // API routes
 app.use('/api', 
